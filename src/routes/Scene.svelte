@@ -59,6 +59,26 @@
 
 <svelte:window
   onkeydown={(e) => {
+    // When a cell is selected, the keyboard drives letter entry / navigation.
+    if (game.selectedCellKey) {
+      if (e.key === "Escape") {
+        game.clearSelection();
+      } else if (e.key === "Backspace") {
+        e.preventDefault();
+        game.backspace();
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        game.moveActive(1);
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        game.moveActive(-1);
+      } else if (/^[a-zA-Z]$/.test(e.key) && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        game.typeLetter(e.key);
+      }
+      return;
+    }
+    // No selection: "d" toggles the ray debug overlay.
     if (e.key.toLowerCase() === "d" && !e.repeat) showRayDebug = !showRayDebug;
   }}
 />
@@ -81,8 +101,11 @@
 <T.Group position={[-cx, -cy, -cz]}>
   {#each cells as cell (cell.key)}
     {@const lit = game.highlightedCells.has(cell.key)}
+    {@const active = cell.key === game.selectedCellKey}
+    {@const order = game.highlightedOrder.get(cell.key)}
     <T.Group position={cell.position}>
       <T.Mesh
+        onclick={() => game.selectCell(cell.key)}
         onpointerenter={(e: IntersectionEvent<PointerEvent>) => {
           game.hoverCell(cell.key);
           // .point is inherited from THREE.Intersection but lost in the type chain
@@ -97,15 +120,15 @@
       >
         <T.BoxGeometry args={[0.9, 0.9, 0.9]} />
         <T.MeshStandardMaterial
-          color={lit ? "#34d399" : "#64748b"}
-          emissive={lit ? "#10b981" : "#334155"}
-          emissiveIntensity={lit ? 0.5 : 0.35}
+          color={active ? "#fbbf24" : lit ? "#34d399" : "#64748b"}
+          emissive={active ? "#f59e0b" : lit ? "#10b981" : "#334155"}
+          emissiveIntensity={active ? 0.6 : lit ? 0.5 : 0.35}
           transparent
-          opacity={lit ? 0.7 : 0.5}
+          opacity={active ? 0.8 : lit ? 0.7 : 0.5}
           roughness={0.45}
           depthWrite={false}
         />
-        <Edges color={lit ? "#a7f3d0" : "#94a3b8"} />
+        <Edges color={active ? "#fde68a" : lit ? "#a7f3d0" : "#94a3b8"} />
       </T.Mesh>
 
       <!-- Billboard keeps the letter facing the camera → it always stays
@@ -119,6 +142,19 @@
           anchorY="middle"
           renderOrder={1}
         />
+        <!-- Ordinal badge in the upper-left corner of the highlighted word's
+             letters, so you can read its direction and find where it starts. -->
+        {#if order}
+          <Text
+            text={String(order)}
+            position={[-0.32, 0.32, 0]}
+            fontSize={0.2}
+            color="#fde68a"
+            anchorX="center"
+            anchorY="middle"
+            renderOrder={2}
+          />
+        {/if}
       </Billboard>
     </T.Group>
   {/each}

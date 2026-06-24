@@ -9,14 +9,20 @@ import type { Puzzle, WordSpec } from "./types";
 export class CrosswordGame {
   readonly built: BuiltPuzzle;
 
-  /** cellKey -> letter the player has typed. (Unused in this MVP, ready for input.) */
+  /** cellKey -> letter the player has typed. */
   entries = $state(new Map<string, string>());
 
-  /** The word whose line is currently highlighted, or null. */
+  /** The word the cursor is hovering, or null. Drives the transient highlight. */
   hoveredWordId = $state<string | null>(null);
 
+  /** The word the player has clicked into — the persistent selection. */
+  selectedWordId = $state<string | null>(null);
+
+  /** The active cell within the selected word: where typed letters land. */
+  selectedCellKey = $state<string | null>(null);
+
   /** When true, every cell shows its solution letter (debug / reveal). */
-  showAnswers = $state(true);
+  showAnswers = $state(false);
 
   toggleAnswers(): void {
     this.showAnswers = !this.showAnswers;
@@ -32,15 +38,28 @@ export class CrosswordGame {
     this.built = buildPuzzle(puzzle);
   }
 
+  /** The clue to show: the selected word's if one is selected, else the hovered word's. */
   get hoveredWord(): WordSpec | null {
-    if (!this.hoveredWordId) return null;
-    return this.built.puzzle.words.find((w) => w.id === this.hoveredWordId) ?? null;
+    const id = this.selectedWordId ?? this.hoveredWordId;
+    if (!id) return null;
+    return this.built.puzzle.words.find((w) => w.id === id) ?? null;
   }
 
-  /** Cell keys belonging to the hovered word (for highlighting the whole line). */
+  /** Cell keys to highlight as a line: the selected word's, else the hovered word's. */
   get highlightedCells(): Set<string> {
-    if (!this.hoveredWordId) return new Set();
-    return new Set(this.built.wordCells.get(this.hoveredWordId) ?? []);
+    const id = this.selectedWordId ?? this.hoveredWordId;
+    if (!id) return new Set();
+    return new Set(this.built.wordCells.get(id) ?? []);
+  }
+
+  /** cellKey -> 1-based position in the highlighted word, so the scene can label
+   *  each letter's order (1, 2, 3…) and you can see where the word starts. */
+  get highlightedOrder(): Map<string, number> {
+    const order = new Map<string, number>();
+    const id = this.selectedWordId ?? this.hoveredWordId;
+    if (!id) return order;
+    (this.built.wordCells.get(id) ?? []).forEach((key, i) => order.set(key, i + 1));
+    return order;
   }
 
   /** Called from a cell's pointer events. A cell may sit on several words; we
@@ -52,5 +71,64 @@ export class CrosswordGame {
     }
     const cell = this.built.cells.get(key);
     this.hoveredWordId = cell ? cell.wordIds[0] : null;
+  }
+
+  /** Click a cell: select it and its first word. Clicking the same active cell
+   *  again cycles to the next word through it (X→Y→Z) for intersections. */
+  selectCell(key: string): void {
+    const cell = this.built.cells.get(key);
+    if (!cell) return;
+    if (key === this.selectedCellKey && cell.wordIds.length > 1) {
+      const i = cell.wordIds.indexOf(this.selectedWordId ?? cell.wordIds[0]);
+      this.selectedWordId = cell.wordIds[(i + 1) % cell.wordIds.length];
+    } else {
+      this.selectedCellKey = key;
+      this.selectedWordId = cell.wordIds[0];
+    }
+  }
+
+  clearSelection(): void {
+    this.selectedWordId = null;
+    this.selectedCellKey = null;
+  }
+
+  /** Ordered cell keys of the selected word, and the active cell's index in it. */
+  private activeLine(): { keys: string[]; index: number } | null {
+    if (!this.selectedWordId || !this.selectedCellKey) return null;
+    const keys = this.built.wordCells.get(this.selectedWordId);
+    if (!keys) return null;
+    return { keys, index: keys.indexOf(this.selectedCellKey) };
+  }
+
+  /** Type a letter into the active cell, then advance the cursor along the word. */
+  typeLetter(ch: string): void {
+    const line = this.activeLine();
+    if (!line || !this.selectedCellKey) return;
+    this.entries = new Map(this.entries).set(this.selectedCellKey, ch.toUpperCase());
+    const next = Math.min(line.index + 1, line.keys.length - 1);
+    this.selectedCellKey = line.keys[next];
+  }
+
+  /** Clear the active cell, or — if already empty — step back and clear that one. */
+  backspace(): void {
+    const line = this.activeLine();
+    if (!line || !this.selectedCellKey) return;
+    const next = new Map(this.entries);
+    if (next.has(this.selectedCellKey)) {
+      next.delete(this.selectedCellKey);
+    } else {
+      const prev = Math.max(line.index - 1, 0);
+      this.selectedCellKey = line.keys[prev];
+      next.delete(this.selectedCellKey);
+    }
+    this.entries = next;
+  }
+
+  /** Move the active cell along the selected word (arrow keys). */
+  moveActive(delta: -1 | 1): void {
+    const line = this.activeLine();
+    if (!line) return;
+    const i = Math.min(Math.max(line.index + delta, 0), line.keys.length - 1);
+    this.selectedCellKey = line.keys[i];
   }
 }

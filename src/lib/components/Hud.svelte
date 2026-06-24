@@ -17,7 +17,7 @@
       <p>{game.hoveredWord.clue}</p>
     </div>
   {:else}
-    <p class="dim">Hover a line of cells to reveal its clue. Drag to rotate · scroll to zoom.</p>
+    <p class="dim">Hover a line to read its clue · click a cell to select, then type. Drag to rotate · scroll to zoom.</p>
   {/if}
 
   <button class="toggle" onclick={() => game.toggleAnswers()}>

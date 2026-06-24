@@ -1,13 +1,32 @@
 <script lang="ts">
-  import { T } from "@threlte/core";
-  import { TrackballControls, Gizmo, Text, Billboard, Edges, interactivity } from "@threlte/extras";
+  import { T, useThrelte, useTask } from "@threlte/core";
+  import {
+    TrackballControls,
+    Gizmo,
+    Text,
+    Billboard,
+    Edges,
+    interactivity,
+    useInteractivity,
+  } from "@threlte/extras";
+  import type { IntersectionEvent } from "@threlte/extras";
   import type { ComponentProps } from "svelte";
   import { puzzleCenter } from "$lib/crossword/puzzle";
   import type { CrosswordGame } from "$lib/crossword/game.svelte";
+  // @ts-ignore – three r184 ships no .d.ts; runtime import works fine
+  import * as THREE from "three";
 
   let { game }: { game: CrosswordGame } = $props();
 
   interactivity();
+  // Access Threlte's own internal raycaster and pointer NDC so the debug line
+  // shows the EXACT ray used for hit detection, not a separately computed one.
+  const { raycaster: _rc, pointer: _pointer } = useInteractivity();
+  // Edges creates THREE.LineSegments as children of each Mesh. The default
+  // line hit threshold is 1 world unit — larger than the gap between cubes —
+  // so lines were being "hit" before the ray reached the box geometry.
+  _rc.params.Line = { threshold: 0 };
+  _rc.params.Points = { threshold: 0 };
 
   // TrackballControls instance, shared with the orientation gizmo.
   // (Type comes from TrackballControls' bindable `ref`, avoiding the
@@ -17,7 +36,32 @@
   const cells = [...game.built.cells.values()];
   // Re-center so the controls pivot around the middle of the puzzle.
   const [cx, cy, cz] = puzzleCenter(cells);
+
+  // ── Ray debug ────────────────────────────────────────────────────────────
+  let showRayDebug = $state(false);
+  let lineGeo = $state<THREE.BufferGeometry | undefined>();
+  let hitPos = $state<[number, number, number] | null>(null);
+
+  // Reuse a single Vector3 for the far end of the ray each frame.
+  const _end = new THREE.Vector3();
+
+  // Every frame: update the line geometry from Threlte's own raycaster.
+  // useTask (not $effect) keeps the ray correct while orbiting without moving
+  // the mouse, because the raycaster re-projects from the current camera.
+  useTask(() => {
+    if (!showRayDebug || !lineGeo) return;
+    const o = _rc.ray.origin;
+    const d = _rc.ray.direction;
+    _end.copy(o).addScaledVector(d, 30);
+    (lineGeo as any).setFromPoints([o, _end]);
+  });
 </script>
+
+<svelte:window
+  onkeydown={(e) => {
+    if (e.key.toLowerCase() === "d" && !e.repeat) showRayDebug = !showRayDebug;
+  }}
+/>
 
 <T.PerspectiveCamera makeDefault position={[7, 6, 9]} fov={50}>
   <!-- TrackballControls orbits freely with no up-vector, so the camera
@@ -39,8 +83,17 @@
     {@const lit = game.highlightedCells.has(cell.key)}
     <T.Group position={cell.position}>
       <T.Mesh
-        onpointerenter={() => game.hoverCell(cell.key)}
-        onpointerleave={() => game.hoverCell(null)}
+        onpointerenter={(e: IntersectionEvent<PointerEvent>) => {
+          game.hoverCell(cell.key);
+          // .point is inherited from THREE.Intersection but lost in the type chain
+          // because three r184 ships no .d.ts; it exists at runtime.
+          const pt = (e as any).point as { x: number; y: number; z: number };
+          hitPos = [pt.x, pt.y, pt.z];
+        }}
+        onpointerleave={() => {
+          game.hoverCell(null);
+          hitPos = null;
+        }}
       >
         <T.BoxGeometry args={[0.9, 0.9, 0.9]} />
         <T.MeshStandardMaterial
@@ -70,3 +123,19 @@
     </T.Group>
   {/each}
 </T.Group>
+
+{#if showRayDebug}
+  <!-- Yellow ray line: camera → cursor, 30 units deep. -->
+  <T.Line frustumCulled={false}>
+    <T.BufferGeometry bind:ref={lineGeo} />
+    <T.LineBasicMaterial color="#fbbf24" />
+  </T.Line>
+
+  <!-- Red sphere at the exact surface point where the ray hit a cube face. -->
+  {#if hitPos}
+    <T.Mesh position={hitPos}>
+      <T.SphereGeometry args={[0.08, 8, 8]} />
+      <T.MeshBasicMaterial color="#f43f5e" depthTest={false} />
+    </T.Mesh>
+  {/if}
+{/if}

@@ -16,6 +16,8 @@ export interface BuiltPuzzle {
   cells: Map<string, Cell>;
   /** wordId -> ordered list of cell keys (start → end). */
   wordCells: Map<string, string[]>;
+  /** wordId -> crossword number (like "1 Across" / "1 Down" in 2D). */
+  wordNumbers: Map<string, number>;
 }
 
 /**
@@ -66,7 +68,25 @@ export function buildPuzzle(puzzle: Puzzle): BuiltPuzzle {
     wordCells.set(word.id, keys);
   }
 
-  return { puzzle, cells, wordCells };
+  // Assign crossword numbers to unique start positions.
+  // Sort: higher y first (top), then smaller z (front), then smaller x (left).
+  const sortedWords = [...puzzle.words].sort((a, b) => {
+    const [ax, ay, az] = a.start;
+    const [bx, by, bz] = b.start;
+    if (ay !== by) return by - ay;
+    if (az !== bz) return az - bz;
+    return ax - bx;
+  });
+  const wordNumbers = new Map<string, number>();
+  const startToNum = new Map<string, number>();
+  let nextNum = 1;
+  for (const word of sortedWords) {
+    const sk = cellKey(...word.start);
+    if (!startToNum.has(sk)) startToNum.set(sk, nextNum++);
+    wordNumbers.set(word.id, startToNum.get(sk)!);
+  }
+
+  return { puzzle, cells, wordCells, wordNumbers };
 }
 
 /** Geometric center of the grid, so the scene can be re-centered on origin. */

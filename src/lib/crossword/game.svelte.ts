@@ -87,6 +87,14 @@ export class CrosswordGame {
     }
   }
 
+  /** Select a word directly (e.g. from the clue list), placing the cursor at its first cell. */
+  selectWord(wordId: string): void {
+    const keys = this.built.wordCells.get(wordId);
+    if (!keys || keys.length === 0) return;
+    this.selectedWordId = wordId;
+    this.selectedCellKey = keys[0];
+  }
+
   clearSelection(): void {
     this.selectedWordId = null;
     this.selectedCellKey = null;

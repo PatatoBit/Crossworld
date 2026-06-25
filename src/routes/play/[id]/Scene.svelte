@@ -38,6 +38,16 @@
   // Re-center so the controls pivot around the middle of the puzzle.
   const [cx, cy, cz] = puzzleCenter(cells);
 
+  // Map from first-cell key → crossword number, for in-scene labels.
+  const cellNumbers = new Map<string, number>();
+  for (const word of game.built.puzzle.words) {
+    const firstKey = game.built.wordCells.get(word.id)?.[0];
+    if (firstKey !== undefined && !cellNumbers.has(firstKey)) {
+      const num = game.built.wordNumbers.get(word.id);
+      if (num !== undefined) cellNumbers.set(firstKey, num);
+    }
+  }
+
   // ── Ray debug ────────────────────────────────────────────────────────────
   let showRayDebug = $state(false);
   let lineGeo = $state<THREE.BufferGeometry | undefined>();
@@ -249,6 +259,23 @@
           renderOrder={1}
         />
       </Billboard>
+
+      <!-- Word-number label at the top-left of the starting cell. -->
+      {@const cellNum = cellNumbers.get(cell.key)}
+      {#if cellNum !== undefined}
+        <T.Group position={[-0.27, 0.27, 0]}>
+          <Billboard>
+            <Text
+              text={String(cellNum)}
+              fontSize={0.18}
+              color="#94a3b8"
+              anchorX="center"
+              anchorY="middle"
+              renderOrder={1}
+            />
+          </Billboard>
+        </T.Group>
+      {/if}
     </T.Group>
   {/each}
 </T.Group>

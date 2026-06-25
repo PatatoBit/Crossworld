@@ -42,13 +42,62 @@
   let lineGeo = $state<THREE.BufferGeometry | undefined>();
   let hitPos = $state<[number, number, number] | null>(null);
 
+  const BOP_DURATION = 0.22;  // seconds each letter spends in the air
+  const BOP_STAGGER  = 0.09;  // seconds between each letter starting
+  const BOP_HEIGHT   = 0.3;   // world units
+  const WAVE_DURATION = 2.0;  // generous ceiling; all cells finish well before this
+
+  // Seconds since the current word's wave started; null when idle.
+  let waveElapsed = $state<number | null>(null);
+  let _prevHighlightId = '';
+
+  // Bounce direction: camera.up projected onto the plane perpendicular to the
+  // word axis, so letters always appear to jump "up" relative to their reading
+  // direction regardless of which 3-D axis the word runs along.
+  const { camera } = useThrelte();
+  let bopDir = $state<[number, number, number]>([0, 1, 0]);
+
+  const _fwd = new THREE.Vector3();
   // Reuse a single Vector3 for the far end of the ray each frame.
   const _end = new THREE.Vector3();
 
-  // Every frame: update the line geometry from Threlte's own raycaster.
-  // useTask (not $effect) keeps the ray correct while orbiting without moving
-  // the mouse, because the raycaster re-projects from the current camera.
-  useTask(() => {
+  useTask((delta) => {
+    // Restart bop and recompute bounce direction whenever the highlighted word changes.
+    const id = game.selectedWordId ?? game.hoveredWordId ?? '';
+    if (id !== _prevHighlightId) {
+      _prevHighlightId = id;
+      waveElapsed = id ? 0 : null;
+      if (id) {
+        const word = game.built.puzzle.words.find((w) => w.id === id);
+        if (word) {
+          const cam = camera.current;
+          const ax = word.axis === 'x' ? 1 : 0;
+          const ay = word.axis === 'y' ? 1 : 0;
+          const az = word.axis === 'z' ? 1 : 0;
+          // Project camera.up perpendicular to the word axis.
+          const dot = cam.up.x * ax + cam.up.y * ay + cam.up.z * az;
+          let bx = cam.up.x - dot * ax;
+          let by = cam.up.y - dot * ay;
+          let bz = cam.up.z - dot * az;
+          let len = Math.sqrt(bx * bx + by * by + bz * bz);
+          if (len < 0.01) {
+            // Word axis is parallel to camera.up (e.g. a vertical Y-axis word
+            // with the camera in its default upright position). Fall back to
+            // the camera's right direction projected perpendicular to the axis.
+            cam.getWorldDirection(_fwd);
+            bx = _fwd.y * az - _fwd.z * ay;
+            by = _fwd.z * ax - _fwd.x * az;
+            bz = _fwd.x * ay - _fwd.y * ax;
+            len = Math.sqrt(bx * bx + by * by + bz * bz);
+          }
+          if (len > 0.01) bopDir = [bx / len, by / len, bz / len];
+        }
+      }
+    }
+    if (waveElapsed !== null) {
+      waveElapsed += delta;
+      if (waveElapsed >= WAVE_DURATION) waveElapsed = null;
+    }
     if (!showRayDebug || !lineGeo) return;
     const o = _rc.ray.origin;
     const d = _rc.ray.direction;
@@ -103,9 +152,9 @@
     {@const lit = game.highlightedCells.has(cell.key)}
     {@const active = cell.key === game.selectedCellKey}
     {@const order = game.highlightedOrder.get(cell.key)}
-    {@const totalLen = game.highlightedCells.size}
-    {@const t = order !== undefined && totalLen > 1 ? (order - 1) / (totalLen - 1) : 0}
-    <T.Group position={cell.position}>
+    {@const bopT = waveElapsed !== null && order !== undefined ? Math.max(0, Math.min((waveElapsed - (order - 1) * BOP_STAGGER) / BOP_DURATION, 1)) : 0}
+    {@const bop = lit && order !== undefined ? Math.sin(bopT * Math.PI) * BOP_HEIGHT : 0}
+    <T.Group position={[cell.position[0] + bop * bopDir[0], cell.position[1] + bop * bopDir[1], cell.position[2] + bop * bopDir[2]]}>
       <T.Mesh
         onclick={() => game.selectCell(cell.key)}
         onpointerenter={(e: IntersectionEvent<PointerEvent>) => {
@@ -124,9 +173,9 @@
         <T.MeshStandardMaterial
           color={active ? "#fbbf24" : lit ? "#34d399" : "#64748b"}
           emissive={active ? "#f59e0b" : lit ? "#10b981" : "#334155"}
-          emissiveIntensity={active ? 0.6 : lit ? 0.7 - t * 0.5 : 0.35}
+          emissiveIntensity={active ? 0.6 : lit ? 0.5 : 0.35}
           transparent
-          opacity={active ? 0.8 : lit ? 0.85 - t * 0.5 : 0.5}
+          opacity={active ? 0.8 : lit ? 0.7 : 0.5}
           roughness={0.45}
           depthWrite={false}
         />

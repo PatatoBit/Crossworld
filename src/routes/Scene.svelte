@@ -103,6 +103,8 @@
     {@const lit = game.highlightedCells.has(cell.key)}
     {@const active = cell.key === game.selectedCellKey}
     {@const order = game.highlightedOrder.get(cell.key)}
+    {@const totalLen = game.highlightedCells.size}
+    {@const t = order !== undefined && totalLen > 1 ? (order - 1) / (totalLen - 1) : 0}
     <T.Group position={cell.position}>
       <T.Mesh
         onclick={() => game.selectCell(cell.key)}
@@ -122,9 +124,9 @@
         <T.MeshStandardMaterial
           color={active ? "#fbbf24" : lit ? "#34d399" : "#64748b"}
           emissive={active ? "#f59e0b" : lit ? "#10b981" : "#334155"}
-          emissiveIntensity={active ? 0.6 : lit ? 0.5 : 0.35}
+          emissiveIntensity={active ? 0.6 : lit ? 0.7 - t * 0.5 : 0.35}
           transparent
-          opacity={active ? 0.8 : lit ? 0.7 : 0.5}
+          opacity={active ? 0.8 : lit ? 0.85 - t * 0.5 : 0.5}
           roughness={0.45}
           depthWrite={false}
         />
@@ -142,19 +144,6 @@
           anchorY="middle"
           renderOrder={1}
         />
-        <!-- Ordinal badge in the upper-left corner of the highlighted word's
-             letters, so you can read its direction and find where it starts. -->
-        {#if order}
-          <Text
-            text={String(order)}
-            position={[-0.32, 0.32, 0]}
-            fontSize={0.2}
-            color="#fde68a"
-            anchorX="center"
-            anchorY="middle"
-            renderOrder={2}
-          />
-        {/if}
       </Billboard>
     </T.Group>
   {/each}

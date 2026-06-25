@@ -1,45 +1,69 @@
 <script lang="ts">
-  import { Canvas } from "@threlte/core";
-  import Scene from "./Scene.svelte";
-  import Hud from "$lib/components/Hud.svelte";
-  import { CrosswordGame } from "$lib/crossword/game.svelte";
-  import { samplePuzzle } from "$lib/crossword/sample";
-
-  // Built once; the scene renders it, the HUD reflects hover state.
-  const game = new CrosswordGame(samplePuzzle);
+  import { goto } from "$app/navigation";
+  import { base } from "$app/paths";
 </script>
 
-<div class="layout">
-  <div class="canvas-wrap">
-    <Canvas>
-      <Scene {game} />
-    </Canvas>
+<main class="menu">
+  <div class="title">
+    <h1>Crossworld</h1>
+    <p class="tagline">A rotatable 3D crossword across seven continents.</p>
   </div>
-  <aside class="sidebar">
-    <Hud {game} />
-  </aside>
-</div>
+
+  <nav class="actions">
+    <button class="play" onclick={() => goto(`${base}/levels`)}>Play</button>
+  </nav>
+</main>
 
 <style>
   :global(body) {
     margin: 0;
   }
-  .layout {
+  .menu {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at 37% 50%, #0f172a, #020617);
+    background: radial-gradient(circle at 50% 35%, #0f172a, #020617);
+    color: #e2e8f0;
+    font-family: system-ui, sans-serif;
   }
-  .canvas-wrap {
-    flex: 3;
-    position: relative;
-    height: 100%;
+  .title {
+    text-align: center;
   }
-  .sidebar {
-    flex: 1;
-    height: 100%;
-    overflow-y: auto;
-    border-left: 1px solid rgba(51, 65, 85, 0.5);
-    background: rgba(2, 6, 23, 0.85);
+  h1 {
+    margin: 0;
+    font-size: clamp(3rem, 9vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(120deg, #34d399, #38bdf8, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .tagline {
+    margin: 0.75rem 0 0;
+    color: #94a3b8;
+    font-size: 1.05rem;
+  }
+  .play {
+    padding: 0.95rem 3.5rem;
+    font: 700 1.15rem system-ui, sans-serif;
+    color: #022c22;
+    background: linear-gradient(120deg, #34d399, #10b981);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px -8px rgba(16, 185, 129, 0.6);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px -8px rgba(16, 185, 129, 0.7);
+  }
+  .play:active {
+    transform: translateY(0);
   }
 </style>

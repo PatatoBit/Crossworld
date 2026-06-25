@@ -13,6 +13,7 @@
   import type { ComponentProps } from "svelte";
   import { puzzleCenter } from "$lib/crossword/puzzle";
   import type { CrosswordGame } from "$lib/crossword/game.svelte";
+  import type { Axis } from "$lib/crossword/types";
   // @ts-ignore – three r184 ships no .d.ts; runtime import works fine
   import * as THREE from "three";
 
@@ -57,6 +58,26 @@
   const { camera } = useThrelte();
   let bopDir = $state<[number, number, number]>([0, 1, 0]);
 
+  // Compute target camera position + up so the given word axis reads left-to-right.
+  // Derived from: right = cross(forward, up) = wordDir.
+  // All targets sit at the same distance from the origin as the current camera.
+  function wordCameraTarget(axis: Axis, dist: number): [THREE.Vector3, THREE.Vector3] {
+    const h = dist * 0.5;    // elevation component (sin 30°)
+    const d = dist * 0.866;  // horizontal component (cos 30°)
+    if (axis === 'x') return [new THREE.Vector3(0, h, d),  new THREE.Vector3(0, 1, 0)];
+    if (axis === 'z') return [new THREE.Vector3(-d, h, 0), new THREE.Vector3(0, 1, 0)];
+                      return [new THREE.Vector3(d, 0, h),  new THREE.Vector3(0, 0, 1)];
+  }
+
+  // Camera fly-to animation state (plain vars — drive THREE directly, not Svelte DOM).
+  let _camPosTgt: THREE.Vector3 | null = null;
+  let _camUpTgt:  THREE.Vector3 | null = null;
+  let _camPosStart = new THREE.Vector3();
+  let _camUpStart  = new THREE.Vector3();
+  let _camAnimT = 0;
+  const CAM_ANIM_DUR = 0.55;
+  let _prevSelectedId = '';
+
   const _fwd = new THREE.Vector3();
   // Reuse a single Vector3 for the far end of the ray each frame.
   const _end = new THREE.Vector3();
@@ -98,6 +119,40 @@
       waveElapsed += delta;
       if (waveElapsed >= WAVE_DURATION) waveElapsed = null;
     }
+
+    // ── Camera orientation ────────────────────────────────────────────────────
+    // Trigger only on selection changes (not hover) so the camera flies to the
+    // angle that makes the selected word read left-to-right on screen.
+    const selId = game.selectedWordId ?? '';
+    if (selId !== _prevSelectedId) {
+      _prevSelectedId = selId;
+      if (selId) {
+        const word = game.built.puzzle.words.find((w) => w.id === selId);
+        if (word) {
+          const cam = camera.current;
+          const dist = Math.max(cam.position.length(), 8);
+          const [tp, tu] = wordCameraTarget(word.axis, dist);
+          _camPosTgt = tp;
+          _camUpTgt  = tu;
+          _camPosStart.copy(cam.position);
+          _camUpStart.copy(cam.up);
+          _camAnimT = 0;
+        }
+      } else {
+        _camPosTgt = null;
+        _camUpTgt  = null;
+      }
+    }
+    if (_camPosTgt && _camUpTgt) {
+      _camAnimT += delta;
+      const t    = Math.min(_camAnimT / CAM_ANIM_DUR, 1);
+      const ease = 1 - Math.pow(1 - t, 3); // ease-out cubic
+      camera.current.position.lerpVectors(_camPosStart, _camPosTgt, ease);
+      camera.current.up.lerpVectors(_camUpStart, _camUpTgt, ease).normalize();
+      if (controls) (controls as any).update();
+      if (t >= 1) { _camPosTgt = null; _camUpTgt = null; }
+    }
+
     if (!showRayDebug || !lineGeo) return;
     const o = _rc.ray.origin;
     const d = _rc.ray.direction;

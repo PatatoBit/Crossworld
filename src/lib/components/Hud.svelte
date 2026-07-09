@@ -66,7 +66,6 @@
     gap: 1.25rem;
     padding: 1.5rem 1.25rem;
     color: #e2e8f0;
-    font-family: system-ui, sans-serif;
     height: 100%;
     box-sizing: border-box;
   }

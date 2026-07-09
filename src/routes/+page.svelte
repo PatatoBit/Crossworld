@@ -15,9 +15,6 @@
 </main>
 
 <style>
-  :global(body) {
-    margin: 0;
-  }
   .menu {
     display: flex;
     flex-direction: column;
@@ -28,7 +25,6 @@
     height: 100vh;
     background: radial-gradient(circle at 50% 35%, #0f172a, #020617);
     color: #e2e8f0;
-    font-family: system-ui, sans-serif;
   }
   .title {
     text-align: center;
@@ -50,7 +46,7 @@
   }
   .play {
     padding: 0.95rem 3.5rem;
-    font: 700 1.15rem system-ui, sans-serif;
+    font: 700 1.15rem var(--font-sans);
     color: #022c22;
     background: linear-gradient(120deg, #34d399, #10b981);
     border: none;

@@ -14,6 +14,7 @@
   import { puzzleCenter } from "$lib/crossword/puzzle";
   import type { CrosswordGame } from "$lib/crossword/game.svelte";
   import type { Axis } from "$lib/crossword/types";
+  import { googleSansFontUrl } from "$lib/fonts";
   // @ts-ignore – three r184 ships no .d.ts; runtime import works fine
   import * as THREE from "three";
 
@@ -252,6 +253,7 @@
       <Billboard>
         <Text
           text={game.displayLetter(cell.key)}
+          font={googleSansFontUrl}
           fontSize={0.5}
           color="#f8fafc"
           anchorX="center"
@@ -267,6 +269,7 @@
           <Billboard>
             <Text
               text={String(cellNum)}
+              font={googleSansFontUrl}
               fontSize={0.18}
               color="#94a3b8"
               anchorX="center"

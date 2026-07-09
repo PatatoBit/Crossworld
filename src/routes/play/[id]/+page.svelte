@@ -35,9 +35,6 @@
 {/if}
 
 <style>
-  :global(body) {
-    margin: 0;
-  }
   .layout {
     display: flex;
     width: 100vw;
@@ -61,7 +58,7 @@
     top: 1rem;
     left: 1rem;
     padding: 0.5rem 0.9rem;
-    font: 600 0.85rem system-ui, sans-serif;
+    font: 600 0.85rem var(--font-sans);
     color: #cbd5e1;
     background: rgba(2, 6, 23, 0.6);
     border: 1px solid rgba(71, 85, 105, 0.6);
@@ -83,13 +80,12 @@
     width: 100vw;
     height: 100vh;
     color: #e2e8f0;
-    font-family: system-ui, sans-serif;
     text-align: center;
     background: radial-gradient(circle at 50% 40%, #0f172a, #020617);
   }
   .missing button {
     padding: 0.6rem 1.2rem;
-    font: 600 0.9rem system-ui, sans-serif;
+    font: 600 0.9rem var(--font-sans);
     color: #0f172a;
     background: #34d399;
     border: none;

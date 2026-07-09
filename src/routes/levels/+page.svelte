@@ -30,16 +30,12 @@
 </main>
 
 <style>
-  :global(body) {
-    margin: 0;
-  }
   .select {
     min-height: 100vh;
     box-sizing: border-box;
     padding: 2.5rem clamp(1.5rem, 6vw, 5rem);
     background: radial-gradient(circle at 50% 0%, #0f172a, #020617);
     color: #e2e8f0;
-    font-family: system-ui, sans-serif;
   }
   header {
     display: flex;
@@ -55,7 +51,7 @@
   }
   .back {
     padding: 0.5rem 0.9rem;
-    font: 600 0.85rem system-ui, sans-serif;
+    font: 600 0.85rem var(--font-sans);
     color: #cbd5e1;
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(71, 85, 105, 0.6);

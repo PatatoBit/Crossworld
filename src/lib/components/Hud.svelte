@@ -23,6 +23,10 @@
   function isActive(wordId: string): boolean {
     return wordId === (game.selectedWordId ?? game.hoveredWordId);
   }
+
+  function isComplete(wordId: string): boolean {
+    return game.completedWordIds.has(wordId);
+  }
 </script>
 
 <div class="hud">
@@ -40,9 +44,10 @@
             <li>
               <button
                 class:active={isActive(word.id)}
+                class:complete={isComplete(word.id)}
                 onclick={() => game.selectWord(word.id)}
               >
-                <span class="num">{num}</span>
+                <span class="num">{isComplete(word.id) ? "✓" : num}</span>
                 <span class="clue">{word.clue}</span>
               </button>
             </li>
@@ -134,6 +139,13 @@
     background: var(--green-soft);
     border-color: rgba(22, 163, 74, 0.35);
   }
+  li button.complete {
+    background: var(--green-soft);
+    border-color: rgba(74, 222, 128, 0.45);
+  }
+  li button.complete .clue {
+    color: var(--green-strong);
+  }
   .num {
     flex-shrink: 0;
     display: inline-flex;
@@ -150,6 +162,10 @@
   li button.active .num {
     color: #fff;
     background: var(--green);
+  }
+  li button.complete .num {
+    color: var(--green-strong);
+    background: rgba(74, 222, 128, 0.35);
   }
   .clue {
     font-size: 0.85rem;

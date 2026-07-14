@@ -45,6 +45,36 @@ export class CrosswordGame {
     return this.built.puzzle.words.find((w) => w.id === id) ?? null;
   }
 
+  /** True when every cell in the word is filled with the correct letter. */
+  isWordComplete(wordId: string): boolean {
+    const keys = this.built.wordCells.get(wordId) ?? [];
+    return keys.every((key) => {
+      const entry = this.entries.get(key);
+      return entry !== undefined && entry === this.built.cells.get(key)?.solution;
+    });
+  }
+
+  /** Word ids whose answers are fully and correctly filled. */
+  get completedWordIds(): Set<string> {
+    return new Set(
+      this.built.puzzle.words.filter((w) => this.isWordComplete(w.id)).map((w) => w.id),
+    );
+  }
+
+  /** Cell keys that belong to at least one completed word. */
+  get completedCells(): Set<string> {
+    const cells = new Set<string>();
+    for (const wordId of this.completedWordIds) {
+      for (const key of this.built.wordCells.get(wordId) ?? []) cells.add(key);
+    }
+    return cells;
+  }
+
+  /** True when every word in the puzzle is correctly filled. */
+  get isComplete(): boolean {
+    return this.built.puzzle.words.every((w) => this.isWordComplete(w.id));
+  }
+
   /** Cell keys to highlight as a line: the selected word's, else the hovered word's. */
   get highlightedCells(): Set<string> {
     const id = this.selectedWordId ?? this.hoveredWordId;

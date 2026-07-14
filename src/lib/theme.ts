@@ -8,6 +8,7 @@ export const sceneColors = {
     default: { color: "#2e7d4f", emissive: "#14532d", edge: "#7fd3a0" },
     highlighted: { color: "#22c55e", emissive: "#16a34a", edge: "#e6f9b5" },
     active: { color: "#f6c915", emissive: "#eab308", edge: "#fff3bf" },
+    completed: { color: "#4ade80", emissive: "#22c55e", edge: "#bbf7d0" },
   },
   letter: "#f4f2e6",
   number: "#a3d9b1",

@@ -12,6 +12,30 @@
   // navigating between levels (the id is reactive via $derived).
   const level = $derived(findLevel($page.params.id ?? ""));
   const game = $derived(level?.puzzle ? new CrosswordGame(level.puzzle) : null);
+
+  let startTime = $state(0);
+  let elapsedMs = $state<number | null>(null);
+
+  $effect(() => {
+    if (game) {
+      startTime = Date.now();
+      elapsedMs = null;
+    }
+  });
+
+  $effect(() => {
+    if (game?.isComplete && elapsedMs === null) {
+      elapsedMs = Date.now() - startTime;
+    }
+  });
+
+  function formatTime(ms: number): string {
+    const totalSec = Math.floor(ms / 1000);
+    const min = Math.floor(totalSec / 60);
+    const sec = totalSec % 60;
+    if (min === 0) return `${sec}s`;
+    return `${min}:${sec.toString().padStart(2, "0")}`;
+  }
 </script>
 
 {#if game}
@@ -25,6 +49,26 @@
     <aside class="sidebar">
       <Hud {game} />
     </aside>
+
+    {#if game.isComplete && elapsedMs !== null}
+      <div class="complete-overlay" role="dialog" aria-labelledby="complete-title">
+        <div class="complete-card">
+          <span class="eyebrow">Level complete</span>
+          <h2 id="complete-title">{level?.name ?? "Puzzle"} solved!</h2>
+          <p class="time">
+            You finished in <strong>{formatTime(elapsedMs)}</strong>
+          </p>
+          <div class="actions">
+            <button class="primary" onclick={() => goto(`${base}/levels`)}>
+              Back to levels
+            </button>
+            <button class="secondary" onclick={() => goto(`${base}/play/${level?.id}`)}>
+              Play again
+            </button>
+          </div>
+        </div>
+      </div>
+    {/if}
   </div>
 {:else}
   <div class="missing">
@@ -74,6 +118,92 @@
     transform: translateY(-1px);
     background: var(--green);
     color: #fff;
+  }
+  .complete-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(13, 42, 26, 0.55);
+    backdrop-filter: blur(4px);
+  }
+  .complete-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 26rem;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: var(--ink);
+    background: var(--cream);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-lift);
+  }
+  .eyebrow {
+    padding: 0.3rem 0.85rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green-strong);
+    background: var(--green-soft);
+    border-radius: var(--radius-pill);
+  }
+  .complete-card h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--forest);
+  }
+  .time {
+    margin: 0.25rem 0 0.75rem;
+    font-size: 1.05rem;
+    color: var(--muted);
+  }
+  .time strong {
+    color: var(--green-strong);
+    font-weight: 800;
+    font-size: 1.35rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .primary,
+  .secondary {
+    padding: 0.75rem 1.5rem;
+    font: 700 0.9rem var(--font-sans);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s, color 0.15s;
+  }
+  .primary {
+    color: #fff;
+    background: var(--green);
+    border: none;
+    box-shadow: var(--shadow-soft);
+  }
+  .primary:hover {
+    transform: translateY(-1px);
+    background: var(--green-strong);
+  }
+  .secondary {
+    color: var(--forest);
+    background: transparent;
+    border: 2px solid var(--forest);
+  }
+  .secondary:hover {
+    color: var(--cream);
+    background: var(--forest);
   }
   .missing {
     display: flex;

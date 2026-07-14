@@ -217,6 +217,7 @@
 <T.Group position={[-cx, -cy, -cz]}>
   {#each cells as cell (cell.key)}
     {@const lit = game.highlightedCells.has(cell.key)}
+    {@const done = game.completedCells.has(cell.key)}
     {@const active = cell.key === game.selectedCellKey}
     {@const order = game.highlightedOrder.get(cell.key)}
     {@const bopT = waveElapsed !== null && order !== undefined ? Math.max(0, Math.min((waveElapsed - (order - 1) * BOP_STAGGER) / BOP_DURATION, 1)) : 0}
@@ -240,14 +241,16 @@
           ? sceneColors.cell.active
           : lit
             ? sceneColors.cell.highlighted
-            : sceneColors.cell.default}
+            : done
+              ? sceneColors.cell.completed
+              : sceneColors.cell.default}
         <T.BoxGeometry args={[0.9, 0.9, 0.9]} />
         <T.MeshStandardMaterial
           color={tone.color}
           emissive={tone.emissive}
-          emissiveIntensity={active ? 0.6 : lit ? 0.5 : 0.35}
+          emissiveIntensity={active ? 0.6 : lit ? 0.5 : done ? 0.42 : 0.35}
           transparent
-          opacity={active ? 0.85 : lit ? 0.72 : 0.5}
+          opacity={active ? 0.85 : lit ? 0.72 : done ? 0.62 : 0.5}
           roughness={0.45}
           depthWrite={false}
         />

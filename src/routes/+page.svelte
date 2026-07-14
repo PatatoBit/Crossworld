@@ -1,16 +1,38 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
+
+  const tags = [
+    { label: "Solar", tone: "yellow" },
+    { label: "Planet", tone: "green" },
+    { label: "Environment", tone: "forest" },
+    { label: "Reflection", tone: "outline" },
+    { label: "Humanity", tone: "green" },
+  ];
 </script>
 
 <main class="menu">
+  <span class="eyebrow">Growing puzzles for a better planet</span>
+
   <div class="title">
-    <h1>Crossworld</h1>
-    <p class="tagline">A rotatable 3D crossword across seven continents.</p>
+    <h1>Cross<span class="accent">world</span></h1>
+    <p class="tagline">
+      A rotatable 3D crossword across seven continents — spell your way to a
+      more sustainable world.
+    </p>
   </div>
 
+  <ul class="tags">
+    {#each tags as tag}
+      <li class="pill {tag.tone}">{tag.label}</li>
+    {/each}
+  </ul>
+
   <nav class="actions">
-    <button class="play" onclick={() => goto(`${base}/levels`)}>Play</button>
+    <button class="play" onclick={() => goto(`${base}/levels`)}>
+      Start playing
+      <span class="arrow">▸</span>
+    </button>
   </nav>
 </main>
 
@@ -20,46 +42,106 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 1.75rem;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at 50% 35%, #0f172a, #020617);
-    color: #e2e8f0;
+    padding: 2rem;
+    text-align: center;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(34, 197, 94, 0.14), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(246, 201, 21, 0.14), transparent 45%),
+      var(--cream);
+    color: var(--ink);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--green-strong);
+    background: var(--green-soft);
+    border-radius: var(--radius-pill);
   }
   .title {
-    text-align: center;
+    max-width: 40rem;
   }
   h1 {
     margin: 0;
-    font-size: clamp(3rem, 9vw, 6rem);
+    font-size: clamp(3.5rem, 12vw, 8rem);
     font-weight: 800;
-    letter-spacing: -0.03em;
-    background: linear-gradient(120deg, #34d399, #38bdf8, #a78bfa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    color: var(--forest);
+  }
+  h1 .accent {
+    color: var(--green);
   }
   .tagline {
-    margin: 0.75rem 0 0;
-    color: #94a3b8;
-    font-size: 1.05rem;
+    margin: 1rem auto 0;
+    max-width: 32rem;
+    color: var(--muted);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    line-height: 1.55;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .pill {
+    padding: 0.5rem 1.15rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    border: 2px solid transparent;
+  }
+  .pill.yellow {
+    background: var(--yellow);
+    color: var(--forest);
+  }
+  .pill.green {
+    background: var(--green);
+    color: #fff;
+  }
+  .pill.forest {
+    background: var(--forest);
+    color: var(--green);
+  }
+  .pill.outline {
+    border-color: var(--forest);
+    color: var(--forest);
   }
   .play {
-    padding: 0.95rem 3.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    padding: 1rem 2.75rem;
     font: 700 1.15rem var(--font-sans);
-    color: #022c22;
-    background: linear-gradient(120deg, #34d399, #10b981);
+    color: #fff;
+    background: var(--green);
     border: none;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     cursor: pointer;
-    box-shadow: 0 10px 30px -8px rgba(16, 185, 129, 0.6);
-    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
   }
   .play:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 36px -8px rgba(16, 185, 129, 0.7);
+    background: var(--green-strong);
+    box-shadow: var(--shadow-lift);
   }
   .play:active {
     transform: translateY(0);
+  }
+  .arrow {
+    font-size: 0.95em;
   }
 </style>

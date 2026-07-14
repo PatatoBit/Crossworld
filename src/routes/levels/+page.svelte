@@ -7,7 +7,10 @@
 <main class="select">
   <header>
     <button class="back" onclick={() => goto(`${base}/`)}>← Menu</button>
-    <h1>Choose a continent</h1>
+    <div class="heading">
+      <span class="eyebrow">Seven continents</span>
+      <h1>Choose a continent</h1>
+    </div>
   </header>
 
   <ul class="grid">
@@ -19,7 +22,7 @@
           class:locked
           onclick={() => goto(`${base}/play/${level.id}`)}
         >
-          <span class="index">{i + 1}</span>
+          <span class="index">{String(i + 1).padStart(2, "0")}</span>
           <span class="name">{level.name}</span>
           <span class="blurb">{level.blurb}</span>
           <span class="status">{locked ? "Coming soon" : "Play ▸"}</span>
@@ -33,90 +36,135 @@
   .select {
     min-height: 100vh;
     box-sizing: border-box;
-    padding: 2.5rem clamp(1.5rem, 6vw, 5rem);
-    background: radial-gradient(circle at 50% 0%, #0f172a, #020617);
-    color: #e2e8f0;
+    padding: 3rem clamp(1.5rem, 6vw, 5rem);
+    background:
+      radial-gradient(circle at 90% 0%, rgba(246, 201, 21, 0.12), transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(34, 197, 94, 0.12), transparent 45%),
+      var(--cream);
+    color: var(--ink);
   }
   header {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .eyebrow {
+    align-self: flex-start;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green-strong);
+    background: var(--green-soft);
+    border-radius: var(--radius-pill);
   }
   h1 {
     margin: 0;
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-size: clamp(1.75rem, 4vw, 2.6rem);
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    color: var(--forest);
   }
   .back {
-    padding: 0.5rem 0.9rem;
+    flex-shrink: 0;
+    padding: 0.6rem 1.1rem;
     font: 600 0.85rem var(--font-sans);
-    color: #cbd5e1;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(71, 85, 105, 0.6);
-    border-radius: 8px;
+    color: var(--forest);
+    background: transparent;
+    border: 2px solid var(--forest);
+    border-radius: var(--radius-pill);
     cursor: pointer;
+    transition: background 0.15s, color 0.15s;
   }
   .back:hover {
-    color: #f8fafc;
-    background: rgba(30, 41, 59, 0.9);
+    color: var(--cream);
+    background: var(--forest);
   }
   .grid {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
   }
   .card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
+    gap: 0.5rem;
     width: 100%;
-    padding: 1.25rem;
+    padding: 1.5rem;
     text-align: left;
-    color: inherit;
-    background: rgba(15, 23, 42, 0.7);
-    border: 1px solid rgba(51, 65, 85, 0.7);
-    border-radius: 14px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid rgba(13, 42, 26, 0.08);
+    border-radius: var(--radius-card);
     cursor: pointer;
-    transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   }
   .card:hover {
-    transform: translateY(-3px);
-    border-color: #34d399;
-    background: rgba(15, 23, 42, 0.95);
+    transform: translateY(-4px);
+    border-color: var(--green);
+    box-shadow: var(--shadow-lift);
   }
   .card.locked {
-    opacity: 0.6;
+    background: transparent;
+    box-shadow: none;
+    border-style: dashed;
+    opacity: 0.7;
   }
   .card.locked:hover {
-    border-color: rgba(71, 85, 105, 0.7);
+    border-color: rgba(13, 42, 26, 0.2);
     transform: none;
+    box-shadow: none;
   }
   .index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    padding: 0.2rem 0.55rem;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #64748b;
+    color: var(--forest);
+    background: var(--yellow);
+    border-radius: var(--radius-pill);
+  }
+  .card.locked .index {
+    color: var(--muted);
+    background: var(--cream-soft);
   }
   .name {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--forest);
   }
   .blurb {
-    font-size: 0.85rem;
-    color: #94a3b8;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--muted);
   }
   .status {
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
+    padding: 0.35rem 0.9rem;
     font-size: 0.8rem;
-    font-weight: 600;
-    color: #34d399;
+    font-weight: 700;
+    color: #fff;
+    background: var(--green);
+    border-radius: var(--radius-pill);
   }
   .card.locked .status {
-    color: #64748b;
+    color: var(--muted);
+    background: var(--cream-soft);
   }
 </style>

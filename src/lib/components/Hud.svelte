@@ -63,38 +63,42 @@
   .hud {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    padding: 1.5rem 1.25rem;
-    color: #e2e8f0;
+    gap: 1.5rem;
+    padding: 1.75rem 1.5rem;
+    color: var(--ink);
     height: 100%;
     box-sizing: border-box;
   }
   h1 {
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #34d399;
-    letter-spacing: 0.02em;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--forest);
     flex-shrink: 0;
   }
   .divider {
     border: none;
-    border-top: 1px solid rgba(51, 65, 85, 0.6);
+    border-top: 1px solid rgba(13, 42, 26, 0.1);
     margin: 0;
     flex-shrink: 0;
   }
   section {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.5rem;
   }
   h2 {
     margin: 0;
-    font-size: 0.65rem;
+    align-self: flex-start;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.62rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #64748b;
+    color: var(--green-strong);
+    background: var(--green-soft);
+    border-radius: var(--radius-pill);
   }
   ul {
     list-style: none;
@@ -102,7 +106,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.25rem;
   }
   li {
     list-style: none;
@@ -111,9 +115,9 @@
   li button {
     display: flex;
     align-items: baseline;
-    gap: 0.45rem;
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.4rem;
+    gap: 0.55rem;
+    padding: 0.45rem 0.65rem;
+    border-radius: 0.75rem;
     cursor: pointer;
     border: 1px solid transparent;
     background: transparent;
@@ -124,49 +128,58 @@
     transition: background 0.1s, border-color 0.1s;
   }
   li button:hover {
-    background: rgba(51, 65, 85, 0.4);
+    background: rgba(13, 42, 26, 0.05);
   }
   li button.active {
-    background: rgba(52, 211, 153, 0.1);
-    border-color: rgba(52, 211, 153, 0.35);
+    background: var(--green-soft);
+    border-color: rgba(22, 163, 74, 0.35);
   }
   .num {
     flex-shrink: 0;
-    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.68rem;
     font-weight: 700;
-    color: #94a3b8;
-    min-width: 1.4rem;
-    text-align: right;
+    color: var(--muted);
+    min-width: 1.5rem;
+    height: 1.5rem;
+    border-radius: var(--radius-pill);
+    background: var(--cream-soft);
   }
   li button.active .num {
-    color: #34d399;
+    color: #fff;
+    background: var(--green);
   }
   .clue {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     line-height: 1.45;
-    color: #cbd5e1;
+    color: var(--muted);
   }
   li button.active .clue {
-    color: #f1f5f9;
+    color: var(--forest);
+    font-weight: 500;
   }
   .footer {
     margin-top: auto;
-    padding-top: 0.5rem;
-    border-top: 1px solid rgba(51, 65, 85, 0.4);
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(13, 42, 26, 0.1);
     flex-shrink: 0;
   }
   .toggle {
-    padding: 0.45rem 0.9rem;
-    border: 1px solid #334155;
-    border-radius: 0.5rem;
-    background: rgba(51, 65, 85, 0.5);
-    color: #e2e8f0;
+    padding: 0.6rem 1.25rem;
+    border: 2px solid var(--forest);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--forest);
     font: inherit;
-    font-size: 0.8rem;
+    font-weight: 700;
+    font-size: 0.82rem;
     cursor: pointer;
+    transition: background 0.15s, color 0.15s;
   }
   .toggle:hover {
-    background: rgba(71, 85, 105, 0.8);
-    border-color: #475569;
+    background: var(--forest);
+    color: var(--cream);
   }
 </style>

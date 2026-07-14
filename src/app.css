@@ -2,9 +2,44 @@
 
 :root {
   --font-sans: "Google Sans Flex Variable", "Google Sans", sans-serif;
+
+  /* ── Eco palette ──────────────────────────────────────────────
+     Fresh sustainability theme: cream paper, deep forest green,
+     vivid grass green, and a punchy sunshine yellow accent. */
+  --cream: #f4f2e6;
+  --cream-soft: #ecead9;
+  --paper: #ffffff;
+
+  --forest: #0d2a1a;
+  --forest-soft: #143620;
+  --forest-line: #1f4a30;
+
+  --green: #22c55e;
+  --green-strong: #16a34a;
+  --green-soft: #d3f4de;
+  --lime: #b9e34a;
+
+  --yellow: #f6c915;
+  --yellow-soft: #fbe58a;
+
+  --ink: #0e2417;
+  --muted: #5c6f62;
+  --muted-soft: #8a9a8e;
+
+  --radius-pill: 999px;
+  --radius-card: 20px;
+  --shadow-soft: 0 12px 30px -14px rgba(13, 42, 26, 0.4);
+  --shadow-lift: 0 20px 44px -18px rgba(13, 42, 26, 0.55);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
 }

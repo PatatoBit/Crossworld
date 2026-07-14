@@ -15,6 +15,7 @@
   import type { CrosswordGame } from "$lib/crossword/game.svelte";
   import type { Axis } from "$lib/crossword/types";
   import { googleSansFontUrl } from "$lib/fonts";
+  import { sceneColors } from "$lib/theme";
   // @ts-ignore – three r184 ships no .d.ts; runtime import works fine
   import * as THREE from "three";
 
@@ -235,17 +236,22 @@
           hitPos = null;
         }}
       >
+        {@const tone = active
+          ? sceneColors.cell.active
+          : lit
+            ? sceneColors.cell.highlighted
+            : sceneColors.cell.default}
         <T.BoxGeometry args={[0.9, 0.9, 0.9]} />
         <T.MeshStandardMaterial
-          color={active ? "#fbbf24" : lit ? "#34d399" : "#64748b"}
-          emissive={active ? "#f59e0b" : lit ? "#10b981" : "#334155"}
+          color={tone.color}
+          emissive={tone.emissive}
           emissiveIntensity={active ? 0.6 : lit ? 0.5 : 0.35}
           transparent
-          opacity={active ? 0.8 : lit ? 0.7 : 0.5}
+          opacity={active ? 0.85 : lit ? 0.72 : 0.5}
           roughness={0.45}
           depthWrite={false}
         />
-        <Edges color={active ? "#fde68a" : lit ? "#a7f3d0" : "#94a3b8"} />
+        <Edges color={tone.edge} />
       </T.Mesh>
 
       <!-- Billboard keeps the letter facing the camera → it always stays
@@ -255,7 +261,7 @@
           text={game.displayLetter(cell.key)}
           font={googleSansFontUrl}
           fontSize={0.5}
-          color="#f8fafc"
+          color={sceneColors.letter}
           anchorX="center"
           anchorY="middle"
           renderOrder={1}
@@ -271,7 +277,7 @@
               text={String(cellNum)}
               font={googleSansFontUrl}
               fontSize={0.18}
-              color="#94a3b8"
+              color={sceneColors.number}
               anchorX="center"
               anchorY="middle"
               renderOrder={1}
@@ -287,14 +293,14 @@
   <!-- Yellow ray line: camera → cursor, 30 units deep. -->
   <T.Line frustumCulled={false}>
     <T.BufferGeometry bind:ref={lineGeo} />
-    <T.LineBasicMaterial color="#fbbf24" />
+    <T.LineBasicMaterial color={sceneColors.rayLine} />
   </T.Line>
 
   <!-- Red sphere at the exact surface point where the ray hit a cube face. -->
   {#if hitPos}
     <T.Mesh position={hitPos}>
       <T.SphereGeometry args={[0.08, 8, 8]} />
-      <T.MeshBasicMaterial color="#f43f5e" depthTest={false} />
+      <T.MeshBasicMaterial color={sceneColors.rayHit} depthTest={false} />
     </T.Mesh>
   {/if}
 {/if}

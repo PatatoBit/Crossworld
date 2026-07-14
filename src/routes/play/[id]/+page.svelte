@@ -39,37 +39,41 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at 37% 50%, #0f172a, #020617);
+    background: var(--cream);
   }
   .canvas-wrap {
     flex: 3;
     position: relative;
     height: 100%;
+    background:
+      radial-gradient(circle at 40% 35%, var(--forest-soft), var(--forest) 70%);
   }
   .sidebar {
     flex: 1;
+    min-width: 300px;
     height: 100%;
     overflow-y: auto;
-    border-left: 1px solid rgba(51, 65, 85, 0.5);
-    background: rgba(2, 6, 23, 0.85);
+    border-left: 1px solid rgba(13, 42, 26, 0.08);
+    background: var(--cream);
   }
   .back {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 0.5rem 0.9rem;
-    font: 600 0.85rem var(--font-sans);
-    color: #cbd5e1;
-    background: rgba(2, 6, 23, 0.6);
-    border: 1px solid rgba(71, 85, 105, 0.6);
-    border-radius: 8px;
+    top: 1.25rem;
+    left: 1.25rem;
+    padding: 0.55rem 1.1rem;
+    font: 700 0.85rem var(--font-sans);
+    color: var(--forest);
+    background: var(--cream);
+    border: none;
+    border-radius: var(--radius-pill);
     cursor: pointer;
-    backdrop-filter: blur(4px);
-    transition: background 0.15s, color 0.15s;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.15s, background 0.15s, color 0.15s;
   }
   .back:hover {
-    background: rgba(15, 23, 42, 0.9);
-    color: #f8fafc;
+    transform: translateY(-1px);
+    background: var(--green);
+    color: #fff;
   }
   .missing {
     display: flex;
@@ -79,17 +83,34 @@
     gap: 1rem;
     width: 100vw;
     height: 100vh;
-    color: #e2e8f0;
+    color: var(--ink);
     text-align: center;
-    background: radial-gradient(circle at 50% 40%, #0f172a, #020617);
+    background:
+      radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.12), transparent 45%),
+      var(--cream);
+  }
+  .missing h1 {
+    color: var(--forest);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .missing p {
+    color: var(--muted);
+    margin: 0;
   }
   .missing button {
-    padding: 0.6rem 1.2rem;
-    font: 600 0.9rem var(--font-sans);
-    color: #0f172a;
-    background: #34d399;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    font: 700 0.9rem var(--font-sans);
+    color: #fff;
+    background: var(--green);
     border: none;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    transition: background 0.15s;
+  }
+  .missing button:hover {
+    background: var(--green-strong);
   }
 </style>

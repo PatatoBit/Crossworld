@@ -1,7 +1,11 @@
 @import "@fontsource-variable/google-sans-flex";
+@import "@fontsource/sarabun/400.css";
+@import "@fontsource/sarabun/600.css";
+@import "@fontsource/sarabun/700.css";
+@import "@fontsource/sarabun/800.css";
 
 :root {
-  --font-sans: "Google Sans Flex Variable", "Google Sans", sans-serif;
+  --font-sans: "Google Sans Flex Variable", "Google Sans", "Sarabun", sans-serif;
 
   /* ── Eco palette ──────────────────────────────────────────────
      Fresh sustainability theme: cream paper, deep forest green,

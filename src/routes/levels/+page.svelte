@@ -6,10 +6,10 @@
 
 <main class="select">
   <header>
-    <button class="back" onclick={() => goto(`${base}/`)}>← Menu</button>
+    <button class="back" onclick={() => goto(`${base}/`)}>← เมนู</button>
     <div class="heading">
-      <span class="eyebrow">Seven continents</span>
-      <h1>Choose a continent</h1>
+      <span class="eyebrow">เจ็ดทวีป</span>
+      <h1>เลือกทวีป</h1>
     </div>
   </header>
 
@@ -25,7 +25,7 @@
           <span class="index">{String(i + 1).padStart(2, "0")}</span>
           <span class="name">{level.name}</span>
           <span class="blurb">{level.blurb}</span>
-          <span class="status">{locked ? "Coming soon" : "Play ▸"}</span>
+          <span class="status">{locked ? "เร็ว ๆ นี้" : "เล่น ▸"}</span>
         </button>
       </li>
     {/each}

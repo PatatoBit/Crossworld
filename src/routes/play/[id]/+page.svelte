@@ -33,8 +33,8 @@
     const totalSec = Math.floor(ms / 1000);
     const min = Math.floor(totalSec / 60);
     const sec = totalSec % 60;
-    if (min === 0) return `${sec}s`;
-    return `${min}:${sec.toString().padStart(2, "0")}`;
+    if (min === 0) return `${sec} วินาที`;
+    return `${min} นาที ${sec.toString().padStart(2, "0")} วินาที`;
   }
 </script>
 
@@ -44,7 +44,7 @@
       <Canvas>
         <Scene {game} />
       </Canvas>
-      <button class="back" onclick={() => goto(`${base}/levels`)}>← Levels</button>
+      <button class="back" onclick={() => goto(`${base}/levels`)}>← เลือกด่าน</button>
     </div>
     <aside class="sidebar">
       <Hud {game} />
@@ -53,17 +53,17 @@
     {#if game.isComplete && elapsedMs !== null}
       <div class="complete-overlay" role="dialog" aria-labelledby="complete-title">
         <div class="complete-card">
-          <span class="eyebrow">Level complete</span>
-          <h2 id="complete-title">{level?.name ?? "Puzzle"} solved!</h2>
+          <span class="eyebrow">ผ่านด่านแล้ว</span>
+          <h2 id="complete-title">{level?.name ?? "ปริศนา"} ไขได้แล้ว</h2>
           <p class="time">
-            You finished in <strong>{formatTime(elapsedMs)}</strong>
+            ใช้เวลา <strong>{formatTime(elapsedMs)}</strong>
           </p>
           <div class="actions">
             <button class="primary" onclick={() => goto(`${base}/levels`)}>
-              Back to levels
+              กลับไปเลือกด่าน
             </button>
             <button class="secondary" onclick={() => goto(`${base}/play/${level?.id}`)}>
-              Play again
+              เล่นอีกครั้ง
             </button>
           </div>
         </div>
@@ -72,9 +72,9 @@
   </div>
 {:else}
   <div class="missing">
-    <h1>{level ? `${level.name} — coming soon` : "Level not found"}</h1>
-    <p>{level ? "This continent's puzzle hasn't been authored yet." : "No level matches that address."}</p>
-    <button onclick={() => goto(`${base}/levels`)}>← Back to levels</button>
+    <h1>{level ? `${level.name} เร็ว ๆ นี้` : "ไม่พบด่าน"}</h1>
+    <p>{level ? "ปริศนาของทวีปนี้ยังไม่ได้สร้าง" : "ไม่พบด่านที่ตรงกับที่อยู่นี้"}</p>
+    <button onclick={() => goto(`${base}/levels`)}>← กลับไปเลือกด่าน</button>
   </div>
 {/if}
 

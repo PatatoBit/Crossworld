@@ -1,0 +1,13 @@
+# Rust/Tauri build artifacts (huge; not needed for web)
+src-tauri/target
+
+# Local deps & build output (Vercel installs/builds itself)
+node_modules
+build
+.svelte-kit
+
+# Misc
+.DS_Store
+graphify-out
+.env
+.env.*

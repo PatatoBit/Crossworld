@@ -5,9 +5,9 @@
   let { game }: { game: CrosswordGame } = $props();
 
   const sections: { axis: Axis; label: string }[] = [
-    { axis: "x", label: "Across (X)" },
-    { axis: "y", label: "Up (Y)" },
-    { axis: "z", label: "Depth (Z)" },
+    { axis: "x", label: "แนวนอน (X)" },
+    { axis: "y", label: "แนวตั้ง (Y)" },
+    { axis: "z", label: "ความลึก (Z)" },
   ];
 
   function wordsForAxis(axis: Axis) {
@@ -59,7 +59,7 @@
 
   <div class="footer">
     <button class="toggle" onclick={() => game.toggleAnswers()}>
-      {game.showAnswers ? "Hide answers" : "Show answers"}
+      {game.showAnswers ? "ซ่อนคำตอบ" : "แสดงคำตอบ"}
     </button>
   </div>
 </div>

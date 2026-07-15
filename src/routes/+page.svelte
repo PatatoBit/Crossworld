@@ -3,22 +3,22 @@
   import { base } from "$app/paths";
 
   const tags = [
-    { label: "Solar", tone: "yellow" },
-    { label: "Planet", tone: "green" },
-    { label: "Environment", tone: "forest" },
-    { label: "Reflection", tone: "outline" },
-    { label: "Humanity", tone: "green" },
+    { label: "พลังงานแสงอาทิตย์", tone: "yellow" },
+    { label: "ดาวเคราะห์", tone: "green" },
+    { label: "สิ่งแวดล้อม", tone: "forest" },
+    { label: "การสะท้อน", tone: "outline" },
+    { label: "มนุษยชาติ", tone: "green" },
   ];
 </script>
 
 <main class="menu">
-  <span class="eyebrow">Growing puzzles for a better planet</span>
+  <span class="eyebrow">ปริศนาที่เติบโตเพื่อโลกที่ดีขึ้น</span>
 
   <div class="title">
     <h1>Cross<span class="accent">world</span></h1>
     <p class="tagline">
-      A rotatable 3D crossword across seven continents — spell your way to a
-      more sustainable world.
+      ปริศนาไขวามิติสามมิติที่หมุนได้ครอบคลุมทั้งเจ็ดทวีป
+      ไขสะกดคำเพื่อสร้างโลกที่ยั่งยืนมากขึ้น
     </p>
   </div>
 
@@ -30,7 +30,7 @@
 
   <nav class="actions">
     <button class="play" onclick={() => goto(`${base}/levels`)}>
-      Start playing
+      เริ่มเล่น
       <span class="arrow">▸</span>
     </button>
   </nav>

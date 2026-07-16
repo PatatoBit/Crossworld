@@ -15,9 +15,13 @@ export const sceneColors = {
   rayLine: "#f6c915",
   rayHit: "#f43f5e",
   globe: {
-    /** Deep slate ocean — reads as void, leaves room for hover accents later. */
-    ocean: "#1c1f24",
-    /** Single land fill for a minimal map; hover will add accent later. */
-    land: "#e8e4d9",
+    /** Apple Maps–style flat map palette. */
+    ocean: "#15334f",
+    land: "#3d8f82",
+    landHover: "#52a899",
+    landActive: "#6ec4b8",
+    connector: "rgba(110, 196, 184, 0.35)",
+    connectorActive: "rgba(110, 196, 184, 0.85)",
+    label: "#e8e4d9",
   },
 } as const;

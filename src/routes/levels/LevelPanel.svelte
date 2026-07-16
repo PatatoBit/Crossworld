@@ -1,12 +1,10 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
-  import { openUrl } from "@tauri-apps/plugin-opener";
+  import { openFeedback } from "$lib/feedback";
   import { levels, type Level } from "$lib/levels";
   import { LEVEL_ANCHORS } from "$lib/globe/levelContinents";
   import { progress } from "$lib/progress.svelte";
-
-  const FEEDBACK_URL = "https://forms.gle/g9yAdopshj77kERC7";
 
   let {
     activeId = null,
@@ -55,14 +53,6 @@
     onSelect(level.id);
     if (isLocked(level) || !level.puzzle) return;
     goto(`${base}/play/${level.id}`);
-  }
-
-  async function openFeedback() {
-    try {
-      await openUrl(FEEDBACK_URL);
-    } catch {
-      window.open(FEEDBACK_URL, "_blank", "noopener,noreferrer");
-    }
   }
 
   function itemRef(node: HTMLElement, levelId: string) {

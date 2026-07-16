@@ -2,6 +2,7 @@
   import { Canvas } from "@threlte/core";
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
+  import { openFeedback } from "$lib/feedback";
   import MenuGlobe from "./MenuGlobe.svelte";
 </script>
 
@@ -28,6 +29,9 @@
       </button>
       <button class="secondary" onclick={() => goto(`${base}/about`)}>
         เกี่ยวกับ / ตั้งค่า
+      </button>
+      <button class="feedback" type="button" onclick={openFeedback}>
+        ส่งความคิดเห็น
       </button>
     </nav>
   </div>
@@ -146,13 +150,33 @@
     background: #e8e4d9;
     border-color: #e8e4d9;
   }
+  .feedback {
+    padding: 0.55rem 1.25rem;
+    font: 600 0.85rem var(--font-sans);
+    color: rgba(232, 228, 217, 0.75);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: rgba(232, 228, 217, 0.35);
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
+  }
+  .feedback:hover {
+    color: #e8e4d9;
+    text-decoration-color: #6ec4b8;
+  }
   .arrow {
     font-size: 0.95em;
   }
 
   @media (prefers-reduced-motion: reduce) {
     .play,
-    .secondary {
+    .secondary,
+    .feedback {
       transition: none;
     }
   }

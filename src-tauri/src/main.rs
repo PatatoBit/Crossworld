@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    crossworld_lib::run()
+    CrossWorld_lib::run()
 }

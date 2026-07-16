@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Crossworld** is a desktop game: a rotatable **3D crossword** puzzle where words run along the X, Y, and Z axes and the player orbits the structure to read intersections. The theme is environmental sustainability / UN SDGs (see `documents/output.md`, the Thai project proposal — the canonical spec for game design, 7 continent levels, and planned Generative-AI puzzle generation). The codebase is currently an early MVP: rendering, hover-to-reveal clues, and camera/gizmo navigation exist; keyboard letter entry and win-checking do not yet.
+**CrossWorld** is a desktop game: a rotatable **3D crossword** puzzle where words run along the X, Y, and Z axes and the player orbits the structure to read intersections. The theme is environmental sustainability / UN SDGs (see `documents/output.md`, the Thai project proposal — the canonical spec for game design, 7 continent levels, and planned Generative-AI puzzle generation). The codebase is currently an early MVP: rendering, hover-to-reveal clues, and camera/gizmo navigation exist; keyboard letter entry and win-checking do not yet.
 
 Stack: **Tauri 2** (Rust shell) + **SvelteKit** (SPA, `ssr = false`) + **Svelte 5 runes** + **Threlte 8 / Three.js** for WebGL.
 

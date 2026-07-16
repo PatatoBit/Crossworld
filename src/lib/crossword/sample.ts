@@ -13,11 +13,35 @@ import type { Puzzle } from "./types";
  */
 export const samplePuzzle: Puzzle = {
   id: "demo-na",
-  title: "Crossworld: พลังงานสะอาด (สาธิต)",
+  title: "CrossWorld: พลังงานสะอาด (ตัวอย่าง)",
   words: [
-    { id: "solar", answer: "SOLAR", start: [0, 0, 0], axis: "x", clue: "พลังงานสะอาดจากดวงอาทิตย์" },
-    { id: "eco", answer: "ECO", start: [1, -2, 0], axis: "y", clue: "คำนำหน้าแปลว่าสิ่งแวดล้อม หรือบ้าน" },
-    { id: "leaf", answer: "LEAF", start: [2, 0, 0], axis: "z", clue: "ส่วนสีเขียวของพืชที่ดูดซับ CO₂" },
-    { id: "air", answer: "AIR", start: [3, 0, 0], axis: "z", clue: "สิ่งที่เราปนเปื้อนด้วยการปล่อยคาร์บอน" },
+    {
+      id: "solar",
+      answer: "SOLAR",
+      start: [0, 0, 0],
+      axis: "x",
+      clue: "พลังงานสะอาดจากดวงอาทิตย์",
+    },
+    {
+      id: "eco",
+      answer: "ECO",
+      start: [1, -2, 0],
+      axis: "y",
+      clue: "คำนำหน้าแปลว่าสิ่งแวดล้อม หรือบ้าน",
+    },
+    {
+      id: "leaf",
+      answer: "LEAF",
+      start: [2, 0, 0],
+      axis: "z",
+      clue: "ส่วนสีเขียวของพืชที่ดูดซับ CO₂",
+    },
+    {
+      id: "air",
+      answer: "AIR",
+      start: [3, 0, 0],
+      axis: "z",
+      clue: "สิ่งที่เราปนเปื้อนด้วยการปล่อยคาร์บอน",
+    },
   ],
 };

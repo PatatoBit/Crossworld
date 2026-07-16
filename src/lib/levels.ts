@@ -20,14 +20,54 @@ export interface Level {
 }
 
 export const levels: Level[] = [
-  { id: "demo", name: "สาธิต", blurb: "ลองเล่น Crossworld เรื่องพลังงานสะอาด", puzzle: samplePuzzle },
-  { id: "north-america", name: "อเมริกาเหนือ", blurb: "พลังงานสะอาดและการปล่อยมลพิษ", puzzle: null },
-  { id: "south-america", name: "อเมริกาใต้", blurb: "ป่าฝนและความหลากหลายทางชีวภาพ", puzzle: null },
-  { id: "europe", name: "ยุโรป", blurb: "เศรษฐกิจหมุนเวียนและการรีไซเคิล", puzzle: null },
-  { id: "africa", name: "แอฟริกา", blurb: "น้ำ ภัยแล้ง และความยืดหยุ่น", puzzle: null },
-  { id: "asia", name: "เอเชีย", blurb: "เมืองใหญ่และอากาศบริสุทธิ์", puzzle: null },
-  { id: "oceania", name: "โอเชียเนีย", blurb: "แนวปะการังและระดับน้ำทะเลที่สูงขึ้น", puzzle: null },
-  { id: "antarctica", name: "แอนตาร์กติกา", blurb: "น้ำแข็ง ภูมิอากาศ และนาฬิกาคาร์บอน", puzzle: null },
+  {
+    id: "demo",
+    name: "ตัวอย่าง",
+    blurb: "ลองเล่น CrossWorld เรื่องพลังงานสะอาด",
+    puzzle: samplePuzzle,
+  },
+  {
+    id: "north-america",
+    name: "อเมริกาเหนือ",
+    blurb: "พลังงานสะอาดและการปล่อยมลพิษ",
+    puzzle: null,
+  },
+  {
+    id: "south-america",
+    name: "อเมริกาใต้",
+    blurb: "ป่าฝนและความหลากหลายทางชีวภาพ",
+    puzzle: null,
+  },
+  {
+    id: "europe",
+    name: "ยุโรป",
+    blurb: "เศรษฐกิจหมุนเวียนและการรีไซเคิล",
+    puzzle: null,
+  },
+  {
+    id: "africa",
+    name: "แอฟริกา",
+    blurb: "น้ำ ภัยแล้ง และความยืดหยุ่น",
+    puzzle: null,
+  },
+  {
+    id: "asia",
+    name: "เอเชีย",
+    blurb: "เมืองใหญ่และอากาศบริสุทธิ์",
+    puzzle: null,
+  },
+  {
+    id: "oceania",
+    name: "โอเชียเนีย",
+    blurb: "แนวปะการังและระดับน้ำทะเลที่สูงขึ้น",
+    puzzle: null,
+  },
+  {
+    id: "antarctica",
+    name: "แอนตาร์กติกา",
+    blurb: "น้ำแข็ง ภูมิอากาศ และนาฬิกาคาร์บอน",
+    puzzle: null,
+  },
 ];
 
 export function findLevel(id: string): Level | undefined {

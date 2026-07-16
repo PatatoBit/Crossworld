@@ -1,32 +1,18 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
-
-  const tags = [
-    { label: "พลังงานแสงอาทิตย์", tone: "yellow" },
-    { label: "ดาวเคราะห์", tone: "green" },
-    { label: "สิ่งแวดล้อม", tone: "forest" },
-    { label: "การสะท้อน", tone: "outline" },
-    { label: "มนุษยชาติ", tone: "green" },
-  ];
 </script>
 
 <main class="menu">
   <span class="eyebrow">ปริศนาที่เติบโตเพื่อโลกที่ดีขึ้น</span>
 
   <div class="title">
-    <h1>Cross<span class="accent">world</span></h1>
+    <h1>Cross<span class="accent">World</span></h1>
     <p class="tagline">
-      ปริศนาไขวามิติสามมิติที่หมุนได้ครอบคลุมทั้งเจ็ดทวีป
-      ไขสะกดคำเพื่อสร้างโลกที่ยั่งยืนมากขึ้น
+      เกมปริศนาอักษรไขว้ 3 มิติเพื่อการเรียนรู้และปลุกจิตสำนึกด้านความยั่งยืน
+      ประเภท โปรแกรมเพื่อการเรียนรู้
     </p>
   </div>
-
-  <ul class="tags">
-    {#each tags as tag}
-      <li class="pill {tag.tone}">{tag.label}</li>
-    {/each}
-  </ul>
 
   <nav class="actions">
     <button class="play" onclick={() => goto(`${base}/levels`)}>
@@ -47,9 +33,16 @@
     height: 100vh;
     padding: 2rem;
     text-align: center;
-    background:
-      radial-gradient(circle at 15% 15%, rgba(34, 197, 94, 0.14), transparent 45%),
-      radial-gradient(circle at 85% 80%, rgba(246, 201, 21, 0.14), transparent 45%),
+    background: radial-gradient(
+        circle at 15% 15%,
+        rgba(34, 197, 94, 0.14),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 85% 80%,
+        rgba(246, 201, 21, 0.14),
+        transparent 45%
+      ),
       var(--cream);
     color: var(--ink);
   }
@@ -131,7 +124,10 @@
     border-radius: var(--radius-pill);
     cursor: pointer;
     box-shadow: var(--shadow-soft);
-    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    transition:
+      transform 0.15s,
+      box-shadow 0.15s,
+      background 0.15s;
   }
   .play:hover {
     transform: translateY(-2px);

@@ -50,7 +50,7 @@
           "documents_proposal_svelte",
           "documents_proposal_threlte_threejs",
           "documents_proposal_typescript",
-          "documents_proposal_crossworld_game"
+          "documents_proposal_CrossWorld_game"
         ],
         "relation": "conceptually_related_to",
         "confidence": "EXTRACTED",
@@ -2120,7 +2120,7 @@
       "source_file": "src/lib/crossword/game.svelte",
       "confidence": "EXTRACTED",
       "_origin": "ast",
-      "id": "users_patato_documents_projects_crossworld_src_lib_crossword_game_svelte",
+      "id": "users_patato_documents_projects_CrossWorld_src_lib_crossword_game_svelte",
       "community": 5,
       "norm_label": "$lib/crossword/game.svelte"
     },
@@ -2381,7 +2381,7 @@
       "source_file": "src/lib/crossword/sample",
       "confidence": "EXTRACTED",
       "_origin": "ast",
-      "id": "users_patato_documents_projects_crossworld_src_lib_crossword_sample",
+      "id": "users_patato_documents_projects_CrossWorld_src_lib_crossword_sample",
       "community": 5,
       "norm_label": "$lib/crossword/sample"
     },
@@ -2461,7 +2461,7 @@
       "source_file": "src/lib/crossword/puzzle",
       "confidence": "EXTRACTED",
       "_origin": "ast",
-      "id": "users_patato_documents_projects_crossworld_src_lib_crossword_puzzle",
+      "id": "users_patato_documents_projects_CrossWorld_src_lib_crossword_puzzle",
       "community": 5,
       "norm_label": "$lib/crossword/puzzle"
     },
@@ -2626,7 +2626,7 @@
       "norm_label": "vite.config.js"
     },
     {
-      "label": "Crossworld (3D crossword game)",
+      "label": "CrossWorld (3D crossword game)",
       "file_type": "concept",
       "source_file": "CLAUDE.md",
       "source_location": null,
@@ -2634,9 +2634,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claudemd_crossworld",
+      "id": "claudemd_CrossWorld",
       "community": 1,
-      "norm_label": "crossworld (3d crossword game)"
+      "norm_label": "CrossWorld (3d crossword game)"
     },
     {
       "label": "Words-as-source-of-truth data model",
@@ -2847,7 +2847,7 @@
       "norm_label": "tauri + sveltekit + typescript template"
     },
     {
-      "label": "Crossworld project proposal (Thai spec)",
+      "label": "CrossWorld project proposal (Thai spec)",
       "file_type": "document",
       "source_file": "documents/output.md",
       "source_location": null,
@@ -2857,7 +2857,7 @@
       "contributor": null,
       "id": "output_project_proposal",
       "community": 1,
-      "norm_label": "crossworld project proposal (thai spec)"
+      "norm_label": "CrossWorld project proposal (thai spec)"
     },
     {
       "label": "3D Crossword core mechanic (X/Y/Z axes)",
@@ -3133,7 +3133,7 @@
       "norm_label": "app.html sveltekit shell"
     },
     {
-      "label": "Crossworld Project Proposal",
+      "label": "CrossWorld Project Proposal",
       "file_type": "document",
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Project code 28P22C00781, page 1",
@@ -3141,12 +3141,12 @@
       "captured_at": null,
       "author": "Chayaphat Phakham",
       "contributor": "Kittiya Kunti (advisor)",
-      "id": "documents_proposal_crossworld_project",
+      "id": "documents_proposal_CrossWorld_project",
       "community": 8,
-      "norm_label": "crossworld project proposal"
+      "norm_label": "CrossWorld project proposal"
     },
     {
-      "label": "Crossworld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning",
+      "label": "CrossWorld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning",
       "file_type": "concept",
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Title, Section 2",
@@ -3154,9 +3154,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "documents_proposal_crossworld_game",
+      "id": "documents_proposal_CrossWorld_game",
       "community": 8,
-      "norm_label": "crossworld: a 3d spatial crossword game for sustainability awareness and learning"
+      "norm_label": "CrossWorld: a 3d spatial crossword game for sustainability awareness and learning"
     },
     {
       "label": "3D Crossword (Rotatable, X/Y/Z axes)",
@@ -3679,7 +3679,7 @@
       "norm_label": "kapp, k.m. (2025). the gamification of learning and instruction"
     },
     {
-      "label": "Crossworld App Icon (Interlocking Rings Logo)",
+      "label": "CrossWorld App Icon (Interlocking Rings Logo)",
       "file_type": "image",
       "source_file": "src-tauri/icons/icon.png",
       "source_location": null,
@@ -3689,7 +3689,7 @@
       "contributor": null,
       "id": "icons_icon_appicon",
       "community": 15,
-      "norm_label": "crossworld app icon (interlocking rings logo)"
+      "norm_label": "CrossWorld app icon (interlocking rings logo)"
     },
     {
       "label": "App Icon \u2014 StoreLogo Variant",
@@ -5861,7 +5861,7 @@
       "confidence": "EXTRACTED",
       "source_file": "src/lib/components/Hud.svelte",
       "source": "components_hud",
-      "target": "users_patato_documents_projects_crossworld_src_lib_crossword_game_svelte",
+      "target": "users_patato_documents_projects_CrossWorld_src_lib_crossword_game_svelte",
       "confidence_score": 1.0
     },
     {
@@ -5877,7 +5877,7 @@
       "confidence": "EXTRACTED",
       "source_file": "src/routes/+page.svelte",
       "source": "routes_page",
-      "target": "users_patato_documents_projects_crossworld_src_lib_crossword_game_svelte",
+      "target": "users_patato_documents_projects_CrossWorld_src_lib_crossword_game_svelte",
       "confidence_score": 1.0
     },
     {
@@ -5885,7 +5885,7 @@
       "confidence": "EXTRACTED",
       "source_file": "src/routes/Scene.svelte",
       "source": "routes_scene",
-      "target": "users_patato_documents_projects_crossworld_src_lib_crossword_game_svelte",
+      "target": "users_patato_documents_projects_CrossWorld_src_lib_crossword_game_svelte",
       "confidence_score": 1.0
     },
     {
@@ -6288,7 +6288,7 @@
       "confidence": "EXTRACTED",
       "source_file": "src/routes/+page.svelte",
       "source": "routes_page",
-      "target": "users_patato_documents_projects_crossworld_src_lib_crossword_sample",
+      "target": "users_patato_documents_projects_CrossWorld_src_lib_crossword_sample",
       "confidence_score": 1.0
     },
     {
@@ -6378,7 +6378,7 @@
       "confidence": "EXTRACTED",
       "source_file": "src/routes/Scene.svelte",
       "source": "routes_scene",
-      "target": "users_patato_documents_projects_crossworld_src_lib_crossword_puzzle",
+      "target": "users_patato_documents_projects_CrossWorld_src_lib_crossword_puzzle",
       "confidence_score": 1.0
     },
     {
@@ -6508,7 +6508,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claudemd_crossworld",
+      "source": "claudemd_CrossWorld",
       "target": "claudemd_stack"
     },
     {
@@ -6518,7 +6518,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claudemd_crossworld",
+      "source": "claudemd_CrossWorld",
       "target": "output_project_proposal"
     },
     {
@@ -6528,7 +6528,7 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
-      "source": "claudemd_crossworld",
+      "source": "claudemd_CrossWorld",
       "target": "readme_tauri_sveltekit_template"
     },
     {
@@ -6539,7 +6539,7 @@
       "source_location": null,
       "weight": 1.0,
       "source": "output_3d_crossword",
-      "target": "claudemd_crossworld"
+      "target": "claudemd_CrossWorld"
     },
     {
       "relation": "rationale_for",
@@ -6898,7 +6898,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 8",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
+      "source": "documents_proposal_CrossWorld_project",
       "target": "documents_proposal_cite_gee_2024"
     },
     {
@@ -6908,7 +6908,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 8",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
+      "source": "documents_proposal_CrossWorld_project",
       "target": "documents_proposal_cite_kapp_2025"
     },
     {
@@ -6918,7 +6918,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 8",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
+      "source": "documents_proposal_CrossWorld_project",
       "target": "documents_proposal_cite_svelte_docs"
     },
     {
@@ -6928,7 +6928,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 8",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
+      "source": "documents_proposal_CrossWorld_project",
       "target": "documents_proposal_cite_tauri_docs"
     },
     {
@@ -6938,7 +6938,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 8",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
+      "source": "documents_proposal_CrossWorld_project",
       "target": "documents_proposal_cite_threejs_docs"
     },
     {
@@ -6948,7 +6948,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 8",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
+      "source": "documents_proposal_CrossWorld_project",
       "target": "documents_proposal_cite_threlte_docs"
     },
     {
@@ -6958,7 +6958,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 8",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
+      "source": "documents_proposal_CrossWorld_project",
       "target": "documents_proposal_cite_typescript_docs"
     },
     {
@@ -6968,8 +6968,8 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Title",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_project",
-      "target": "documents_proposal_crossworld_game"
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_CrossWorld_game"
     },
     {
       "relation": "rationale_for",
@@ -6979,7 +6979,7 @@
       "source_location": "Section 3",
       "weight": 1.0,
       "source": "documents_proposal_climate_change",
-      "target": "documents_proposal_crossworld_game"
+      "target": "documents_proposal_CrossWorld_game"
     },
     {
       "relation": "conceptually_related_to",
@@ -6988,7 +6988,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 2",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_3d_crossword"
     },
     {
@@ -6998,7 +6998,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 2",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_gamification"
     },
     {
@@ -7008,7 +7008,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 2, Objectives",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_progressive_ai_generation"
     },
     {
@@ -7018,7 +7018,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Objectives, Section 7.2",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_svelte"
     },
     {
@@ -7028,7 +7028,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Sections 5, 6",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_target_audience"
     },
     {
@@ -7038,7 +7038,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Objectives, Section 7.2",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_tauri"
     },
     {
@@ -7048,7 +7048,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Objectives, Section 7.2",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_threlte_threejs"
     },
     {
@@ -7058,7 +7058,7 @@
       "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
       "source_location": "Section 2, Objectives",
       "weight": 1.0,
-      "source": "documents_proposal_crossworld_game",
+      "source": "documents_proposal_CrossWorld_game",
       "target": "documents_proposal_un_sdgs"
     },
     {
@@ -7460,7 +7460,7 @@
         "documents_proposal_svelte",
         "documents_proposal_threlte_threejs",
         "documents_proposal_typescript",
-        "documents_proposal_crossworld_game"
+        "documents_proposal_CrossWorld_game"
       ],
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",

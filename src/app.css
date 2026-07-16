@@ -1,11 +1,75 @@
-@import "@fontsource-variable/google-sans-flex";
 @import "@fontsource/sarabun/400.css";
 @import "@fontsource/sarabun/600.css";
 @import "@fontsource/sarabun/700.css";
 @import "@fontsource/sarabun/800.css";
 
+/* Self-hosted Google Sans (static desktop TTFs in /static/fonts). Unlike the
+   Google Sans Flex web font, these files carry the full Thai alphabet, so the
+   whole Thai UI renders in Google Sans for every visitor — not just machines
+   with the brand fonts installed locally. Faces are unified under one
+   "Google Sans" family with explicit weight/style descriptors. */
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Google Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Google Sans";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Google Sans";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-SemiBoldItalic.ttf") format("truetype");
+}
+/* Cover the 700–900 range (the UI uses weight 800 headings) with Bold. */
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 700 900;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Google Sans";
+  font-style: italic;
+  font-weight: 700 900;
+  font-display: swap;
+  src: url("/fonts/GoogleSans-BoldItalic.ttf") format("truetype");
+}
+
 :root {
-  --font-sans: "Google Sans Flex Variable", "Google Sans", "Sarabun", sans-serif;
+  /* Self-hosted Google Sans (Latin + Thai) first, Sarabun as the safety net
+     if the font fails to load. */
+  --font-sans: "Google Sans", "Sarabun", sans-serif;
 
   /* ── Eco palette ──────────────────────────────────────────────
      Fresh sustainability theme: cream paper, deep forest green,

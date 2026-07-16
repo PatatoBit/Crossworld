@@ -44,17 +44,25 @@
       <Canvas>
         <Scene {game} />
       </Canvas>
-      <button class="back" onclick={() => goto(`${base}/levels`)}>← เลือกด่าน</button>
+      <button class="back" onclick={() => goto(`${base}/levels`)}
+        >← เลือกด่าน</button
+      >
     </div>
     <aside class="sidebar">
       <Hud {game} />
     </aside>
 
     {#if game.isComplete && elapsedMs !== null}
-      <div class="complete-overlay" role="dialog" aria-labelledby="complete-title">
+      <div
+        class="complete-overlay"
+        role="dialog"
+        aria-labelledby="complete-title"
+      >
         <div class="complete-card">
           <span class="eyebrow">ผ่านด่านแล้ว</span>
-          <h2 id="complete-title">{level?.name ?? "ปริศนา"} ไขได้แล้ว</h2>
+          <h2 id="complete-title">
+            ผ่านด่าน {level?.name ?? "ปริศนา"} ได้แล้ว
+          </h2>
           <p class="time">
             ใช้เวลา <strong>{formatTime(elapsedMs)}</strong>
           </p>
@@ -62,7 +70,10 @@
             <button class="primary" onclick={() => goto(`${base}/levels`)}>
               กลับไปเลือกด่าน
             </button>
-            <button class="secondary" onclick={() => goto(`${base}/play/${level?.id}`)}>
+            <button
+              class="secondary"
+              onclick={() => goto(`${base}/play/${level?.id}`)}
+            >
               เล่นอีกครั้ง
             </button>
           </div>
@@ -72,8 +83,12 @@
   </div>
 {:else}
   <div class="missing">
-    <h1>{level ? `${level.name} เร็ว ๆ นี้` : "ไม่พบด่าน"}</h1>
-    <p>{level ? "ปริศนาของทวีปนี้ยังไม่ได้สร้าง" : "ไม่พบด่านที่ตรงกับที่อยู่นี้"}</p>
+    <h1>{level ? `ทวีป${level.name}กำลังอยู่ในการพัฒนา` : "ไม่พบด่าน"}</h1>
+    <p>
+      {level
+        ? "ปริศนาของทวีปนี้ยังไม่ได้สร้าง"
+        : "ไม่พบด่านที่ตรงกับที่อยู่นี้"}
+    </p>
     <button onclick={() => goto(`${base}/levels`)}>← กลับไปเลือกด่าน</button>
   </div>
 {/if}
@@ -89,8 +104,11 @@
     flex: 3;
     position: relative;
     height: 100%;
-    background:
-      radial-gradient(circle at 40% 35%, var(--forest-soft), var(--forest) 70%);
+    background: radial-gradient(
+      circle at 40% 35%,
+      var(--forest-soft),
+      var(--forest) 70%
+    );
   }
   .sidebar {
     flex: 1;
@@ -112,7 +130,10 @@
     border-radius: var(--radius-pill);
     cursor: pointer;
     box-shadow: var(--shadow-soft);
-    transition: transform 0.15s, background 0.15s, color 0.15s;
+    transition:
+      transform 0.15s,
+      background 0.15s,
+      color 0.15s;
   }
   .back:hover {
     transform: translateY(-1px);
@@ -184,7 +205,10 @@
     font: 700 0.9rem var(--font-sans);
     border-radius: var(--radius-pill);
     cursor: pointer;
-    transition: transform 0.15s, background 0.15s, color 0.15s;
+    transition:
+      transform 0.15s,
+      background 0.15s,
+      color 0.15s;
   }
   .primary {
     color: #fff;
@@ -215,8 +239,11 @@
     height: 100vh;
     color: var(--ink);
     text-align: center;
-    background:
-      radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.12), transparent 45%),
+    background: radial-gradient(
+        circle at 50% 30%,
+        rgba(34, 197, 94, 0.12),
+        transparent 45%
+      ),
       var(--cream);
   }
   .missing h1 {

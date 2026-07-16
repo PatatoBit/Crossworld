@@ -1,1 +1,936 @@
-{"nodes": [{"id": "documents_proposal_crossworld_project", "label": "Crossworld Project Proposal", "file_type": "document", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Project code 28P22C00781, page 1", "source_url": null, "captured_at": null, "author": "Chayaphat Phakham", "contributor": "Kittiya Kunti (advisor)"}, {"id": "documents_proposal_crossworld_game", "label": "Crossworld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Title, Section 2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_3d_crossword", "label": "3D Crossword (Rotatable, X/Y/Z axes)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2, 7.1", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_progressive_ai_generation", "label": "Progressive AI Generation (Generative-AI puzzle generation)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2, Objectives", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_sustainable_innovation", "label": "Sustainable Innovation", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_gamification", "label": "Gamification (points, level unlocking, storytelling)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_un_sdgs", "label": "UN SDGs (Sustainability)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2, Objectives", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_climate_change", "label": "Climate Change / Environmental Crisis", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 3", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_spatial_thinking", "label": "Spatial Thinking / Spatial Skills", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives, Section 3", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_game_based_learning", "label": "Game-based Learning", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_eco_rehabilitation", "label": "Eco-Rehabilitation system (level progression: planets in crisis)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7 (page 5)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_content_framework", "label": "Content Framework (word & hint database, AI-Integration API)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7 (page 5)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_storyboard", "label": "Storyboard: Time-traveler restoring 7 continents (100 years in future)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_level1_north_america", "label": "Level 1: North America (air pollution, transport, smart city / carbon reduction)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 8)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_level2_south_america", "label": "Level 2: South America (deforestation, biodiversity loss, reforestation)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 9)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_level3_europe", "label": "Level 3: Europe (overconsumption, waste, Reduce/Reuse/Recycle/Upcycling)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 9)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_level4_africa", "label": "Level 4: Africa (drought, water scarcity, Rainwater/Desalination)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 10)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_level5_asia", "label": "Level 5: Asia (industrial air pollution, renewables: Solar/Wind/Geothermal)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 11)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_level6_australia", "label": "Level 6: Australia/Oceania (coral bleaching, plastic, Reef/Marine/Sanctuary)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 12)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_level7_antarctica", "label": "Level 7: Antarctica (final level, global warming, ice melt, Climate Stability)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 12)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_endless_mode", "label": "Endless Mode (Endgame Expansion: procedural alien planets)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 13)", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_tauri", "label": "Tauri (Rust desktop shell)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_svelte", "label": "Svelte (UI framework / state management)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_threlte_threejs", "label": "Threlte / Three.js (3D WebGL rendering, raycasting)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_typescript", "label": "TypeScript (game logic, word validation, AI-Integration API)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_blender", "label": "Blender (3D modeling, export glTF/glb)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2, 7.3", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_figma", "label": "Figma (UI design, interactive prototyping)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2, 7.3", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_vscode", "label": "Visual Studio Code (editor)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2, 7.3", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_html_css", "label": "HTML / CSS (markup and responsive UI styling)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_hud", "label": "HUD (Eco Point score, Hint Panel, restoration progress bar)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.4.1 Output Spec", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_io_specification", "label": "Input/Output Specification (mouse/keyboard controls, audio, dynamic text)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.4.1", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_software_design_flow", "label": "Software Design Flow (Main Menu, load Earth, select continent, unlock check, fetch DB, launch gameplay)", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.4.2", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_scope_limitations", "label": "Scope & Limitations (PC single-player, Low-Poly 3D, AI only in endless mode, OpenAI API, prototype)", "file_type": "rationale", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.5", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_two_d_crossword_problem", "label": "Limitation of conventional 2D crosswords (repetitive, low challenge, no social content)", "file_type": "rationale", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Sections 2, 3, 5", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_target_audience", "label": "Target audience: youth, students, general learners", "file_type": "concept", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Sections 5, 6", "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "documents_proposal_cite_svelte_docs", "label": "Svelte Documentation (2026)", "file_type": "document", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8 Bibliography", "source_url": "https://svelte.dev/docs", "captured_at": null, "author": "Svelte", "contributor": null}, {"id": "documents_proposal_cite_tauri_docs", "label": "Tauri Framework Docs (2026)", "file_type": "document", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8 Bibliography", "source_url": "https://tauri.app/docs", "captured_at": null, "author": "Tauri", "contributor": null}, {"id": "documents_proposal_cite_threlte_docs", "label": "Threlte Docs (2026)", "file_type": "document", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8 Bibliography", "source_url": "https://threlte.xyz/docs", "captured_at": null, "author": "Threlte", "contributor": null}, {"id": "documents_proposal_cite_threejs_docs", "label": "Three.js Docs (2026)", "file_type": "document", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8 Bibliography", "source_url": "https://threejs.org/docs/", "captured_at": null, "author": "Three.js", "contributor": null}, {"id": "documents_proposal_cite_typescript_docs", "label": "TypeScript Docs (2026)", "file_type": "document", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8 Bibliography", "source_url": "https://www.typescriptlang.org/docs/", "captured_at": null, "author": "TypeScript", "contributor": null}, {"id": "documents_proposal_cite_gee_2024", "label": "Gee, J.P. (2024). What Video Games Have to Teach Us About Learning and Literacy", "file_type": "paper", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8 Bibliography", "source_url": null, "captured_at": null, "author": "Gee, J. P.", "contributor": "Palgrave Macmillan"}, {"id": "documents_proposal_cite_kapp_2025", "label": "Kapp, K.M. (2025). The Gamification of Learning and Instruction", "file_type": "paper", "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8 Bibliography", "source_url": null, "captured_at": null, "author": "Kapp, K. M.", "contributor": "Pfeiffer"}], "edges": [{"source": "documents_proposal_crossworld_project", "target": "documents_proposal_crossworld_game", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Title", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_3d_crossword", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_progressive_ai_generation", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2, Objectives", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_un_sdgs", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2, Objectives", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_gamification", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2", "weight": 1.0}, {"source": "documents_proposal_gamification", "target": "documents_proposal_game_based_learning", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives", "weight": 1.0}, {"source": "documents_proposal_sustainable_innovation", "target": "documents_proposal_un_sdgs", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 2", "weight": 1.0}, {"source": "documents_proposal_climate_change", "target": "documents_proposal_crossworld_game", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 3", "weight": 1.0}, {"source": "documents_proposal_two_d_crossword_problem", "target": "documents_proposal_3d_crossword", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Sections 2, 3, 5", "weight": 1.0}, {"source": "documents_proposal_3d_crossword", "target": "documents_proposal_spatial_thinking", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives, page 7", "weight": 1.0}, {"source": "documents_proposal_eco_rehabilitation", "target": "documents_proposal_storyboard", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7", "weight": 1.0}, {"source": "documents_proposal_content_framework", "target": "documents_proposal_progressive_ai_generation", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7 (page 5)", "weight": 1.0}, {"source": "documents_proposal_storyboard", "target": "documents_proposal_level1_north_america", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "weight": 1.0}, {"source": "documents_proposal_storyboard", "target": "documents_proposal_level2_south_america", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "weight": 1.0}, {"source": "documents_proposal_storyboard", "target": "documents_proposal_level3_europe", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "weight": 1.0}, {"source": "documents_proposal_storyboard", "target": "documents_proposal_level4_africa", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "weight": 1.0}, {"source": "documents_proposal_storyboard", "target": "documents_proposal_level5_asia", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "weight": 1.0}, {"source": "documents_proposal_storyboard", "target": "documents_proposal_level6_australia", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "weight": 1.0}, {"source": "documents_proposal_storyboard", "target": "documents_proposal_level7_antarctica", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1", "weight": 1.0}, {"source": "documents_proposal_level7_antarctica", "target": "documents_proposal_endless_mode", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 (page 13)", "weight": 1.0}, {"source": "documents_proposal_endless_mode", "target": "documents_proposal_progressive_ai_generation", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1, 7.5", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_tauri", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives, Section 7.2", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_svelte", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives, Section 7.2", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_threlte_threejs", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives, Section 7.2", "weight": 1.0}, {"source": "documents_proposal_threlte_threejs", "target": "documents_proposal_3d_crossword", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2", "weight": 1.0}, {"source": "documents_proposal_typescript", "target": "documents_proposal_content_framework", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2 (TypeScript / AI-Integration API)", "weight": 1.0}, {"source": "documents_proposal_blender", "target": "documents_proposal_threlte_threejs", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2 (glTF export for web rendering)", "weight": 1.0}, {"source": "documents_proposal_figma", "target": "documents_proposal_io_specification", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.75, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.2, 7.4.1", "weight": 1.0}, {"source": "documents_proposal_hud", "target": "documents_proposal_io_specification", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.4.1", "weight": 1.0}, {"source": "documents_proposal_software_design_flow", "target": "documents_proposal_content_framework", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.4.2 (Fetch Continent DB)", "weight": 1.0}, {"source": "documents_proposal_scope_limitations", "target": "documents_proposal_progressive_ai_generation", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.5 (AI only in endless mode, OpenAI API)", "weight": 1.0}, {"source": "documents_proposal_crossworld_game", "target": "documents_proposal_target_audience", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Sections 5, 6", "weight": 1.0}, {"source": "documents_proposal_crossworld_project", "target": "documents_proposal_cite_svelte_docs", "relation": "cites", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_crossworld_project", "target": "documents_proposal_cite_tauri_docs", "relation": "cites", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_crossworld_project", "target": "documents_proposal_cite_threlte_docs", "relation": "cites", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_crossworld_project", "target": "documents_proposal_cite_threejs_docs", "relation": "cites", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_crossworld_project", "target": "documents_proposal_cite_typescript_docs", "relation": "cites", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_crossworld_project", "target": "documents_proposal_cite_gee_2024", "relation": "cites", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_crossworld_project", "target": "documents_proposal_cite_kapp_2025", "relation": "cites", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_cite_gee_2024", "target": "documents_proposal_game_based_learning", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_cite_kapp_2025", "target": "documents_proposal_gamification", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 8", "weight": 1.0}, {"source": "documents_proposal_eco_rehabilitation", "target": "documents_proposal_un_sdgs", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.65, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7", "weight": 1.0}], "hyperedges": [{"nodes": ["documents_proposal_tauri", "documents_proposal_svelte", "documents_proposal_threlte_threejs", "documents_proposal_typescript", "documents_proposal_crossworld_game"], "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Objectives, Section 7.2 \u2014 shared technology stack", "weight": 1.0}, {"nodes": ["documents_proposal_level1_north_america", "documents_proposal_level2_south_america", "documents_proposal_level3_europe", "documents_proposal_level4_africa", "documents_proposal_level5_asia", "documents_proposal_level6_australia", "documents_proposal_level7_antarctica"], "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Section 7.1 \u2014 7 continent level progression around the globe", "weight": 1.0}, {"nodes": ["documents_proposal_progressive_ai_generation", "documents_proposal_content_framework", "documents_proposal_typescript", "documents_proposal_endless_mode"], "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf", "source_location": "Sections 7.1, 7.2, 7.5 \u2014 AI puzzle generation pipeline via AI-Integration API", "weight": 1.0}]}
+{
+  "nodes": [
+    {
+      "id": "documents_proposal_CrossWorld_project",
+      "label": "CrossWorld Project Proposal",
+      "file_type": "document",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Project code 28P22C00781, page 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Chayaphat Phakham",
+      "contributor": "Kittiya Kunti (advisor)"
+    },
+    {
+      "id": "documents_proposal_CrossWorld_game",
+      "label": "CrossWorld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Title, Section 2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_3d_crossword",
+      "label": "3D Crossword (Rotatable, X/Y/Z axes)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2, 7.1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_progressive_ai_generation",
+      "label": "Progressive AI Generation (Generative-AI puzzle generation)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2, Objectives",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_sustainable_innovation",
+      "label": "Sustainable Innovation",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_gamification",
+      "label": "Gamification (points, level unlocking, storytelling)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_un_sdgs",
+      "label": "UN SDGs (Sustainability)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2, Objectives",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_climate_change",
+      "label": "Climate Change / Environmental Crisis",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_spatial_thinking",
+      "label": "Spatial Thinking / Spatial Skills",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives, Section 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_game_based_learning",
+      "label": "Game-based Learning",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_eco_rehabilitation",
+      "label": "Eco-Rehabilitation system (level progression: planets in crisis)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7 (page 5)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_content_framework",
+      "label": "Content Framework (word & hint database, AI-Integration API)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7 (page 5)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_storyboard",
+      "label": "Storyboard: Time-traveler restoring 7 continents (100 years in future)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_level1_north_america",
+      "label": "Level 1: North America (air pollution, transport, smart city / carbon reduction)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 8)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_level2_south_america",
+      "label": "Level 2: South America (deforestation, biodiversity loss, reforestation)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 9)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_level3_europe",
+      "label": "Level 3: Europe (overconsumption, waste, Reduce/Reuse/Recycle/Upcycling)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 9)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_level4_africa",
+      "label": "Level 4: Africa (drought, water scarcity, Rainwater/Desalination)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 10)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_level5_asia",
+      "label": "Level 5: Asia (industrial air pollution, renewables: Solar/Wind/Geothermal)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 11)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_level6_australia",
+      "label": "Level 6: Australia/Oceania (coral bleaching, plastic, Reef/Marine/Sanctuary)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 12)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_level7_antarctica",
+      "label": "Level 7: Antarctica (final level, global warming, ice melt, Climate Stability)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 12)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_endless_mode",
+      "label": "Endless Mode (Endgame Expansion: procedural alien planets)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 13)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_tauri",
+      "label": "Tauri (Rust desktop shell)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_svelte",
+      "label": "Svelte (UI framework / state management)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_threlte_threejs",
+      "label": "Threlte / Three.js (3D WebGL rendering, raycasting)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_typescript",
+      "label": "TypeScript (game logic, word validation, AI-Integration API)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_blender",
+      "label": "Blender (3D modeling, export glTF/glb)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2, 7.3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_figma",
+      "label": "Figma (UI design, interactive prototyping)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2, 7.3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_vscode",
+      "label": "Visual Studio Code (editor)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2, 7.3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_html_css",
+      "label": "HTML / CSS (markup and responsive UI styling)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_hud",
+      "label": "HUD (Eco Point score, Hint Panel, restoration progress bar)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.4.1 Output Spec",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_io_specification",
+      "label": "Input/Output Specification (mouse/keyboard controls, audio, dynamic text)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.4.1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_software_design_flow",
+      "label": "Software Design Flow (Main Menu, load Earth, select continent, unlock check, fetch DB, launch gameplay)",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.4.2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_scope_limitations",
+      "label": "Scope & Limitations (PC single-player, Low-Poly 3D, AI only in endless mode, OpenAI API, prototype)",
+      "file_type": "rationale",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_two_d_crossword_problem",
+      "label": "Limitation of conventional 2D crosswords (repetitive, low challenge, no social content)",
+      "file_type": "rationale",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Sections 2, 3, 5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_target_audience",
+      "label": "Target audience: youth, students, general learners",
+      "file_type": "concept",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Sections 5, 6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_cite_svelte_docs",
+      "label": "Svelte Documentation (2026)",
+      "file_type": "document",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8 Bibliography",
+      "source_url": "https://svelte.dev/docs",
+      "captured_at": null,
+      "author": "Svelte",
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_cite_tauri_docs",
+      "label": "Tauri Framework Docs (2026)",
+      "file_type": "document",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8 Bibliography",
+      "source_url": "https://tauri.app/docs",
+      "captured_at": null,
+      "author": "Tauri",
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_cite_threlte_docs",
+      "label": "Threlte Docs (2026)",
+      "file_type": "document",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8 Bibliography",
+      "source_url": "https://threlte.xyz/docs",
+      "captured_at": null,
+      "author": "Threlte",
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_cite_threejs_docs",
+      "label": "Three.js Docs (2026)",
+      "file_type": "document",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8 Bibliography",
+      "source_url": "https://threejs.org/docs/",
+      "captured_at": null,
+      "author": "Three.js",
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_cite_typescript_docs",
+      "label": "TypeScript Docs (2026)",
+      "file_type": "document",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8 Bibliography",
+      "source_url": "https://www.typescriptlang.org/docs/",
+      "captured_at": null,
+      "author": "TypeScript",
+      "contributor": null
+    },
+    {
+      "id": "documents_proposal_cite_gee_2024",
+      "label": "Gee, J.P. (2024). What Video Games Have to Teach Us About Learning and Literacy",
+      "file_type": "paper",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8 Bibliography",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Gee, J. P.",
+      "contributor": "Palgrave Macmillan"
+    },
+    {
+      "id": "documents_proposal_cite_kapp_2025",
+      "label": "Kapp, K.M. (2025). The Gamification of Learning and Instruction",
+      "file_type": "paper",
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8 Bibliography",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Kapp, K. M.",
+      "contributor": "Pfeiffer"
+    }
+  ],
+  "edges": [
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_CrossWorld_game",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Title",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_3d_crossword",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_progressive_ai_generation",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2, Objectives",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_un_sdgs",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2, Objectives",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_gamification",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_gamification",
+      "target": "documents_proposal_game_based_learning",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_sustainable_innovation",
+      "target": "documents_proposal_un_sdgs",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 2",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_climate_change",
+      "target": "documents_proposal_CrossWorld_game",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 3",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_two_d_crossword_problem",
+      "target": "documents_proposal_3d_crossword",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Sections 2, 3, 5",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_3d_crossword",
+      "target": "documents_proposal_spatial_thinking",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives, page 7",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_eco_rehabilitation",
+      "target": "documents_proposal_storyboard",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_content_framework",
+      "target": "documents_proposal_progressive_ai_generation",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7 (page 5)",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_storyboard",
+      "target": "documents_proposal_level1_north_america",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_storyboard",
+      "target": "documents_proposal_level2_south_america",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_storyboard",
+      "target": "documents_proposal_level3_europe",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_storyboard",
+      "target": "documents_proposal_level4_africa",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_storyboard",
+      "target": "documents_proposal_level5_asia",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_storyboard",
+      "target": "documents_proposal_level6_australia",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_storyboard",
+      "target": "documents_proposal_level7_antarctica",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_level7_antarctica",
+      "target": "documents_proposal_endless_mode",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 (page 13)",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_endless_mode",
+      "target": "documents_proposal_progressive_ai_generation",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1, 7.5",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_tauri",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives, Section 7.2",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_svelte",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives, Section 7.2",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_threlte_threejs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives, Section 7.2",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_threlte_threejs",
+      "target": "documents_proposal_3d_crossword",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_typescript",
+      "target": "documents_proposal_content_framework",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2 (TypeScript / AI-Integration API)",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_blender",
+      "target": "documents_proposal_threlte_threejs",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2 (glTF export for web rendering)",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_figma",
+      "target": "documents_proposal_io_specification",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.2, 7.4.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_hud",
+      "target": "documents_proposal_io_specification",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.4.1",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_software_design_flow",
+      "target": "documents_proposal_content_framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.4.2 (Fetch Continent DB)",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_scope_limitations",
+      "target": "documents_proposal_progressive_ai_generation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.5 (AI only in endless mode, OpenAI API)",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_game",
+      "target": "documents_proposal_target_audience",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Sections 5, 6",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_cite_svelte_docs",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_cite_tauri_docs",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_cite_threlte_docs",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_cite_threejs_docs",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_cite_typescript_docs",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_cite_gee_2024",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_CrossWorld_project",
+      "target": "documents_proposal_cite_kapp_2025",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_cite_gee_2024",
+      "target": "documents_proposal_game_based_learning",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_cite_kapp_2025",
+      "target": "documents_proposal_gamification",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 8",
+      "weight": 1.0
+    },
+    {
+      "source": "documents_proposal_eco_rehabilitation",
+      "target": "documents_proposal_un_sdgs",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "nodes": [
+        "documents_proposal_tauri",
+        "documents_proposal_svelte",
+        "documents_proposal_threlte_threejs",
+        "documents_proposal_typescript",
+        "documents_proposal_CrossWorld_game"
+      ],
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Objectives, Section 7.2 \u2014 shared technology stack",
+      "weight": 1.0
+    },
+    {
+      "nodes": [
+        "documents_proposal_level1_north_america",
+        "documents_proposal_level2_south_america",
+        "documents_proposal_level3_europe",
+        "documents_proposal_level4_africa",
+        "documents_proposal_level5_asia",
+        "documents_proposal_level6_australia",
+        "documents_proposal_level7_antarctica"
+      ],
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Section 7.1 \u2014 7 continent level progression around the globe",
+      "weight": 1.0
+    },
+    {
+      "nodes": [
+        "documents_proposal_progressive_ai_generation",
+        "documents_proposal_content_framework",
+        "documents_proposal_typescript",
+        "documents_proposal_endless_mode"
+      ],
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf",
+      "source_location": "Sections 7.1, 7.2, 7.5 \u2014 AI puzzle generation pipeline via AI-Integration API",
+      "weight": 1.0
+    }
+  ]
+}

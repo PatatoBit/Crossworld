@@ -37,12 +37,12 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 10 edges
-2. `Crossworld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning` - 10 edges
+2. `CrossWorld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning` - 10 edges
 3. `definitions` - 9 edges
 4. `definitions` - 9 edges
 5. `CrosswordGame` - 8 edges
-6. `Crossworld project proposal (Thai spec)` - 8 edges
-7. `Crossworld Project Proposal` - 8 edges
+6. `CrossWorld project proposal (Thai spec)` - 8 edges
+7. `CrossWorld Project Proposal` - 8 edges
 8. `Storyboard: Time-traveler restoring 7 continents (100 years in future)` - 8 edges
 9. `scripts` - 7 edges
 10. `Puzzle` - 6 edges
@@ -54,9 +54,9 @@
   documents/output.md → CLAUDE.md
 - `Raycasting 3D block selection` --semantically_similar_to--> `interactivity() raycasting`  [INFERRED] [semantically similar]
   documents/output.md → CLAUDE.md
-- `Crossworld (3D crossword game)` --references--> `Tauri + SvelteKit + TypeScript template`  [INFERRED]
+- `CrossWorld (3D crossword game)` --references--> `Tauri + SvelteKit + TypeScript template`  [INFERRED]
   CLAUDE.md → README.md
-- `3D Crossword core mechanic (X/Y/Z axes)` --conceptually_related_to--> `Crossworld (3D crossword game)`  [INFERRED]
+- `3D Crossword core mechanic (X/Y/Z axes)` --conceptually_related_to--> `CrossWorld (3D crossword game)`  [INFERRED]
   documents/output.md → CLAUDE.md
 
 ## Import Cycles
@@ -66,7 +66,7 @@
 - **Words-as-source-of-truth puzzle data flow** — claudemd_wordspec, claudemd_buildpuzzle, claudemd_cell, claudemd_crosswordgame [EXTRACTED 0.95]
 - **Letter visibility rendering pattern** — claudemd_billboard_text, claudemd_depthwrite_renderorder, claudemd_rendering_flow [EXTRACTED 0.85]
 - **AI-driven sustainability content pipeline** — output_progressive_ai_generation, output_content_framework, output_openai_api, output_sustainable_innovation [EXTRACTED 0.85]
-- **** — documents_proposal_tauri, documents_proposal_svelte, documents_proposal_threlte_threejs, documents_proposal_typescript, documents_proposal_crossworld_game [EXTRACTED 1.00]
+- **** — documents_proposal_tauri, documents_proposal_svelte, documents_proposal_threlte_threejs, documents_proposal_typescript, documents_proposal_CrossWorld_game [EXTRACTED 1.00]
 - **** — documents_proposal_level1_north_america, documents_proposal_level2_south_america, documents_proposal_level3_europe, documents_proposal_level4_africa, documents_proposal_level5_asia, documents_proposal_level6_australia, documents_proposal_level7_antarctica [EXTRACTED 1.00]
 - **** — documents_proposal_progressive_ai_generation, documents_proposal_content_framework, documents_proposal_typescript, documents_proposal_endless_mode [INFERRED 0.85]
 
@@ -78,7 +78,7 @@ Nodes (41): description, properties, required, type, Capability, Identifier, def
 
 ### Community 1 - "Game Architecture & Design"
 Cohesion: 0.07
-Nodes (33): app.html SvelteKit shell, Billboard Text letters face camera, buildPuzzle() derivation, Cell (derived grid cell), CrosswordGame reactive store, Crossworld (3D crossword game), depthWrite=false + renderOrder=1 fix, Hover-to-reveal clue interaction (+25 more)
+Nodes (33): app.html SvelteKit shell, Billboard Text letters face camera, buildPuzzle() derivation, Cell (derived grid cell), CrosswordGame reactive store, CrossWorld (3D crossword game), depthWrite=false + renderOrder=1 fix, Hover-to-reveal clue interaction (+25 more)
 
 ### Community 2 - "Permission Schema (Capabilities)"
 Cohesion: 0.07
@@ -134,7 +134,7 @@ Nodes (6): Svelte (Framework), Svelte Logo, Tauri (Framework), Tauri Logo, Vite 
 
 ### Community 15 - "App Icon Assets"
 Cohesion: 0.40
-Nodes (5): App Icon — 128x128 Variant, App Icon — 32x32 Variant, Crossworld App Icon (Interlocking Rings Logo), App Icon — StoreLogo Variant, Favicon (Default SvelteKit Logo)
+Nodes (5): App Icon — 128x128 Variant, App Icon — 32x32 Variant, CrossWorld App Icon (Interlocking Rings Logo), App Icon — StoreLogo Variant, Favicon (Default SvelteKit Logo)
 
 ### Community 17 - "HUD & I/O Design"
 Cohesion: 0.67

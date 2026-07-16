@@ -1,1 +1,361 @@
-{"nodes": [{"id": "claudemd_crossworld", "label": "Crossworld (3D crossword game)", "file_type": "concept", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_word_source_of_truth", "label": "Words-as-source-of-truth data model", "file_type": "rationale", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_wordspec", "label": "WordSpec authoring unit", "file_type": "concept", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_buildpuzzle", "label": "buildPuzzle() derivation", "file_type": "code", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_cell", "label": "Cell (derived grid cell)", "file_type": "concept", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_crosswordgame", "label": "CrosswordGame reactive store", "file_type": "code", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_rendering_flow", "label": "Scene/Hud rendering flow", "file_type": "rationale", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_billboard_text", "label": "Billboard Text letters face camera", "file_type": "rationale", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_depthwrite_renderorder", "label": "depthWrite=false + renderOrder=1 fix", "file_type": "rationale", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_trackballcontrols", "label": "TrackballControls camera choice", "file_type": "rationale", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_gizmo", "label": "Gizmo orientation widget", "file_type": "code", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_hover_clue", "label": "Hover-to-reveal clue interaction", "file_type": "concept", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_interactivity_raycasting", "label": "interactivity() raycasting", "file_type": "code", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_spa_ssr_false", "label": "SPA / ssr=false constraint", "file_type": "rationale", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_check_gate", "label": "npm run check typecheck gate", "file_type": "concept", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "claudemd_stack", "label": "Tauri 2 + SvelteKit + Svelte 5 runes + Threlte stack", "file_type": "concept", "source_file": "CLAUDE.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [{"source": "claudemd_buildpuzzle", "target": "claudemd_wordspec", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_buildpuzzle", "target": "claudemd_cell", "relation": "shares_data_with", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_word_source_of_truth", "target": "claudemd_buildpuzzle", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_word_source_of_truth", "target": "claudemd_wordspec", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_crosswordgame", "target": "claudemd_cell", "relation": "shares_data_with", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_rendering_flow", "target": "claudemd_crosswordgame", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_hover_clue", "target": "claudemd_interactivity_raycasting", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_interactivity_raycasting", "target": "claudemd_crosswordgame", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_depthwrite_renderorder", "target": "claudemd_billboard_text", "relation": "rationale_for", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_billboard_text", "target": "claudemd_rendering_flow", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_trackballcontrols", "target": "claudemd_gizmo", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_stack", "target": "claudemd_spa_ssr_false", "relation": "rationale_for", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_crossworld", "target": "output_project_proposal", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_crossworld", "target": "claudemd_stack", "relation": "implements", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}, {"source": "claudemd_word_source_of_truth", "target": "output_progressive_ai_generation", "relation": "conceptually_related_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "CLAUDE.md", "source_location": null, "weight": 1.0}], "hyperedges": [{"id": "puzzle_data_model_flow", "label": "Words-as-source-of-truth puzzle data flow", "nodes": ["claudemd_wordspec", "claudemd_buildpuzzle", "claudemd_cell", "claudemd_crosswordgame"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "CLAUDE.md"}, {"id": "letter_visibility_render_pattern", "label": "Letter visibility rendering pattern", "nodes": ["claudemd_billboard_text", "claudemd_depthwrite_renderorder", "claudemd_rendering_flow"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 0.85, "source_file": "CLAUDE.md"}]}
+{
+  "nodes": [
+    {
+      "id": "claudemd_CrossWorld",
+      "label": "CrossWorld (3D crossword game)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_word_source_of_truth",
+      "label": "Words-as-source-of-truth data model",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_wordspec",
+      "label": "WordSpec authoring unit",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_buildpuzzle",
+      "label": "buildPuzzle() derivation",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_cell",
+      "label": "Cell (derived grid cell)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_crosswordgame",
+      "label": "CrosswordGame reactive store",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_rendering_flow",
+      "label": "Scene/Hud rendering flow",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_billboard_text",
+      "label": "Billboard Text letters face camera",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_depthwrite_renderorder",
+      "label": "depthWrite=false + renderOrder=1 fix",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_trackballcontrols",
+      "label": "TrackballControls camera choice",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_gizmo",
+      "label": "Gizmo orientation widget",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_hover_clue",
+      "label": "Hover-to-reveal clue interaction",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_interactivity_raycasting",
+      "label": "interactivity() raycasting",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_spa_ssr_false",
+      "label": "SPA / ssr=false constraint",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_check_gate",
+      "label": "npm run check typecheck gate",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claudemd_stack",
+      "label": "Tauri 2 + SvelteKit + Svelte 5 runes + Threlte stack",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "claudemd_buildpuzzle",
+      "target": "claudemd_wordspec",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_buildpuzzle",
+      "target": "claudemd_cell",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_word_source_of_truth",
+      "target": "claudemd_buildpuzzle",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_word_source_of_truth",
+      "target": "claudemd_wordspec",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_crosswordgame",
+      "target": "claudemd_cell",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_rendering_flow",
+      "target": "claudemd_crosswordgame",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_hover_clue",
+      "target": "claudemd_interactivity_raycasting",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_interactivity_raycasting",
+      "target": "claudemd_crosswordgame",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_depthwrite_renderorder",
+      "target": "claudemd_billboard_text",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_billboard_text",
+      "target": "claudemd_rendering_flow",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_trackballcontrols",
+      "target": "claudemd_gizmo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_stack",
+      "target": "claudemd_spa_ssr_false",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_CrossWorld",
+      "target": "output_project_proposal",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_CrossWorld",
+      "target": "claudemd_stack",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claudemd_word_source_of_truth",
+      "target": "output_progressive_ai_generation",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "puzzle_data_model_flow",
+      "label": "Words-as-source-of-truth puzzle data flow",
+      "nodes": [
+        "claudemd_wordspec",
+        "claudemd_buildpuzzle",
+        "claudemd_cell",
+        "claudemd_crosswordgame"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md"
+    },
+    {
+      "id": "letter_visibility_render_pattern",
+      "label": "Letter visibility rendering pattern",
+      "nodes": [
+        "claudemd_billboard_text",
+        "claudemd_depthwrite_renderorder",
+        "claudemd_rendering_flow"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md"
+    }
+  ]
+}

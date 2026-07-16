@@ -1,1 +1,182 @@
-{"/Users/patato/Documents/Projects/Crossworld/.vscode/extensions.json":{"size":120,"mtime_ns":1782016331904983193,"hash":"d7295368917501f4be826871b88506e482c32e4e61c841afc266f3c5c1b2d6d0"},"/Users/patato/Documents/Projects/Crossworld/.vscode/settings.json":{"size":38,"mtime_ns":1782016331905110610,"hash":"4f8dab5208e7b5b745ec79500d731274a93f2388049e7d1b6190d76ffd9dbec1"},"/Users/patato/Documents/Projects/Crossworld/package.json":{"size":896,"mtime_ns":1782276652389242695,"hash":"4379c2ba30d07b05eb16615b1e260139b24ad829aae45fdc6544382ca553d70f"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/build.rs":{"size":39,"mtime_ns":1782016331896011660,"hash":"9169064f78959e2add41431205a3852e57f58ec57c82aaac9bf1fdf19df86d32"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/capabilities/default.json":{"size":220,"mtime_ns":1782016331896204910,"hash":"b245580f3cf868c195de80ca7d5e6bc82d298c70304acb0807f8eba654c2dc77"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/gen/schemas/acl-manifests.json":{"size":69499,"mtime_ns":1782016457392111708,"hash":"9d8ed38f930bf6a897373556ba5702875818d93a4091a4f6de7c023d623157b7"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/gen/schemas/capabilities.json":{"size":163,"mtime_ns":1782016457401212366,"hash":"c425638b62f7611a3a58ba518f7961846171c240267562ddda9cf57a9baa6564"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/gen/schemas/desktop-schema.json":{"size":129129,"mtime_ns":1782016457400696408,"hash":"6cca1405aea653fcd244accfcc624fea414698b3847f225396711cf141b1378a"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/gen/schemas/macOS-schema.json":{"size":129129,"mtime_ns":1782016457400696408,"hash":"e20e629d76c81953683add66d687a27d5601871ad1ce98ec6582f07d2b397b4c"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/src/lib.rs":{"size":490,"mtime_ns":1782016331904573360,"hash":"4c4ab3319394e5337861c05c90a7e9a41e199fcc414dda3374bbffce30d50287"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/src/main.rs":{"size":185,"mtime_ns":1782016331904711485,"hash":"085380b4e0d9ae3d765d481acd5ee5d46b52338ed7bf426f4f72dd89c4e1a546"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/tauri.conf.json":{"size":696,"mtime_ns":1782016331895453577,"hash":"aa99d21b6dbb61da9ae2e75fc66bc7f5209c43fb937678d8fd24550c72db9d50"},"/Users/patato/Documents/Projects/Crossworld/tsconfig.json":{"size":675,"mtime_ns":1782016331906510275,"hash":"a2a0b107964c8d24fba19b1abee64d9fcf0d33f34789ab0fe9431b952e7869d3"},"/Users/patato/Documents/Projects/Crossworld/CLAUDE.md":{"size":4742,"mtime_ns":1782276884234307305,"hash":"d66ff84a925423f8b12112e73b08bbde28ef5be3a28e9a1b18cff346a4750dca"},"/Users/patato/Documents/Projects/Crossworld/README.md":{"size":470,"mtime_ns":1782016331905256318,"hash":"c28f45a6d3db6bc86603efd1a80297f8a2b7e78d601396667a97b0472bd8b44f"},"/Users/patato/Documents/Projects/Crossworld/documents/output.md":{"size":55578,"mtime_ns":1782222687683363214,"hash":"09bcad6d693c755b9a14a92648befbc9c075aa7c97b49b7f461c8414695fe1a5"},"/Users/patato/Documents/Projects/Crossworld/src/app.html":{"size":414,"mtime_ns":1782016331905785151,"hash":"ebce4c0daaff6efa2e63c106bc4c3a19315bf06221e208c932581dfb3d690934"},"/Users/patato/Documents/Projects/Crossworld/documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf":{"size":1937113,"mtime_ns":1782222687689326042,"hash":"ee2815f3095f5edbf04e08ca094b708787480c3b2988f9259e552eef2ee0854b"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/128x128.png":{"size":3512,"mtime_ns":1782016331896505410,"hash":"dfd6f03c098d1c5a11bba512b7433150819b0ce83c2108b5ea5fb754af112ba4"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/128x128@2x.png":{"size":7012,"mtime_ns":1782016331896920534,"hash":"d03241e3a3fe44d171b2b98d716a0b24acdc36f10248991ca2fab52fb77d5026"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/32x32.png":{"size":974,"mtime_ns":1782016331897309951,"hash":"bed820453f59e7e31621a8669366ad700be0950d7e74d6716206002a533c4861"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square107x107Logo.png":{"size":2863,"mtime_ns":1782016331897610117,"hash":"04d5115dadbf4fb227429f114f958de1538546b4fd75e2b1e2fe764e1a41f991"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square142x142Logo.png":{"size":3858,"mtime_ns":1782016331897913367,"hash":"0ec2a7250d735355ad9f57b6f306afdab5336f836c9addc3aa8404dad3a906e0"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square150x150Logo.png":{"size":3966,"mtime_ns":1782016331898549199,"hash":"70299a270518db741dd02b520a21d8315d938eebdee0291f52729968669fe81c"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square284x284Logo.png":{"size":7737,"mtime_ns":1782016331899522782,"hash":"8cf04f662cd0bf11f02a56a3aa931083eeeb88668d62932f2f84fea404c7ca41"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square30x30Logo.png":{"size":903,"mtime_ns":1782016331899744282,"hash":"bb9e12852584c6690e65ab0bab994139bb87eb583e3110e9d0badf24c5485e66"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square310x310Logo.png":{"size":8591,"mtime_ns":1782016331900277698,"hash":"27948c14069f9d62292c51b6953dfcc61967c7b794e6660ed10ca9902b8e6132"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square44x44Logo.png":{"size":1299,"mtime_ns":1782016331900573281,"hash":"76d5c36d6e5e5dcef9a87a1a970c40313e6f18c09f13b30fb6011e649964ce63"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square71x71Logo.png":{"size":2011,"mtime_ns":1782016331900801697,"hash":"bf51316ac1ddaeb283159a5e397745e8f7b766cf099940c5e0ba2ab13f8469c0"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/Square89x89Logo.png":{"size":2468,"mtime_ns":1782016331900973155,"hash":"91ff364c0fd4b097487aced98bf6c06e805afd0922e6449791cb8e05157d4227"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/StoreLogo.png":{"size":1523,"mtime_ns":1782016331901117822,"hash":"46fffbcaa1e31549216c645a2f6f81f5202d4d1910fe4f01e18dedd6207b3abe"},"/Users/patato/Documents/Projects/Crossworld/src-tauri/icons/icon.png":{"size":14183,"mtime_ns":1782016331904348361,"hash":"4e52606a2b5939393b03a6d9241c986947f4963058705750183e19b01a9d8da4"},"/Users/patato/Documents/Projects/Crossworld/static/favicon.png":{"size":1571,"mtime_ns":1782016331907201733,"hash":"208d0a008cd17b06d71e3e152e9162993c70136c034454a153734cdf083c930c"},"/Users/patato/Documents/Projects/Crossworld/static/svelte.svg":{"size":1950,"mtime_ns":1782016331906964316,"hash":"6352386334f49564f17b8fad01ad565ff5030793cd135782986d3c65433ecaf5"},"/Users/patato/Documents/Projects/Crossworld/static/tauri.svg":{"size":2599,"mtime_ns":1782016331907536483,"hash":"82d0ea3cb2f9f2b5884bf8c9618ca8c98ceb811a0f999bb70dbe9dae495de4e3"},"/Users/patato/Documents/Projects/Crossworld/static/vite.svg":{"size":1497,"mtime_ns":1782016331907366149,"hash":"68ded8f427c886ef5e7384819a341c45cce647a55007dfff9634fff2b76c791c"}}
+{
+  "/Users/patato/Documents/Projects/CrossWorld/.vscode/extensions.json": {
+    "size": 120,
+    "mtime_ns": 1782016331904983193,
+    "hash": "d7295368917501f4be826871b88506e482c32e4e61c841afc266f3c5c1b2d6d0"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/.vscode/settings.json": {
+    "size": 38,
+    "mtime_ns": 1782016331905110610,
+    "hash": "4f8dab5208e7b5b745ec79500d731274a93f2388049e7d1b6190d76ffd9dbec1"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/package.json": {
+    "size": 896,
+    "mtime_ns": 1782276652389242695,
+    "hash": "4379c2ba30d07b05eb16615b1e260139b24ad829aae45fdc6544382ca553d70f"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/build.rs": {
+    "size": 39,
+    "mtime_ns": 1782016331896011660,
+    "hash": "9169064f78959e2add41431205a3852e57f58ec57c82aaac9bf1fdf19df86d32"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/capabilities/default.json": {
+    "size": 220,
+    "mtime_ns": 1782016331896204910,
+    "hash": "b245580f3cf868c195de80ca7d5e6bc82d298c70304acb0807f8eba654c2dc77"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/gen/schemas/acl-manifests.json": {
+    "size": 69499,
+    "mtime_ns": 1782016457392111708,
+    "hash": "9d8ed38f930bf6a897373556ba5702875818d93a4091a4f6de7c023d623157b7"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/gen/schemas/capabilities.json": {
+    "size": 163,
+    "mtime_ns": 1782016457401212366,
+    "hash": "c425638b62f7611a3a58ba518f7961846171c240267562ddda9cf57a9baa6564"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/gen/schemas/desktop-schema.json": {
+    "size": 129129,
+    "mtime_ns": 1782016457400696408,
+    "hash": "6cca1405aea653fcd244accfcc624fea414698b3847f225396711cf141b1378a"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/gen/schemas/macOS-schema.json": {
+    "size": 129129,
+    "mtime_ns": 1782016457400696408,
+    "hash": "e20e629d76c81953683add66d687a27d5601871ad1ce98ec6582f07d2b397b4c"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/src/lib.rs": {
+    "size": 490,
+    "mtime_ns": 1782016331904573360,
+    "hash": "4c4ab3319394e5337861c05c90a7e9a41e199fcc414dda3374bbffce30d50287"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/src/main.rs": {
+    "size": 185,
+    "mtime_ns": 1782016331904711485,
+    "hash": "085380b4e0d9ae3d765d481acd5ee5d46b52338ed7bf426f4f72dd89c4e1a546"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/tauri.conf.json": {
+    "size": 696,
+    "mtime_ns": 1782016331895453577,
+    "hash": "aa99d21b6dbb61da9ae2e75fc66bc7f5209c43fb937678d8fd24550c72db9d50"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/tsconfig.json": {
+    "size": 675,
+    "mtime_ns": 1782016331906510275,
+    "hash": "a2a0b107964c8d24fba19b1abee64d9fcf0d33f34789ab0fe9431b952e7869d3"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/CLAUDE.md": {
+    "size": 4742,
+    "mtime_ns": 1782276884234307305,
+    "hash": "d66ff84a925423f8b12112e73b08bbde28ef5be3a28e9a1b18cff346a4750dca"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/README.md": {
+    "size": 470,
+    "mtime_ns": 1782016331905256318,
+    "hash": "c28f45a6d3db6bc86603efd1a80297f8a2b7e78d601396667a97b0472bd8b44f"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/documents/output.md": {
+    "size": 55578,
+    "mtime_ns": 1782222687683363214,
+    "hash": "09bcad6d693c755b9a14a92648befbc9c075aa7c97b49b7f461c8414695fe1a5"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src/app.html": {
+    "size": 414,
+    "mtime_ns": 1782016331905785151,
+    "hash": "ebce4c0daaff6efa2e63c106bc4c3a19315bf06221e208c932581dfb3d690934"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/documents/\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23_\u0e0a\u0e22\u0e1e\u0e31\u0e17\u0e18\u0e4c.pdf": {
+    "size": 1937113,
+    "mtime_ns": 1782222687689326042,
+    "hash": "ee2815f3095f5edbf04e08ca094b708787480c3b2988f9259e552eef2ee0854b"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/128x128.png": {
+    "size": 3512,
+    "mtime_ns": 1782016331896505410,
+    "hash": "dfd6f03c098d1c5a11bba512b7433150819b0ce83c2108b5ea5fb754af112ba4"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/128x128@2x.png": {
+    "size": 7012,
+    "mtime_ns": 1782016331896920534,
+    "hash": "d03241e3a3fe44d171b2b98d716a0b24acdc36f10248991ca2fab52fb77d5026"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/32x32.png": {
+    "size": 974,
+    "mtime_ns": 1782016331897309951,
+    "hash": "bed820453f59e7e31621a8669366ad700be0950d7e74d6716206002a533c4861"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square107x107Logo.png": {
+    "size": 2863,
+    "mtime_ns": 1782016331897610117,
+    "hash": "04d5115dadbf4fb227429f114f958de1538546b4fd75e2b1e2fe764e1a41f991"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square142x142Logo.png": {
+    "size": 3858,
+    "mtime_ns": 1782016331897913367,
+    "hash": "0ec2a7250d735355ad9f57b6f306afdab5336f836c9addc3aa8404dad3a906e0"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square150x150Logo.png": {
+    "size": 3966,
+    "mtime_ns": 1782016331898549199,
+    "hash": "70299a270518db741dd02b520a21d8315d938eebdee0291f52729968669fe81c"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square284x284Logo.png": {
+    "size": 7737,
+    "mtime_ns": 1782016331899522782,
+    "hash": "8cf04f662cd0bf11f02a56a3aa931083eeeb88668d62932f2f84fea404c7ca41"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square30x30Logo.png": {
+    "size": 903,
+    "mtime_ns": 1782016331899744282,
+    "hash": "bb9e12852584c6690e65ab0bab994139bb87eb583e3110e9d0badf24c5485e66"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square310x310Logo.png": {
+    "size": 8591,
+    "mtime_ns": 1782016331900277698,
+    "hash": "27948c14069f9d62292c51b6953dfcc61967c7b794e6660ed10ca9902b8e6132"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square44x44Logo.png": {
+    "size": 1299,
+    "mtime_ns": 1782016331900573281,
+    "hash": "76d5c36d6e5e5dcef9a87a1a970c40313e6f18c09f13b30fb6011e649964ce63"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square71x71Logo.png": {
+    "size": 2011,
+    "mtime_ns": 1782016331900801697,
+    "hash": "bf51316ac1ddaeb283159a5e397745e8f7b766cf099940c5e0ba2ab13f8469c0"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/Square89x89Logo.png": {
+    "size": 2468,
+    "mtime_ns": 1782016331900973155,
+    "hash": "91ff364c0fd4b097487aced98bf6c06e805afd0922e6449791cb8e05157d4227"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/StoreLogo.png": {
+    "size": 1523,
+    "mtime_ns": 1782016331901117822,
+    "hash": "46fffbcaa1e31549216c645a2f6f81f5202d4d1910fe4f01e18dedd6207b3abe"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/src-tauri/icons/icon.png": {
+    "size": 14183,
+    "mtime_ns": 1782016331904348361,
+    "hash": "4e52606a2b5939393b03a6d9241c986947f4963058705750183e19b01a9d8da4"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/static/favicon.png": {
+    "size": 1571,
+    "mtime_ns": 1782016331907201733,
+    "hash": "208d0a008cd17b06d71e3e152e9162993c70136c034454a153734cdf083c930c"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/static/svelte.svg": {
+    "size": 1950,
+    "mtime_ns": 1782016331906964316,
+    "hash": "6352386334f49564f17b8fad01ad565ff5030793cd135782986d3c65433ecaf5"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/static/tauri.svg": {
+    "size": 2599,
+    "mtime_ns": 1782016331907536483,
+    "hash": "82d0ea3cb2f9f2b5884bf8c9618ca8c98ceb811a0f999bb70dbe9dae495de4e3"
+  },
+  "/Users/patato/Documents/Projects/CrossWorld/static/vite.svg": {
+    "size": 1497,
+    "mtime_ns": 1782016331907366149,
+    "hash": "68ded8f427c886ef5e7384819a341c45cce647a55007dfff9634fff2b76c791c"
+  }
+}

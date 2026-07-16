@@ -7,8 +7,8 @@
 | หัวข้อ | รายละเอียด |
 | --- | --- |
 | รหัสโครงการ | 28P22C00781 |
-| ชื่อโครงการ (ไทย) | Crossworld: เกมปริศนาอักษรไขว้ 3 มิติเพื่อการเรียนรู้และปลูกจิตสำนึกด้านความยั่งยืน |
-| ชื่อโครงการ (อังกฤษ) | Crossworld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning |
+| ชื่อโครงการ (ไทย) | CrossWorld: เกมปริศนาอักษรไขว้ 3 มิติเพื่อการเรียนรู้และปลูกจิตสำนึกด้านความยั่งยืน |
+| ชื่อโครงการ (อังกฤษ) | CrossWorld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning |
 | ประเภท | โปรแกรมเพื่อการเรียนรู้ |
 | ผู้พัฒนา | นายชยพัทธ์ ผาคำ |
 | อาจารย์ที่ปรึกษา | นางสาวกิตติญา กูลดี |
@@ -24,11 +24,11 @@
 # กิตติกรรมประกาศ
 **(Acknowledgement)**
 
-คณะผู้จัดทำโปรแกรมเพื่อส่งเสริมทักษะการเรียนรู้ “Crossworld” รหัสโครงการ 28P22C00781 นี้ สำเร็จลงได้ด้วยความกรุณาจาก ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ ที่ได้มอบทุนอุดหนุนโครงการในการแข่งขันโครงการพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ 28 และรวมถึงอาจารย์ที่ปรึกษา นางสาวกิตติญา กูลดี และอีกหลายท่านที่ไม่ได้กล่าวถึง ที่คอยให้คำปรึกษาและคำแนะนำในการพัฒนาโปรแกรม
+คณะผู้จัดทำโปรแกรมเพื่อส่งเสริมทักษะการเรียนรู้ “CrossWorld” รหัสโครงการ 28P22C00781 นี้ สำเร็จลงได้ด้วยความกรุณาจาก ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ ที่ได้มอบทุนอุดหนุนโครงการในการแข่งขันโครงการพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ 28 และรวมถึงอาจารย์ที่ปรึกษา นางสาวกิตติญา กูลดี และอีกหลายท่านที่ไม่ได้กล่าวถึง ที่คอยให้คำปรึกษาและคำแนะนำในการพัฒนาโปรแกรม
 
 สุดท้ายนี้ต้องขอขอบคุณคณะผู้จัดทำทุกคนที่ตั้งใจสร้างสรรค์ผลงานออกมาอย่างสุดความสามารถ จนโครงการสำเร็จลุล่วงไปได้ด้วยดี
 
-**คณะผู้จัดทำ “Crossworld”**
+**คณะผู้จัดทำ “CrossWorld”**
 
 ---
 
@@ -40,7 +40,7 @@
 
 # บทคัดย่อ
 
-โครงการ Crossworld: เกมปริศนาอักษรไขว้ 3 มิติ เพื่อการเรียนรู้และปลูกจิตสำนึกด้านความยั่งยืน (Crossworld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning) รหัสโครงการ: 28P22C00781 เป็นโปรแกรมเกมเพื่อส่งเสริมทักษะการเรียนรู้ที่พัฒนาขึ้นโดยมีเป้าหมายเพื่อเสริมสร้างความรู้ด้านคำศัพท์ภาษาอังกฤษควบคู่กับการปลูกฝังจิตสำนึกด้านการอนุรักษ์สิ่งแวดล้อมและการพัฒนาอย่างยั่งยืน (UN SDGs)
+โครงการ CrossWorld: เกมปริศนาอักษรไขว้ 3 มิติ เพื่อการเรียนรู้และปลูกจิตสำนึกด้านความยั่งยืน (CrossWorld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning) รหัสโครงการ: 28P22C00781 เป็นโปรแกรมเกมเพื่อส่งเสริมทักษะการเรียนรู้ที่พัฒนาขึ้นโดยมีเป้าหมายเพื่อเสริมสร้างความรู้ด้านคำศัพท์ภาษาอังกฤษควบคู่กับการปลูกฝังจิตสำนึกด้านการอนุรักษ์สิ่งแวดล้อมและการพัฒนาอย่างยั่งยืน (UN SDGs)
 
 เกมนี้ถ่ายทอดปัญหาสิ่งแวดล้อมและความยั่งยืนผ่านรูปแบบปริศนาอักษรไขว้ 3 มิติ (3D Crossword) ที่สามารถหมุนมุมมองได้รอบทิศทาง ผู้เล่นจะสวมบทเป็นผู้พิทักษ์กาลเวลาผู้ได้รับเลือกให้เดินทางย้อนเวลากลับไปยัง 7 ทวีป เพื่อไขปริศนาแห่งความยั่งยืนและฟื้นฟูระบบนิเวศที่เสื่อมโทรม พร้อมสะท้อนผลของการดำเนินชีวิตและการใช้ทรัพยากรอย่างมีความรับผิดชอบ เหมาะสำหรับเยาวชน นักเรียน นักศึกษา และผู้เล่นทั่วไป อีกทั้งยังส่งเสริมทักษะการคิดวิเคราะห์ การคิดเชิงพื้นที่ (Spatial Thinking) และการแก้ปัญหาภายใต้บริบทของความรู้ด้านสิ่งแวดล้อม
 
@@ -50,7 +50,7 @@
 
 # Abstract
 
-Crossworld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning (Program for learning skills) Project ID: 28P22C00781 is a desktop learning game developed with the goal of building English vocabulary skills while fostering environmental awareness and sustainable development (UN SDGs). The game presents environmental and sustainability issues through a rotatable 3D crossword format. Players take on the role of a Time Guardian chosen to travel back across seven continents, solving sustainability puzzles to restore degraded ecosystems. The game reflects the consequences of responsible resource use and is suitable for youth, students, and general players. In addition to vocabulary learning, it promotes critical thinking, spatial reasoning, and problem-solving within an environmental context. Ultimately, Crossworld aims to instill the values of environmental conservation and sustainable development through an interactive, challenging, and memorable gameplay experience.
+CrossWorld: A 3D Spatial Crossword Game for Sustainability Awareness and Learning (Program for learning skills) Project ID: 28P22C00781 is a desktop learning game developed with the goal of building English vocabulary skills while fostering environmental awareness and sustainable development (UN SDGs). The game presents environmental and sustainability issues through a rotatable 3D crossword format. Players take on the role of a Time Guardian chosen to travel back across seven continents, solving sustainability puzzles to restore degraded ecosystems. The game reflects the consequences of responsible resource use and is suitable for youth, students, and general players. In addition to vocabulary learning, it promotes critical thinking, spatial reasoning, and problem-solving within an environmental context. Ultimately, CrossWorld aims to instill the values of environmental conservation and sustainable development through an interactive, challenging, and memorable gameplay experience.
 
 ---
 
@@ -58,13 +58,13 @@ Crossworld: A 3D Spatial Crossword Game for Sustainability Awareness and Learnin
 
 ภาวะโลกร้อนและการเปลี่ยนแปลงสภาพภูมิอากาศเป็นวิกฤตระดับโลกที่ส่งผลกระทบต่อประเทศไทยอย่างชัดเจน ทั้งด้านสุขภาพ เศรษฐกิจ สังคม และสิ่งแวดล้อม การเรียนรู้เรื่องความยั่งยืนผ่านสื่อแบบเดิมมักขาดความน่าสนใจและไม่สร้างปฏิสัมพันธ์ที่ดึงดูดเยาวชน ในขณะที่เกมปริศนาอักษรไขว้ซึ่งเป็นเครื่องมือส่งเสริมทักษะคำศัพท์ยังจำกัดอยู่บนตาราง 2 มิติเดิม ๆ ทำให้ขาดความท้าทายและการเชื่อมโยงกับประเด็นสังคม
 
-คณะผู้พัฒนาจึงสร้างสรรค์เกม “Crossworld” เพื่อให้เยาวชนได้เรียนรู้และตระหนักถึงปัญหาสิ่งแวดล้อมอย่างสนุกสนาน โดยผู้เล่นเริ่มภารกิจในบทบาทผู้พิทักษ์กาลเวลา ผู้ต้องเดินทางย้อนไปยังทวีปต่าง ๆ เพื่อไขปริศนาอักษรไขว้ 3 มิติที่เกี่ยวข้องกับวิกฤตสิ่งแวดล้อมในแต่ละพื้นที่ พร้อมผสานความรู้ด้านความยั่งยืน พลังงานสะอาด และเป้าหมายการพัฒนาที่ยั่งยืน (UN SDGs) เข้ากับคำศัพท์และคำใบ้ในเกม
+คณะผู้พัฒนาจึงสร้างสรรค์เกม “CrossWorld” เพื่อให้เยาวชนได้เรียนรู้และตระหนักถึงปัญหาสิ่งแวดล้อมอย่างสนุกสนาน โดยผู้เล่นเริ่มภารกิจในบทบาทผู้พิทักษ์กาลเวลา ผู้ต้องเดินทางย้อนไปยังทวีปต่าง ๆ เพื่อไขปริศนาอักษรไขว้ 3 มิติที่เกี่ยวข้องกับวิกฤตสิ่งแวดล้อมในแต่ละพื้นที่ พร้อมผสานความรู้ด้านความยั่งยืน พลังงานสะอาด และเป้าหมายการพัฒนาที่ยั่งยืน (UN SDGs) เข้ากับคำศัพท์และคำใบ้ในเกม
 
 เกมนี้ใช้แนวคิด Gamification เพื่อสร้างแรงจูงใจในการเรียนรู้ ผ่านระบบด่านตามทวีป การหมุนมุมมองปริศนาเพื่อวิเคราะห์จุดตัดของคำศัพท์ และการปลดล็อกความก้าวหน้าเมื่อฟื้นฟูระบบนิเวศจำลองได้สำเร็จ รวมถึงใช้ปัญญาประดิษฐ์เชิงสร้างสรรค์ (Generative AI) เพื่อสร้างเนื้อหาและปริศนาใหม่ได้อย่างต่อเนื่อง
 
-Crossworld จึงไม่ใช่เพียงเกมฝึกคำศัพท์ แต่เป็นสื่อการเรียนรู้ที่ช่วยปลูกฝังจิตสำนึกรักษ์โลกให้แก่คนรุ่นใหม่ และหวังให้ผู้เล่นนำแนวคิดด้านความยั่งยืนไปปรับใช้ในชีวิตประจำวันได้อย่างแท้จริง
+CrossWorld จึงไม่ใช่เพียงเกมฝึกคำศัพท์ แต่เป็นสื่อการเรียนรู้ที่ช่วยปลูกฝังจิตสำนึกรักษ์โลกให้แก่คนรุ่นใหม่ และหวังให้ผู้เล่นนำแนวคิดด้านความยั่งยืนไปปรับใช้ในชีวิตประจำวันได้อย่างแท้จริง
 
-**คำสำคัญ (Keywords):** Crossworld, 3D Crossword, Spatial Thinking, Gamification, Sustainability, UN SDGs, Generative AI, Game-based Learning
+**คำสำคัญ (Keywords):** CrossWorld, 3D Crossword, Spatial Thinking, Gamification, Sustainability, UN SDGs, Generative AI, Game-based Learning
 
 ---
 
@@ -113,7 +113,7 @@ Crossworld จึงไม่ใช่เพียงเกมฝึกคำศ
 
 # วัตถุประสงค์และเป้าหมาย
 
-1. เพื่อออกแบบและพัฒนาเกมปริศนาอักษรไขว้ในรูปแบบ 3 มิติ ชื่อว่า Crossworld โดยประยุกต์ใช้เทคโนโลยีเว็บร่วมกับ Tauri, Svelte และ Threlte ให้สามารถทำงานได้อย่างมีประสิทธิภาพและรองรับการใช้งานบนระบบปฏิบัติการเดสก์ท็อป
+1. เพื่อออกแบบและพัฒนาเกมปริศนาอักษรไขว้ในรูปแบบ 3 มิติ ชื่อว่า CrossWorld โดยประยุกต์ใช้เทคโนโลยีเว็บร่วมกับ Tauri, Svelte และ Threlte ให้สามารถทำงานได้อย่างมีประสิทธิภาพและรองรับการใช้งานบนระบบปฏิบัติการเดสก์ท็อป
 2. เพื่อประยุกต์ใช้ระบบปัญญาประดิษฐ์เชิงสร้างสรรค์ (Generative AI) ในการสร้างตารางปริศนาอักษรไขว้ คอนเซปต์ดวงดาวจำลอง และคำใบ้ที่เชื่อมโยงกับความรู้ด้านสิ่งแวดล้อมและแนวคิดความยั่งยืน (Sustainability) ได้อย่างชาญฉลาดและมีความหลากหลายไม่สิ้นสุด
 3. เพื่อสร้างสื่อการเรียนรู้ในรูปแบบ Game-based Learning ที่ช่วยส่งเสริมความรู้ ความเข้าใจ และปลูกฝังจิตสำนึกด้านการอนุรักษ์สิ่งแวดล้อม พลังงานสะอาด และการพัฒนาที่ยั่งยืน (UN SDGs) ให้แก่เยาวชนและผู้เล่นทั่วไปผ่านกระบวนการ Gamification
 4. เพื่อส่งเสริมและพัฒนาทักษะการคิดเชิงพื้นที่ (Spatial Thinking) และทักษะการแก้ไขปัญหาของผู้เล่น ผ่านการปฏิสัมพันธ์กับตารางปริศนาและมุมมองสามมิติรอบทิศทาง
@@ -210,7 +210,7 @@ Crossworld จึงไม่ใช่เพียงเกมฝึกคำศ
 
 #### หน้าเริ่มเกม (Main Menu)
 - กด **Start playing** เพื่อเข้าสู่หน้าเลือกด่าน
-- แสดงชื่อเกม Crossworld พร้อมแท็กธีมสิ่งแวดล้อม (Solar, Planet, Environment ฯลฯ)
+- แสดงชื่อเกม CrossWorld พร้อมแท็กธีมสิ่งแวดล้อม (Solar, Planet, Environment ฯลฯ)
 
 > *(วางภาพหน้า Main Menu)*
 
@@ -237,7 +237,7 @@ Crossworld จึงไม่ใช่เพียงเกมฝึกคำศ
 ## ทฤษฎีหลักการและเทคนิคหรือเทคโนโลยีที่ใช้
 
 ### หลักการและเหตุผลโดยย่อ
-วิกฤต Climate Change เป็นปัญหาเร่งด่วนที่ต้องสร้างความตระหนักรู้ในเยาวชน แต่สื่อเรียนรู้แบบเดิมมักขาดปฏิสัมพันธ์ ในขณะที่เกมอักษรไขว้ 2 มิติแบบเดิมขาดความท้าทายเชิงมิติสัมพันธ์และมักไม่สอดแทรกเนื้อหาสังคม Crossworld จึงผสาน Game-based Learning, Spatial Thinking และเนื้อหา UN SDGs เข้าด้วยกันผ่านปริศนา 3 มิติที่หมุนได้ พร้อมแผนใช้ Generative AI สร้างเนื้อหาต่อเนื่อง
+วิกฤต Climate Change เป็นปัญหาเร่งด่วนที่ต้องสร้างความตระหนักรู้ในเยาวชน แต่สื่อเรียนรู้แบบเดิมมักขาดปฏิสัมพันธ์ ในขณะที่เกมอักษรไขว้ 2 มิติแบบเดิมขาดความท้าทายเชิงมิติสัมพันธ์และมักไม่สอดแทรกเนื้อหาสังคม CrossWorld จึงผสาน Game-based Learning, Spatial Thinking และเนื้อหา UN SDGs เข้าด้วยกันผ่านปริศนา 3 มิติที่หมุนได้ พร้อมแผนใช้ Generative AI สร้างเนื้อหาต่อเนื่อง
 
 ### เทคโนโลยีที่ใช้
 
@@ -457,7 +457,7 @@ Crossworld จึงไม่ใช่เพียงเกมฝึกคำศ
 
 # ข้อสรุปและข้อเสนอแนะ
 
-“Crossworld” เป็นโปรแกรมเพื่อการเรียนรู้ที่ผสานความสนุกของเกมปริศนาเข้ากับทักษะการคิดเชิงพื้นที่และจิตสำนึกด้านความยั่งยืน ผู้เล่นได้ฝึกคำศัพท์ภาษาอังกฤษผ่านปริศนาอักษรไขว้ 3 มิติที่หมุนมุมมองได้ พร้อมเรียนรู้ประเด็นสิ่งแวดล้อมตามทวีปในรูปแบบที่ท้าทายและน่าจดจำ
+“CrossWorld” เป็นโปรแกรมเพื่อการเรียนรู้ที่ผสานความสนุกของเกมปริศนาเข้ากับทักษะการคิดเชิงพื้นที่และจิตสำนึกด้านความยั่งยืน ผู้เล่นได้ฝึกคำศัพท์ภาษาอังกฤษผ่านปริศนาอักษรไขว้ 3 มิติที่หมุนมุมมองได้ พร้อมเรียนรู้ประเด็นสิ่งแวดล้อมตามทวีปในรูปแบบที่ท้าทายและน่าจดจำ
 
 ในระยะปัจจุบัน ทีมพัฒนาได้สร้างต้นแบบที่เล่นได้จริงในด่าน Demo พร้อมสถาปัตยกรรมข้อมูลและฉาก 3 มิติที่เป็นแกนหลักของเกม คณะผู้จัดทำจะพัฒนาต่อเนื่องจนครบ 7 ทวีป เพิ่มระบบเสียง เนื้อเรื่อง และการสร้างเนื้อหาด้วย AI ตามเป้าหมายที่วางไว้ เพื่อให้เป็นสื่อการเรียนรู้ที่พร้อมเผยแพร่สู่กลุ่มเป้าหมายอย่างสมบูรณ์
 
@@ -498,7 +498,7 @@ Email: ________________
 ### วิธีที่ 1: รันจากซอร์สโค้ด (สำหรับพัฒนา / สาธิต)
 
 1. ติดตั้ง Node.js (แนะนำเวอร์ชัน LTS) และ Rust toolchain ตามเอกสาร Tauri  
-2. เปิดเทอร์มินัลแล้วไปยังโฟลเดอร์โปรเจกต์ Crossworld  
+2. เปิดเทอร์มินัลแล้วไปยังโฟลเดอร์โปรเจกต์ CrossWorld  
 3. ติดตั้งแพ็กเกจ:  
    ```bash
    npm install
@@ -518,7 +518,7 @@ Email: ________________
 1. ดาวน์โหลดไฟล์ติดตั้งจากลิงก์ที่คณะผู้พัฒนาเผยแพร่  
    *(ใส่ลิงก์ GitHub Releases / itch.io / Drive ที่นี่)*  
 2. แตกไฟล์หรือรันตัวติดตั้งตามระบบปฏิบัติการ (Windows `.msi` / `.exe` หรือ macOS `.dmg` / `.app`)  
-3. เปิดโปรแกรม Crossworld จากโฟลเดอร์ที่ติดตั้ง  
+3. เปิดโปรแกรม CrossWorld จากโฟลเดอร์ที่ติดตั้ง  
 
 > *(วางภาพขั้นตอนติดตั้งทีละขั้นเหมือนตัวอย่าง — แนะนำ 4–5 ภาพ)*
 
@@ -545,13 +545,13 @@ Email: ________________
 
 ## ข้อตกลงในการใช้ซอฟต์แวร์
 
-ซอฟต์แวร์นี้เป็นผลงานที่พัฒนาขึ้นโดย **นายชยพัทธ์ ผาคำ** จาก **โรงเรียนสาธิตมหาวิทยาลัยศรีนครินทรวิโรฒ ปทุมวัน** ภายใต้การดูแลของ **นางสาวกิตติญา กูลดี** ภายใต้โครงการ **Crossworld** ซึ่งสนับสนุนโดย สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ โดยมีวัตถุประสงค์เพื่อส่งเสริมให้นักเรียนและนักศึกษาได้เรียนรู้และฝึกทักษะในการพัฒนาซอฟต์แวร์ ลิขสิทธิ์ของซอฟต์แวร์นี้จึงเป็นของผู้พัฒนา ซึ่งผู้พัฒนาได้อนุญาตให้สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ เผยแพร่ซอฟต์แวร์นี้ตาม “ต้นฉบับ” โดยไม่มีการแก้ไขดัดแปลงใด ๆ ทั้งสิ้น ให้แก่บุคคลทั่วไปได้ใช้เพื่อประโยชน์ส่วนบุคคลหรือประโยชน์ทางการศึกษาที่ไม่มีวัตถุประสงค์ในเชิงพาณิชย์ โดยไม่คิดค่าตอบแทนการใช้ซอฟต์แวร์ ดังนั้น สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ จึงไม่มีหน้าที่ในการดูแล บำรุงรักษา จัดการอบรมการใช้งาน หรือพัฒนาประสิทธิภาพซอฟต์แวร์ รวมทั้งไม่รับรองความถูกต้องหรือประสิทธิภาพการทำงานของซอฟต์แวร์ ตลอดจนไม่รับประกันความเสียหายต่าง ๆ อันเกิดจากการใช้ซอฟต์แวร์นี้ทั้งสิ้น
+ซอฟต์แวร์นี้เป็นผลงานที่พัฒนาขึ้นโดย **นายชยพัทธ์ ผาคำ** จาก **โรงเรียนสาธิตมหาวิทยาลัยศรีนครินทรวิโรฒ ปทุมวัน** ภายใต้การดูแลของ **นางสาวกิตติญา กูลดี** ภายใต้โครงการ **CrossWorld** ซึ่งสนับสนุนโดย สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ โดยมีวัตถุประสงค์เพื่อส่งเสริมให้นักเรียนและนักศึกษาได้เรียนรู้และฝึกทักษะในการพัฒนาซอฟต์แวร์ ลิขสิทธิ์ของซอฟต์แวร์นี้จึงเป็นของผู้พัฒนา ซึ่งผู้พัฒนาได้อนุญาตให้สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ เผยแพร่ซอฟต์แวร์นี้ตาม “ต้นฉบับ” โดยไม่มีการแก้ไขดัดแปลงใด ๆ ทั้งสิ้น ให้แก่บุคคลทั่วไปได้ใช้เพื่อประโยชน์ส่วนบุคคลหรือประโยชน์ทางการศึกษาที่ไม่มีวัตถุประสงค์ในเชิงพาณิชย์ โดยไม่คิดค่าตอบแทนการใช้ซอฟต์แวร์ ดังนั้น สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ จึงไม่มีหน้าที่ในการดูแล บำรุงรักษา จัดการอบรมการใช้งาน หรือพัฒนาประสิทธิภาพซอฟต์แวร์ รวมทั้งไม่รับรองความถูกต้องหรือประสิทธิภาพการทำงานของซอฟต์แวร์ ตลอดจนไม่รับประกันความเสียหายต่าง ๆ อันเกิดจากการใช้ซอฟต์แวร์นี้ทั้งสิ้น
 
 ---
 
 ## License Agreement
 
-This software is a work developed by **Mr. Chayapat Phakham** from Srinakharinwirot University Prasarnmit Demonstration School (Patumwan) under the provision of **Ms. Kittiya Kuldee** under **Crossworld**, which has been supported by the National Science and Technology Development Agency (NSTDA), in order to encourage pupils and students to learn and practice their skills in developing software. Therefore, the intellectual property of this software shall belong to the developer and the developer gives NSTDA a permission to distribute this software as an “as is” and non-modified software for a temporary and non-exclusive use without remuneration to anyone for his or her own purpose or academic purpose, which are not commercial purposes. In this connection, NSTDA shall not be responsible to the user for taking care, maintaining, training, or developing the efficiency of this software. Moreover, NSTDA shall not be liable for any error, software efficiency and damages in connection with or arising out of the use of the software.
+This software is a work developed by **Mr. Chayapat Phakham** from Srinakharinwirot University Prasarnmit Demonstration School (Patumwan) under the provision of **Ms. Kittiya Kuldee** under **CrossWorld**, which has been supported by the National Science and Technology Development Agency (NSTDA), in order to encourage pupils and students to learn and practice their skills in developing software. Therefore, the intellectual property of this software shall belong to the developer and the developer gives NSTDA a permission to distribute this software as an “as is” and non-modified software for a temporary and non-exclusive use without remuneration to anyone for his or her own purpose or academic purpose, which are not commercial purposes. In this connection, NSTDA shall not be responsible to the user for taking care, maintaining, training, or developing the efficiency of this software. Moreover, NSTDA shall not be liable for any error, software efficiency and damages in connection with or arising out of the use of the software.
 
 ---
 
@@ -562,7 +562,7 @@ This software is a work developed by **Mr. Chayapat Phakham** from Srinakharinwi
 - [x] พัฒนาใหม่
 
 ### 2. เป็นผลงานที่มีเป้าหมายเพื่อการพัฒนาที่ยั่งยืน (SDGs) ด้านใด
-*(เลือกข้อที่ตรงที่สุด — Crossworld ครอบคลุมหลายข้อ แต่ข้อหลักที่แนะนำ)*  
+*(เลือกข้อที่ตรงที่สุด — CrossWorld ครอบคลุมหลายข้อ แต่ข้อหลักที่แนะนำ)*  
 - [x] **Quality Education** — การศึกษาที่เท่าเทียมและการเรียนรู้ตลอดชีวิต  
 - [x] **Climate Action** — มาตรการเร่งด่วนเพื่อรับมือการเปลี่ยนแปลงสภาพภูมิอากาศ  
 - [x] **Affordable and Clean Energy** — พลังงานที่เข้าถึงได้ เชื่อถือได้ ยั่งยืน  

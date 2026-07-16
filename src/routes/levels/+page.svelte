@@ -8,7 +8,6 @@
   <header>
     <button class="back" onclick={() => goto(`${base}/`)}>← เมนู</button>
     <div class="heading">
-      <span class="eyebrow">เจ็ดทวีป</span>
       <h1>เลือกทวีป</h1>
     </div>
   </header>
@@ -25,7 +24,7 @@
           <span class="index">{String(i + 1).padStart(2, "0")}</span>
           <span class="name">{level.name}</span>
           <span class="blurb">{level.blurb}</span>
-          <span class="status">{locked ? "เร็ว ๆ นี้" : "เล่น ▸"}</span>
+          <span class="status">{locked ? "อยู่ในการพัฒนา" : "เล่น ▸"}</span>
         </button>
       </li>
     {/each}
@@ -37,9 +36,16 @@
     min-height: 100vh;
     box-sizing: border-box;
     padding: 3rem clamp(1.5rem, 6vw, 5rem);
-    background:
-      radial-gradient(circle at 90% 0%, rgba(246, 201, 21, 0.12), transparent 40%),
-      radial-gradient(circle at 0% 100%, rgba(34, 197, 94, 0.12), transparent 45%),
+    background: radial-gradient(
+        circle at 90% 0%,
+        rgba(246, 201, 21, 0.12),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 0% 100%,
+        rgba(34, 197, 94, 0.12),
+        transparent 45%
+      ),
       var(--cream);
     color: var(--ink);
   }
@@ -81,7 +87,9 @@
     border: 2px solid var(--forest);
     border-radius: var(--radius-pill);
     cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    transition:
+      background 0.15s,
+      color 0.15s;
   }
   .back:hover {
     color: var(--cream);
@@ -109,7 +117,10 @@
     border-radius: var(--radius-card);
     cursor: pointer;
     box-shadow: var(--shadow-soft);
-    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    transition:
+      transform 0.15s,
+      box-shadow 0.15s,
+      border-color 0.15s;
   }
   .card:hover {
     transform: translateY(-4px);

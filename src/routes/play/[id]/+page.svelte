@@ -7,6 +7,7 @@
   import Hud from "$lib/components/Hud.svelte";
   import { CrosswordGame } from "$lib/crossword/game.svelte";
   import { findLevel } from "$lib/levels";
+  import { progress } from "$lib/progress.svelte";
 
   // Resolve the level from the route param and build its game. Rebuilds when
   // navigating between levels (the id is reactive via $derived).
@@ -24,8 +25,9 @@
   });
 
   $effect(() => {
-    if (game?.isComplete && elapsedMs === null) {
+    if (game?.isComplete && elapsedMs === null && level) {
       elapsedMs = Date.now() - startTime;
+      progress.markComplete(level.id, elapsedMs);
     }
   });
 

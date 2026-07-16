@@ -11,6 +11,7 @@
   } from "@threlte/extras";
   import type { IntersectionEvent } from "@threlte/extras";
   import type { ComponentProps } from "svelte";
+  import { onMount } from "svelte";
   import { puzzleCenter } from "$lib/crossword/puzzle";
   import type { CrosswordGame } from "$lib/crossword/game.svelte";
   import type { Axis } from "$lib/crossword/types";
@@ -64,12 +65,40 @@
   interactivity();
   // Access Threlte's own internal raycaster and pointer NDC so the debug line
   // shows the EXACT ray used for hit detection, not a separately computed one.
-  const { raycaster: _rc, pointer: _pointer } = useInteractivity();
+  const {
+    raycaster: _rc,
+    pointer: _pointer,
+    initialClick,
+    initialClickTime,
+    initialHits,
+    clickDistanceThreshold,
+    clickTimeThreshold,
+  } = useInteractivity();
   // Edges creates THREE.LineSegments as children of each Mesh. The default
   // line hit threshold is 1 world unit — larger than the gap between cubes —
   // so lines were being "hit" before the ray reached the box geometry.
   _rc.params.Line = { threshold: 0 };
   _rc.params.Points = { threshold: 0 };
+
+  const { camera, renderer } = useThrelte();
+
+  // Click empty canvas space → deselect. Shares Threlte's drag thresholds so
+  // orbiting with TrackballControls does not clear the selection.
+  onMount(() => {
+    const el = renderer.domElement;
+    const onClick = (event: MouseEvent) => {
+      const dx = event.offsetX - initialClick[0];
+      const dy = event.offsetY - initialClick[1];
+      const delta = Math.round(Math.hypot(dx, dy));
+      if (delta > clickDistanceThreshold) return;
+      if (performance.now() - initialClickTime > clickTimeThreshold) return;
+      if (initialHits.length > 0) return;
+      game.clearSelection();
+      game.hoverCell(null);
+    };
+    el.addEventListener("click", onClick);
+    return () => el.removeEventListener("click", onClick);
+  });
 
   // TrackballControls instance, shared with the orientation gizmo.
   // (Type comes from TrackballControls' bindable `ref`, avoiding the
@@ -107,7 +136,6 @@
   // Bounce direction: camera.up projected onto the plane perpendicular to the
   // word axis, so letters always appear to jump "up" relative to their reading
   // direction regardless of which 3-D axis the word runs along.
-  const { camera } = useThrelte();
   let bopDir = $state<[number, number, number]>([0, 1, 0]);
 
   // Compute target camera position + up so the given word axis reads left-to-right.

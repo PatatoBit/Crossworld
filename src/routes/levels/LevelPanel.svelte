@@ -3,6 +3,7 @@
   import { base } from "$app/paths";
   import { levels, type Level } from "$lib/levels";
   import { LEVEL_ANCHORS } from "$lib/globe/levelContinents";
+  import { progress } from "$lib/progress.svelte";
 
   let {
     activeId = null,
@@ -23,6 +24,10 @@
   const continentLevels = levels.filter((l) => l.id in LEVEL_ANCHORS);
   const otherLevels = levels.filter((l) => !(l.id in LEVEL_ANCHORS));
 
+  const completedCount = $derived(progress.completedCount);
+  const totalCount = $derived(progress.totalCount);
+  const progressPct = $derived(Math.round(progress.fraction * 100));
+
   function isHighlighted(level: Level): boolean {
     return level.id === activeId || level.id === hoveredId;
   }
@@ -30,6 +35,12 @@
   function levelNumber(level: Level): string {
     const idx = levels.findIndex((l) => l.id === level.id);
     return String(Math.max(0, idx)).padStart(2, "0");
+  }
+
+  function statusLabel(level: Level): string {
+    if (progress.isComplete(level.id)) return "ผ่านแล้ว";
+    if (level.puzzle) return "เล่น ▸";
+    return "เร็ว ๆ นี้";
   }
 
   function handleClick(level: Level) {
@@ -51,6 +62,22 @@
   <header>
     <h1>เลือกทวีป</h1>
     <p class="hint">ชี้หรือคลิกทวีปบนลูกโลก หรือเลือกจากรายการ</p>
+    <div
+      class="progress"
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={totalCount}
+      aria-valuenow={completedCount}
+      aria-label="ความคืบหน้าด่าน"
+    >
+      <div class="progress-meta">
+        <span class="progress-label">ความคืบหน้า</span>
+        <span class="progress-count">{completedCount}/{totalCount} ด่าน</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" style:width="{progressPct}%"></div>
+      </div>
+    </div>
   </header>
 
   {#if otherLevels.length > 0}
@@ -62,6 +89,7 @@
             <button
               use:itemRef={level.id}
               class:active={isHighlighted(level)}
+              class:done={progress.isComplete(level.id)}
               onclick={() => handleClick(level)}
               onpointerenter={() => onHover(level.id)}
               onpointerleave={() => onHover(null)}
@@ -71,7 +99,7 @@
                 <span class="name">{level.name}</span>
                 <span class="blurb">{level.blurb}</span>
               </span>
-              <span class="status">{level.puzzle ? "เล่น ▸" : "เร็ว ๆ นี้"}</span>
+              <span class="status">{statusLabel(level)}</span>
             </button>
           </li>
         {/each}
@@ -84,10 +112,11 @@
     <ul>
       {#each continentLevels as level (level.id)}
         <li>
-            <button
-              use:itemRef={level.id}
-              class:active={isHighlighted(level)}
-              class:locked={level.puzzle === null}
+          <button
+            use:itemRef={level.id}
+            class:active={isHighlighted(level)}
+            class:done={progress.isComplete(level.id)}
+            class:locked={level.puzzle === null}
             onclick={() => handleClick(level)}
             onpointerenter={() => onHover(level.id)}
             onpointerleave={() => onHover(null)}
@@ -97,7 +126,7 @@
               <span class="name">{level.name}</span>
               <span class="blurb">{level.blurb}</span>
             </span>
-            <span class="status">{level.puzzle ? "เล่น ▸" : "เร็ว ๆ นี้"}</span>
+            <span class="status">{statusLabel(level)}</span>
           </button>
         </li>
       {/each}
@@ -154,6 +183,43 @@
     line-height: 1.45;
     color: var(--muted);
   }
+  .progress {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .progress-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--green-strong);
+  }
+  .progress-count {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--forest);
+  }
+  .progress-track {
+    height: 0.45rem;
+    overflow: hidden;
+    background: var(--cream-soft);
+    border: 1px solid rgba(13, 42, 26, 0.08);
+    border-radius: var(--radius-pill);
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--green-strong));
+    border-radius: inherit;
+    transition: width 0.35s ease;
+  }
   section {
     display: flex;
     flex-direction: column;
@@ -204,9 +270,16 @@
     background: var(--green-soft);
     border-color: rgba(22, 163, 74, 0.35);
   }
+  li button.done:not(.active) {
+    background: rgba(34, 197, 94, 0.08);
+  }
   li button.locked .status {
     color: var(--muted);
     background: var(--cream-soft);
+  }
+  li button.done .status {
+    color: var(--green-strong);
+    background: var(--green-soft);
   }
   .num {
     display: inline-flex;
@@ -220,7 +293,8 @@
     background: var(--yellow);
     border-radius: var(--radius-pill);
   }
-  li button.active .num {
+  li button.active .num,
+  li button.done .num {
     color: #fff;
     background: var(--green);
   }

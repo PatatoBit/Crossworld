@@ -1,8 +1,5 @@
 <script lang="ts">
-  import {
-    navTutorial,
-    type NavTutorialStep,
-  } from "$lib/tutorial.svelte";
+  import { navTutorial, type NavTutorialStep } from "$lib/tutorial.svelte";
   import MouseHint from "./MouseHint.svelte";
 
   const copy: Record<
@@ -16,33 +13,33 @@
     }
   > = {
     intro: {
-      eyebrow: "บทสอน · การนำทาง",
-      title: "หมุน มอง และสลับแถว",
-      body: "ก่อนไขปริศนา ลองควบคุมมุมมอง 3 มิติสักครู่ — ทำตามทีละขั้น",
+      eyebrow: "แนะนำการเล่น",
+      title: "การหมุน ซูม และสลับแถว",
+      body: "เรียนรู้วิธีการเล่น CrossWorld",
       cta: "เริ่มเรียน",
     },
     rotate: {
-      eyebrow: "ขั้นที่ 1 จาก 3",
-      title: "ลากเพื่อหมุน",
-      body: "กดค้างปุ่มซ้ายของเมาส์แล้วลาก เพื่อหมุนรอบปริศนา",
+      eyebrow: "1/3",
+      title: "ลากเมาส์เพื่อหมุน",
+      body: "กดแล้วลากเมาส์ เพื่อหมุนกล้องรอบเกม",
       hint: "rotate",
     },
     zoom: {
-      eyebrow: "ขั้นที่ 2 จาก 3",
+      eyebrow: "2/3",
       title: "ซูมเข้า–ออก",
       body: "เลื่อนล้อเมาส์ เพื่อซูมเข้าใกล้หรือถอยออก",
       hint: "zoom",
     },
     intersect: {
-      eyebrow: "ขั้นที่ 3 จาก 3",
-      title: "ดับเบิลคลิกที่จุดตัด",
-      body: "ดับเบิลคลิกช่องที่คำตัดกัน เพื่อสลับไปยังแถวที่ตัดผ่านช่องนั้น",
+      eyebrow: "3/3",
+      title: "คลิกสองรอบที่จุดตัดระหว่างสองแถว",
+      body: "เพื่อสลับไปยังแถวที่ตัดผ่านช่องนั้น",
       hint: "dblclick",
     },
     done: {
       eyebrow: "พร้อมแล้ว",
-      title: "ควบคุมมุมมองได้แล้ว",
-      body: "เลือกช่อง ดูคำใบ้ทางขวา แล้วพิมพ์ตัวอักษรเพื่อไขปริศนาได้เลย",
+      title: "จบการสอน",
+      body: "เริ่มไขปริศนากันได้เลย",
       cta: "เริ่มเล่น",
     },
   };
@@ -76,7 +73,11 @@
         {#if progressIndex >= 0}
           <div class="dots" aria-hidden="true">
             {#each [0, 1, 2] as i}
-              <span class="dot" class:on={i <= progressIndex} class:now={i === progressIndex}></span>
+              <span
+                class="dot"
+                class:on={i <= progressIndex}
+                class:now={i === progressIndex}
+              ></span>
             {/each}
           </div>
           <p class="wait">ลองทำตามด้านบน — ขั้นจะเดินต่ออัตโนมัติ</p>
@@ -87,7 +88,8 @@
             <button class="primary" onclick={onCta}>{content.cta}</button>
           {/if}
           {#if step !== "done"}
-            <button class="skip" onclick={() => navTutorial.skip()}>ข้ามบทสอน</button>
+            <button class="skip" onclick={() => navTutorial.skip()}>ข้าม</button
+            >
           {/if}
         </div>
       </div>

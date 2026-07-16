@@ -152,7 +152,7 @@
       {/each}
     </ul>
     <button class="feedback" type="button" onclick={openFeedback}>
-      ให้ความเห็น / เสนอแนะ
+      แสดงความเห็น / เสนอแนะ
     </button>
   </section>
 </aside>

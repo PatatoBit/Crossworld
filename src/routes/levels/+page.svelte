@@ -91,11 +91,13 @@
     background: #15334f;
     /* panel width + horizontal margins */
     --panel-slot: calc(min(340px, calc(100vw - 2.5rem)) + 2.5rem);
+    --panel-slot-bottom: 0px;
   }
   .canvas-wrap {
     position: absolute;
     inset: 0;
     right: var(--panel-slot);
+    bottom: var(--panel-slot-bottom);
   }
   .canvas-wrap :global(canvas) {
     display: block;
@@ -122,5 +124,13 @@
   .back:hover {
     background: rgba(232, 228, 217, 0.12);
     border-color: #e8e4d9;
+  }
+
+  @media (max-width: 768px) {
+    .select {
+      --panel-slot: 0px;
+      /* panel height + vertical margins (matches LevelPanel mobile) */
+      --panel-slot-bottom: calc(min(42vh, 280px) + 2.5rem);
+    }
   }
 </style>

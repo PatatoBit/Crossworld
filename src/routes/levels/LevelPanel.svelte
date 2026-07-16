@@ -125,6 +125,19 @@
     box-shadow: var(--shadow-lift);
     pointer-events: auto;
   }
+
+  @media (max-width: 768px) {
+    .panel {
+      top: auto;
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      width: auto;
+      height: min(42vh, 280px);
+      gap: 0.85rem;
+      padding: 1.1rem 1rem;
+    }
+  }
   header {
     flex-shrink: 0;
   }

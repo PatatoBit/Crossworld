@@ -45,6 +45,12 @@ export class CrosswordGame {
     return this.built.puzzle.words.find((w) => w.id === id) ?? null;
   }
 
+  /** True when every cell in the word has a player entry (correct or not). */
+  isWordFilled(wordId: string): boolean {
+    const keys = this.built.wordCells.get(wordId) ?? [];
+    return keys.length > 0 && keys.every((key) => this.entries.has(key));
+  }
+
   /** True when every cell in the word is filled with the correct letter. */
   isWordComplete(wordId: string): boolean {
     const keys = this.built.wordCells.get(wordId) ?? [];
@@ -54,10 +60,22 @@ export class CrosswordGame {
     });
   }
 
+  /** True when the word is fully filled but at least one letter is wrong. */
+  isWordIncorrect(wordId: string): boolean {
+    return this.isWordFilled(wordId) && !this.isWordComplete(wordId);
+  }
+
   /** Word ids whose answers are fully and correctly filled. */
   get completedWordIds(): Set<string> {
     return new Set(
       this.built.puzzle.words.filter((w) => this.isWordComplete(w.id)).map((w) => w.id),
+    );
+  }
+
+  /** Word ids that are fully filled but incorrect. */
+  get incorrectWordIds(): Set<string> {
+    return new Set(
+      this.built.puzzle.words.filter((w) => this.isWordIncorrect(w.id)).map((w) => w.id),
     );
   }
 
@@ -68,6 +86,25 @@ export class CrosswordGame {
       for (const key of this.built.wordCells.get(wordId) ?? []) cells.add(key);
     }
     return cells;
+  }
+
+  /** Cell keys that belong to at least one fully-filled-but-incorrect word
+   *  and no completed word (completed green wins at intersections). */
+  get incorrectCells(): Set<string> {
+    const done = this.completedCells;
+    const cells = new Set<string>();
+    for (const wordId of this.incorrectWordIds) {
+      for (const key of this.built.wordCells.get(wordId) ?? []) {
+        if (!done.has(key)) cells.add(key);
+      }
+    }
+    return cells;
+  }
+
+  /** Whether the currently highlighted word is filled but incorrect. */
+  get highlightedWordIncorrect(): boolean {
+    const id = this.selectedWordId ?? this.hoveredWordId;
+    return id !== null && this.isWordIncorrect(id);
   }
 
   /** True when every word in the puzzle is correctly filled. */

@@ -24,18 +24,26 @@
   function updatePanelAnchors() {
     if (!container || !panelEl) return;
     const box = container.getBoundingClientRect();
-    const panelLeft = panelEl.getBoundingClientRect().left - box.left;
+    const panelRect = panelEl.getBoundingClientRect();
+    // Bottom-docked panel: anchors sit on the panel's top edge under each row.
+    const isBelow = panelRect.top - box.top > box.height * 0.4;
     const next: Record<string, ScreenAnchor> = {};
 
     for (const levelId of Object.keys(LEVEL_ANCHORS)) {
       const el = itemRefs[levelId];
       if (!el) continue;
       const rect = el.getBoundingClientRect();
-      next[levelId] = {
-        x: panelLeft,
-        y: rect.top - box.top + rect.height / 2,
-        visible: true,
-      };
+      next[levelId] = isBelow
+        ? {
+            x: rect.left - box.left + rect.width / 2,
+            y: panelRect.top - box.top,
+            visible: true,
+          }
+        : {
+            x: panelRect.left - box.left,
+            y: rect.top - box.top + rect.height / 2,
+            visible: true,
+          };
     }
 
     panelAnchors = next;
@@ -60,6 +68,10 @@
   });
 
   function connectorPath(panel: ScreenAnchor, globe: ScreenAnchor): string {
+    if (panel.y > globe.y) {
+      const midY = (panel.y + globe.y) * 0.5;
+      return `M ${panel.x} ${panel.y} Q ${panel.x} ${midY} ${globe.x} ${globe.y}`;
+    }
     const midX = (panel.x + globe.x) * 0.5;
     return `M ${panel.x} ${panel.y} Q ${midX} ${panel.y} ${globe.x} ${globe.y}`;
   }

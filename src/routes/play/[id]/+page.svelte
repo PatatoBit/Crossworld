@@ -118,6 +118,26 @@
     border-left: 1px solid rgba(13, 42, 26, 0.08);
     background: var(--cream);
   }
+
+  @media (max-width: 768px) {
+    .layout {
+      flex-direction: column;
+    }
+    .canvas-wrap {
+      flex: 1 1 auto;
+      min-height: 0;
+      height: auto;
+    }
+    .sidebar {
+      flex: 0 0 auto;
+      min-width: 0;
+      width: 100%;
+      height: auto;
+      max-height: 42vh;
+      border-left: none;
+      border-top: 1px solid rgba(13, 42, 26, 0.08);
+    }
+  }
   .back {
     position: absolute;
     top: 1.25rem;

@@ -27,6 +27,10 @@
   function isComplete(wordId: string): boolean {
     return game.completedWordIds.has(wordId);
   }
+
+  function isIncorrect(wordId: string): boolean {
+    return game.incorrectWordIds.has(wordId);
+  }
 </script>
 
 <div class="hud">
@@ -45,6 +49,7 @@
               <button
                 class:active={isActive(word.id)}
                 class:complete={isComplete(word.id)}
+                class:incorrect={isIncorrect(word.id)}
                 onclick={() => game.selectWord(word.id)}
               >
                 <span class="num">{isComplete(word.id) ? "✓" : num}</span>
@@ -148,6 +153,17 @@
   li button.complete .clue {
     color: var(--green-strong);
   }
+  li button.incorrect {
+    background: var(--yellow-soft);
+    border-color: rgba(234, 179, 8, 0.5);
+  }
+  li button.incorrect.active {
+    background: var(--yellow-soft);
+    border-color: rgba(217, 119, 6, 0.55);
+  }
+  li button.incorrect .clue {
+    color: var(--forest);
+  }
   .num {
     flex-shrink: 0;
     display: inline-flex;
@@ -168,6 +184,14 @@
   li button.complete .num {
     color: var(--green-strong);
     background: rgba(74, 222, 128, 0.35);
+  }
+  li button.incorrect .num {
+    color: var(--forest);
+    background: var(--yellow);
+  }
+  li button.incorrect.active .num {
+    color: var(--forest);
+    background: var(--yellow);
   }
   .clue {
     font-size: 0.85rem;
@@ -201,5 +225,12 @@
   .toggle:hover {
     background: var(--forest);
     color: var(--cream);
+  }
+
+  @media (max-width: 768px) {
+    .hud {
+      gap: 1rem;
+      padding: 1.15rem 1.1rem;
+    }
   }
 </style>

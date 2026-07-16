@@ -4,8 +4,6 @@
 </script>
 
 <main class="menu">
-  <span class="eyebrow">ปริศนาที่เติบโตเพื่อโลกที่ดีขึ้น</span>
-
   <div class="title">
     <h1>Cross<span class="accent">World</span></h1>
     <p class="tagline">

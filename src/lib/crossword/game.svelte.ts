@@ -107,6 +107,12 @@ export class CrosswordGame {
     return id !== null && this.isWordIncorrect(id);
   }
 
+  /** Whether the currently highlighted word is fully and correctly filled. */
+  get highlightedWordComplete(): boolean {
+    const id = this.selectedWordId ?? this.hoveredWordId;
+    return id !== null && this.isWordComplete(id);
+  }
+
   /** True when every word in the puzzle is correctly filled. */
   get isComplete(): boolean {
     return this.built.puzzle.words.every((w) => this.isWordComplete(w.id));

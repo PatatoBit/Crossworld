@@ -5,18 +5,23 @@
  */
 export const sceneColors = {
   cell: {
-    default: { color: "#2e7d4f", emissive: "#14532d", edge: "#7fd3a0" },
-    highlighted: { color: "#22c55e", emissive: "#16a34a", edge: "#e6f9b5" },
+    /** Unsolved cells — muted stone so green is reserved for correct words. */
+    default: { color: "#7a8578", emissive: "#3d4a40", edge: "#c5cec0" },
+    /** Selected/hovered line while the word is still unsolved. */
+    highlighted: { color: "#9aa696", emissive: "#5c6f62", edge: "#e4ebe4" },
     /** Active cursor cell — brighter yellow than incorrect. */
     active: { color: "#f6c915", emissive: "#eab308", edge: "#fff3bf" },
-    completed: { color: "#4ade80", emissive: "#22c55e", edge: "#bbf7d0" },
+    /** Fully correct word — the eco green tint. */
+    completed: { color: "#2e7d4f", emissive: "#14532d", edge: "#7fd3a0" },
+    /** Selected/hovered line when that word is fully correct. */
+    highlightedComplete: { color: "#22c55e", emissive: "#16a34a", edge: "#e6f9b5" },
     /** Fully filled but wrong — amber so it reads as a warning. */
     incorrect: { color: "#eab308", emissive: "#ca8a04", edge: "#fde68a" },
     /** Selected/hovered line when that word is filled incorrectly. */
     highlightedIncorrect: { color: "#f59e0b", emissive: "#d97706", edge: "#fef08a" },
   },
   letter: "#f4f2e6",
-  number: "#a3d9b1",
+  number: "#b8c4b4",
   rayLine: "#f6c915",
   rayHit: "#f43f5e",
   globe: {

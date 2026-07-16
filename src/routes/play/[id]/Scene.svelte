@@ -358,6 +358,7 @@
     {@const done = game.completedCells.has(cell.key)}
     {@const wrong = game.incorrectCells.has(cell.key)}
     {@const litWrong = lit && game.highlightedWordIncorrect}
+    {@const litDone = lit && game.highlightedWordComplete}
     {@const active = cell.key === game.selectedCellKey}
     {@const order = game.highlightedOrder.get(cell.key)}
     {@const bopT = waveElapsed !== null && order !== undefined ? Math.max(0, Math.min((waveElapsed - (order - 1) * BOP_STAGGER) / BOP_DURATION, 1)) : 0}
@@ -391,13 +392,15 @@
           ? sceneColors.cell.active
           : litWrong
             ? sceneColors.cell.highlightedIncorrect
-            : lit
-              ? sceneColors.cell.highlighted
-              : done
-                ? sceneColors.cell.completed
-                : wrong
-                  ? sceneColors.cell.incorrect
-                  : sceneColors.cell.default}
+            : litDone
+              ? sceneColors.cell.highlightedComplete
+              : lit
+                ? sceneColors.cell.highlighted
+                : done
+                  ? sceneColors.cell.completed
+                  : wrong
+                    ? sceneColors.cell.incorrect
+                    : sceneColors.cell.default}
         <T.BoxGeometry args={[0.9, 0.9, 0.9]} />
         <T.MeshStandardMaterial
           color={tone.color}

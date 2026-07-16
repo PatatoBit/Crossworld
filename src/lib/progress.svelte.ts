@@ -42,6 +42,19 @@ class CampaignProgress {
     return levelId in this.records;
   }
 
+  /**
+   * A level is playable only after every preceding campaign level is cleared.
+   * The first level (tutorial / demo) is always unlocked.
+   */
+  isUnlocked(levelId: string): boolean {
+    const idx = levels.findIndex((l) => l.id === levelId);
+    if (idx < 0) return false;
+    for (let i = 0; i < idx; i++) {
+      if (!this.isComplete(levels[i].id)) return false;
+    }
+    return true;
+  }
+
   get completedCount(): number {
     return Object.keys(this.records).length;
   }
@@ -67,6 +80,17 @@ class CampaignProgress {
     };
     this.records = { ...this.records, [levelId]: next };
     save(this.records);
+  }
+
+  /** Wipe all saved level clears (localStorage + in-memory). */
+  reset(): void {
+    this.records = {};
+    if (typeof localStorage === "undefined") return;
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // Private mode — in-memory wipe above is enough for this session.
+    }
   }
 }
 

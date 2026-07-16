@@ -6,6 +6,7 @@
   import LevelPanel from "./LevelPanel.svelte";
   import LevelConnectors from "./LevelConnectors.svelte";
   import { findLevel } from "$lib/levels";
+  import { progress } from "$lib/progress.svelte";
   import type { ScreenAnchor } from "$lib/globe/levelContinents";
 
   let activeId = $state<string | null>(null);
@@ -44,7 +45,9 @@
   function handleGlobeSelect(id: string) {
     activeId = id;
     const level = findLevel(id);
-    if (level?.puzzle) goto(`${base}/play/${id}`);
+    if (level?.puzzle && progress.isUnlocked(id)) {
+      goto(`${base}/play/${id}`);
+    }
   }
 </script>
 

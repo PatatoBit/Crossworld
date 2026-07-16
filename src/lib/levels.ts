@@ -11,9 +11,10 @@ import {
 } from "./crossword/continents";
 
 /**
- * The campaign levels: a standalone demo followed by the 7 continents in
- * ascending difficulty (North America → Antarctica). Each continent puzzle
- * is themed on that region's real sustainability crisis.
+ * The campaign levels in play order: tutorial (`demo`) first, then the 7
+ * continents in ascending difficulty (North America → Antarctica). Players
+ * must clear each level before the next unlocks (see `progress.isUnlocked`).
+ * Each continent puzzle is themed on that region's sustainability crisis.
  *
  * `/play/[id]` looks the level up here by `id`.
  */
@@ -30,8 +31,8 @@ export interface Level {
 export const levels: Level[] = [
   {
     id: "demo",
-    name: "ตัวอย่าง",
-    blurb: "ลองเล่น CrossWorld เรื่องพลังงานสะอาด",
+    name: "บทสอน",
+    blurb: "เริ่มที่นี่ — เรียนรู้การเล่นกับธีมพลังงานสะอาด",
     puzzle: samplePuzzle,
   },
   {

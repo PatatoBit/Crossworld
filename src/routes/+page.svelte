@@ -17,6 +17,9 @@
       เริ่มเล่น
       <span class="arrow">▸</span>
     </button>
+    <button class="secondary" onclick={() => goto(`${base}/about`)}>
+      เกี่ยวกับ / ตั้งค่า
+    </button>
   </nav>
 </main>
 
@@ -109,6 +112,12 @@
     border-color: var(--forest);
     color: var(--forest);
   }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
   .play {
     display: inline-flex;
     align-items: center;
@@ -134,6 +143,24 @@
   }
   .play:active {
     transform: translateY(0);
+  }
+  .secondary {
+    padding: 0.7rem 1.5rem;
+    font: 600 0.95rem var(--font-sans);
+    color: var(--forest);
+    background: transparent;
+    border: 2px solid rgba(13, 42, 26, 0.28);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition:
+      background 0.15s,
+      border-color 0.15s,
+      color 0.15s;
+  }
+  .secondary:hover {
+    color: var(--cream);
+    background: var(--forest);
+    border-color: var(--forest);
   }
   .arrow {
     font-size: 0.95em;

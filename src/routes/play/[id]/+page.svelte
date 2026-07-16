@@ -12,7 +12,10 @@
   // Resolve the level from the route param and build its game. Rebuilds when
   // navigating between levels (the id is reactive via $derived).
   const level = $derived(findLevel($page.params.id ?? ""));
-  const game = $derived(level?.puzzle ? new CrosswordGame(level.puzzle) : null);
+  const unlocked = $derived(level ? progress.isUnlocked(level.id) : false);
+  const game = $derived(
+    level?.puzzle && unlocked ? new CrosswordGame(level.puzzle) : null,
+  );
 
   let startTime = $state(0);
   let elapsedMs = $state<number | null>(null);
@@ -85,12 +88,17 @@
   </div>
 {:else}
   <div class="missing">
-    <h1>{level ? `ทวีป${level.name}กำลังอยู่ในการพัฒนา` : "ไม่พบด่าน"}</h1>
-    <p>
-      {level
-        ? "ปริศนาของทวีปนี้ยังไม่ได้สร้าง"
-        : "ไม่พบด่านที่ตรงกับที่อยู่นี้"}
-    </p>
+    {#if level && !unlocked}
+      <h1>ด่านนี้ยังล็อกอยู่</h1>
+      <p>ต้องผ่านด่านก่อนหน้าให้ครบก่อน — เริ่มจากบทสอน</p>
+    {:else}
+      <h1>{level ? `ทวีป${level.name}กำลังอยู่ในการพัฒนา` : "ไม่พบด่าน"}</h1>
+      <p>
+        {level
+          ? "ปริศนาของทวีปนี้ยังไม่ได้สร้าง"
+          : "ไม่พบด่านที่ตรงกับที่อยู่นี้"}
+      </p>
+    {/if}
     <button onclick={() => goto(`${base}/levels`)}>← กลับไปเลือกด่าน</button>
   </div>
 {/if}

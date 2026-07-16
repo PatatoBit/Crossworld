@@ -37,15 +37,21 @@
     return String(Math.max(0, idx)).padStart(2, "0");
   }
 
+  function isLocked(level: Level): boolean {
+    return !progress.isUnlocked(level.id);
+  }
+
   function statusLabel(level: Level): string {
     if (progress.isComplete(level.id)) return "ผ่านแล้ว";
+    if (isLocked(level)) return "ล็อก";
     if (level.puzzle) return "เล่น ▸";
     return "เร็ว ๆ นี้";
   }
 
   function handleClick(level: Level) {
     onSelect(level.id);
-    if (level.puzzle) goto(`${base}/play/${level.id}`);
+    if (isLocked(level) || !level.puzzle) return;
+    goto(`${base}/play/${level.id}`);
   }
 
   function itemRef(node: HTMLElement, levelId: string) {
@@ -82,7 +88,7 @@
 
   {#if otherLevels.length > 0}
     <section>
-      <h2>อื่น ๆ</h2>
+      <h2>เริ่มต้น</h2>
       <ul>
         {#each otherLevels as level (level.id)}
           <li>
@@ -90,6 +96,8 @@
               use:itemRef={level.id}
               class:active={isHighlighted(level)}
               class:done={progress.isComplete(level.id)}
+              class:locked={isLocked(level)}
+              aria-disabled={isLocked(level)}
               onclick={() => handleClick(level)}
               onpointerenter={() => onHover(level.id)}
               onpointerleave={() => onHover(null)}
@@ -116,7 +124,8 @@
             use:itemRef={level.id}
             class:active={isHighlighted(level)}
             class:done={progress.isComplete(level.id)}
-            class:locked={level.puzzle === null}
+            class:locked={isLocked(level)}
+            aria-disabled={isLocked(level)}
             onclick={() => handleClick(level)}
             onpointerenter={() => onHover(level.id)}
             onpointerleave={() => onHover(null)}
@@ -273,9 +282,20 @@
   li button.done:not(.active) {
     background: rgba(34, 197, 94, 0.08);
   }
+  li button.locked {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  li button.locked:hover {
+    background: transparent;
+  }
   li button.locked .status {
     color: var(--muted);
     background: var(--cream-soft);
+  }
+  li button.locked .num {
+    background: var(--cream-soft);
+    color: var(--muted);
   }
   li button.done .status {
     color: var(--green-strong);

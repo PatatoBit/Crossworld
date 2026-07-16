@@ -14,12 +14,52 @@
   import { puzzleCenter } from "$lib/crossword/puzzle";
   import type { CrosswordGame } from "$lib/crossword/game.svelte";
   import type { Axis } from "$lib/crossword/types";
+  import EarthMesh from "$lib/globe/EarthMesh.svelte";
+  import { LEVEL_ANCHORS } from "$lib/globe/levelContinents";
+  import { continentOrientation } from "$lib/globe/latLon";
   import { googleSansFontUrl } from "$lib/fonts";
   import { sceneColors } from "$lib/theme";
   // @ts-ignore – three r184 ships no .d.ts; runtime import works fine
   import * as THREE from "three";
 
-  let { game }: { game: CrosswordGame } = $props();
+  let {
+    game,
+    levelId = null,
+  }: {
+    game: CrosswordGame;
+    levelId?: string | null;
+  } = $props();
+
+  /** Lift the puzzle so the Earth can occupy the lower third of the frame. */
+  const PUZZLE_LIFT = 2.35;
+  /** Camera-local Earth: arc along the bottom, ~20% of viewport height. */
+  const EARTH_DIST = 10;
+  const EARTH_FOV_DEG = 50;
+  const EARTH_VIEW_FRAC = 0.2;
+  const EARTH_HALF_H =
+    EARTH_DIST * Math.tan(((EARTH_FOV_DEG / 2) * Math.PI) / 180);
+  const EARTH_SCALE = EARTH_VIEW_FRAC * 2 * EARTH_HALF_H;
+  const EARTH_CAM_POS: [number, number, number] = [
+    0,
+    -EARTH_HALF_H,
+    -EARTH_DIST,
+  ];
+
+  /**
+   * Place the level continent on the visible top arc (tilted slightly away
+   * from the camera) while keeping geographic north screen-up so the landmass
+   * reads upright.
+   */
+  function earthOrientation(id: string | null): [number, number, number] {
+    const anchor = id ? LEVEL_ANCHORS[id] : undefined;
+    if (!anchor) return [0, 0, 0];
+    const to = new THREE.Vector3(0, 0.9, 0.44);
+    const quat = continentOrientation(anchor.lat, anchor.lon, to);
+    const euler = new THREE.Euler().setFromQuaternion(quat);
+    return [euler.x, euler.y, euler.z];
+  }
+
+  const earthRot = $derived(earthOrientation(levelId));
 
   interactivity();
   // Access Threlte's own internal raycaster and pointer NDC so the debug line
@@ -72,13 +112,14 @@
 
   // Compute target camera position + up so the given word axis reads left-to-right.
   // Derived from: right = cross(forward, up) = wordDir.
-  // All targets sit at the same distance from the origin as the current camera.
+  // Orbit around the raised puzzle center (not world origin).
   function wordCameraTarget(axis: Axis, dist: number): [THREE.Vector3, THREE.Vector3] {
     const h = dist * 0.5;    // elevation component (sin 30°)
     const d = dist * 0.866;  // horizontal component (cos 30°)
-    if (axis === 'x') return [new THREE.Vector3(0, h, d),  new THREE.Vector3(0, 1, 0)];
-    if (axis === 'z') return [new THREE.Vector3(-d, h, 0), new THREE.Vector3(0, 1, 0)];
-                      return [new THREE.Vector3(d, 0, h),  new THREE.Vector3(0, 0, 1)];
+    const y = PUZZLE_LIFT;
+    if (axis === 'x') return [new THREE.Vector3(0, y + h, d),  new THREE.Vector3(0, 1, 0)];
+    if (axis === 'z') return [new THREE.Vector3(-d, y + h, 0), new THREE.Vector3(0, 1, 0)];
+                      return [new THREE.Vector3(d, y, h),  new THREE.Vector3(0, 0, 1)];
   }
 
   // Camera fly-to animation state (plain vars — drive THREE directly, not Svelte DOM).
@@ -93,6 +134,7 @@
   const _fwd = new THREE.Vector3();
   // Reuse a single Vector3 for the far end of the ray each frame.
   const _end = new THREE.Vector3();
+  const _pivot = new THREE.Vector3(0, PUZZLE_LIFT, 0);
 
   useTask((delta) => {
     // Restart bop and recompute bounce direction whenever the highlighted word changes.
@@ -142,7 +184,8 @@
         const word = game.built.puzzle.words.find((w) => w.id === selId);
         if (word) {
           const cam = camera.current;
-          const dist = Math.max(cam.position.length(), 8);
+          // Distance from the raised puzzle pivot, not world origin.
+          const dist = Math.max(cam.position.distanceTo(_pivot), 8);
           const [tp, tu] = wordCameraTarget(word.axis, dist);
           _camPosTgt = tp;
           _camUpTgt  = tu;
@@ -171,6 +214,62 @@
     _end.copy(o).addScaledVector(d, 30);
     (lineGeo as any).setFromPoints([o, _end]);
   });
+
+  // Keep trackball orbit centered on the raised puzzle.
+  $effect(() => {
+    if (!controls) return;
+    controls.target.set(0, PUZZLE_LIFT, 0);
+    controls.update();
+  });
+
+  /** Cube opacity for non-highlighted cells nearest / furthest from the lit word. */
+  const DIM_NEAR = 0.48;
+  const DIM_FAR = 0.14;
+
+  /** Min Euclidean distance from a cell to any cell in the highlighted word. */
+  function distToHighlight(
+    pos: [number, number, number],
+    litPositions: [number, number, number][],
+  ): number {
+    let min = Infinity;
+    for (const [hx, hy, hz] of litPositions) {
+      const dx = pos[0] - hx;
+      const dy = pos[1] - hy;
+      const dz = pos[2] - hz;
+      const d = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      if (d < min) min = d;
+    }
+    return min;
+  }
+
+  /** Positions of the currently highlighted word's cells (empty when idle). */
+  const litPositions = $derived.by((): [number, number, number][] => {
+    const id = game.selectedWordId ?? game.hoveredWordId;
+    if (!id) return [];
+    const keys = game.built.wordCells.get(id) ?? [];
+    return keys.map((key) => {
+      const c = game.built.cells.get(key)!;
+      return c.position;
+    });
+  });
+
+  /** Furthest non-highlighted cell distance — used to normalize the fade. */
+  const fadeMaxDist = $derived.by(() => {
+    if (litPositions.length === 0) return 0;
+    let max = 0;
+    for (const cell of cells) {
+      if (game.highlightedCells.has(cell.key)) continue;
+      const d = distToHighlight(cell.position, litPositions);
+      if (d > max) max = d;
+    }
+    return max;
+  });
+
+  function dimOpacity(pos: [number, number, number]): number {
+    if (fadeMaxDist <= 0) return DIM_NEAR;
+    const t = distToHighlight(pos, litPositions) / fadeMaxDist;
+    return DIM_NEAR + (DIM_FAR - DIM_NEAR) * t;
+  }
 </script>
 
 <svelte:window
@@ -199,10 +298,20 @@
   }}
 />
 
-<T.PerspectiveCamera makeDefault position={[7, 6, 9]} fov={50}>
+<T.PerspectiveCamera makeDefault position={[7, 6 + PUZZLE_LIFT, 9]} fov={50}>
   <!-- TrackballControls orbits freely with no up-vector, so the camera
        never locks at the poles the way OrbitControls does. -->
   <TrackballControls bind:ref={controls} />
+
+  <!-- Camera-locked Earth: stays at the bottom of the view while orbiting;
+       continent faces the player and does not spin. -->
+  <T.Group
+    position={EARTH_CAM_POS}
+    scale={[EARTH_SCALE, EARTH_SCALE, EARTH_SCALE]}
+    rotation={earthRot}
+  >
+    <EarthMesh activeId={levelId} radius={1} backdrop />
+  </T.Group>
 </T.PerspectiveCamera>
 
 <!-- Blender-style orientation gizmo (corner). Click a face/axis to snap. -->
@@ -214,7 +323,8 @@
 <T.DirectionalLight position={[8, 12, 6]} intensity={1.4} />
 <T.DirectionalLight position={[-6, -4, -8]} intensity={0.5} />
 
-<T.Group position={[-cx, -cy, -cz]}>
+<T.Group position={[-cx, -cy + PUZZLE_LIFT, -cz]}>
+  {@const focusing = litPositions.length > 0}
   {#each cells as cell (cell.key)}
     {@const lit = game.highlightedCells.has(cell.key)}
     {@const done = game.completedCells.has(cell.key)}
@@ -224,6 +334,16 @@
     {@const order = game.highlightedOrder.get(cell.key)}
     {@const bopT = waveElapsed !== null && order !== undefined ? Math.max(0, Math.min((waveElapsed - (order - 1) * BOP_STAGGER) / BOP_DURATION, 1)) : 0}
     {@const bop = lit && order !== undefined ? Math.sin(bopT * Math.PI) * BOP_HEIGHT : 0}
+    {@const showOutline = !focusing || lit || active}
+    {@const cubeOpacity = focusing && !lit && !active
+      ? dimOpacity(cell.position)
+      : active
+        ? 0.85
+        : lit
+          ? 0.72
+          : done || wrong
+            ? 0.62
+            : 0.5}
     <T.Group position={[cell.position[0] + bop * bopDir[0], cell.position[1] + bop * bopDir[1], cell.position[2] + bop * bopDir[2]]}>
       <T.Mesh
         onclick={() => game.selectCell(cell.key)}
@@ -256,11 +376,13 @@
           emissive={tone.emissive}
           emissiveIntensity={active ? 0.6 : lit ? 0.5 : done || wrong ? 0.42 : 0.35}
           transparent
-          opacity={active ? 0.85 : lit ? 0.72 : done || wrong ? 0.62 : 0.5}
+          opacity={cubeOpacity}
           roughness={0.45}
           depthWrite={false}
         />
-        <Edges color={tone.edge} />
+        {#if showOutline}
+          <Edges color={tone.edge} />
+        {/if}
       </T.Mesh>
 
       <!-- Billboard keeps the letter facing the camera → it always stays

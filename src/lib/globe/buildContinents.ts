@@ -59,7 +59,7 @@ function appendSubdividedTriangle(
   const ca = c.distanceTo(a);
   const longest = Math.max(ab, bc, ca);
 
-  if (longest <= maxEdge || depth >= 10) {
+  if (longest <= maxEdge || depth >= 14) {
     positions.push(a.x, a.y, a.z, b.x, b.y, b.z, c.x, c.y, c.z);
     return;
   }
@@ -101,8 +101,8 @@ function polygonToGeometry(
     latLonToVector3(v.y, v.x, radius),
   );
 
-  // ~4° of arc on a unit sphere — keeps land faces outside the ocean shell.
-  const maxEdge = radius * 0.07;
+  // ~2° of arc — keeps land chords outside the ocean shell even on large continents.
+  const maxEdge = radius * 0.035;
   const positions: number[] = [];
 
   for (const face of faces) {

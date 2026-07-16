@@ -42,7 +42,7 @@
   <div class="layout">
     <div class="canvas-wrap">
       <Canvas>
-        <Scene {game} />
+        <Scene {game} levelId={level?.id ?? null} />
       </Canvas>
       <button class="back" onclick={() => goto(`${base}/levels`)}
         >← เลือกด่าน</button
@@ -105,9 +105,9 @@
     position: relative;
     height: 100%;
     background: radial-gradient(
-      circle at 40% 35%,
-      var(--forest-soft),
-      var(--forest) 70%
+      circle at 40% 28%,
+      #1a3d5c,
+      #0b1628 72%
     );
   }
   .sidebar {
@@ -142,23 +142,22 @@
     position: absolute;
     top: 1.25rem;
     left: 1.25rem;
-    padding: 0.55rem 1.1rem;
-    font: 700 0.85rem var(--font-sans);
-    color: var(--forest);
-    background: var(--cream);
-    border: none;
+    z-index: 2;
+    padding: 0.55rem 1.05rem;
+    font: 600 0.85rem var(--font-sans);
+    color: #e8e4d9;
+    background: rgba(12, 20, 36, 0.55);
+    border: 1.5px solid rgba(232, 228, 217, 0.35);
     border-radius: var(--radius-pill);
     cursor: pointer;
-    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(8px);
     transition:
-      transform 0.15s,
-      background 0.15s,
-      color 0.15s;
+      background 0.15s ease,
+      border-color 0.15s ease;
   }
   .back:hover {
-    transform: translateY(-1px);
-    background: var(--green);
-    color: #fff;
+    background: rgba(232, 228, 217, 0.12);
+    border-color: #e8e4d9;
   }
   .complete-overlay {
     position: fixed;

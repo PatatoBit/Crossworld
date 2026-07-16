@@ -6,16 +6,9 @@
     Billboard,
     interactivity,
   } from "@threlte/extras";
-  import { base } from "$app/paths";
-  import { onMount } from "svelte";
-  import {
-    loadContinents,
-    type ContinentFeature,
-  } from "$lib/globe/buildContinents";
+  import EarthMesh from "$lib/globe/EarthMesh.svelte";
   import {
     LEVEL_ANCHORS,
-    isContinentHighlighted,
-    levelIdForContinent,
     type ScreenAnchor,
   } from "$lib/globe/levelContinents";
   import { latLonToVector3 } from "$lib/globe/latLon";
@@ -42,10 +35,8 @@
   interactivity();
 
   const RADIUS = 1;
-  const GEO_URL = `${base}/arcgis-world-continents.simplified.geojson`;
   const LABEL_RADIUS = RADIUS * 1.12;
 
-  let continents = $state<ContinentFeature[]>([]);
   const { camera, size } = useThrelte();
   const scratch = new THREE.Vector3();
 
@@ -56,29 +47,6 @@
         (l.id === activeId || l.id === hoveredId),
     ),
   );
-
-  onMount(() => {
-    let cancelled = false;
-    let loaded: ContinentFeature[] = [];
-
-    loadContinents(GEO_URL, RADIUS)
-      .then((features) => {
-        if (cancelled) {
-          for (const f of features) f.geometry.dispose();
-          return;
-        }
-        loaded = features;
-        continents = features;
-      })
-      .catch((err: unknown) => {
-        console.error("Failed to load globe continents", err);
-      });
-
-    return () => {
-      cancelled = true;
-      for (const c of loaded) c.geometry.dispose();
-    };
-  });
 
   useTask(() => {
     if (!camera.current) return;
@@ -106,20 +74,6 @@
 
     onAnchorUpdate(anchors);
   });
-
-  function landColor(continentName: string): string {
-    if (isContinentHighlighted(continentName, activeId, hoveredId)) {
-      return activeId && levelIdForContinent(continentName) === activeId
-        ? sceneColors.globe.landActive
-        : sceneColors.globe.landHover;
-    }
-    return sceneColors.globe.land;
-  }
-
-  function handleContinentPointer(levelId: string | undefined) {
-    if (!levelId) return;
-    onHover(levelId);
-  }
 </script>
 
 <T.PerspectiveCamera makeDefault position={[0, 0.3, 3.55]} fov={42}>
@@ -134,22 +88,14 @@
   />
 </T.PerspectiveCamera>
 
-<T.Mesh>
-  <T.SphereGeometry args={[RADIUS * 0.985, 64, 64]} />
-  <T.MeshBasicMaterial color={sceneColors.globe.ocean} />
-</T.Mesh>
-
-{#each continents as continent (continent.name)}
-  {@const levelId = levelIdForContinent(continent.name)}
-  <T.Mesh
-    geometry={continent.geometry}
-    onpointerenter={() => handleContinentPointer(levelId)}
-    onpointerleave={() => onHover(null)}
-    onclick={() => levelId && onSelect(levelId)}
-  >
-    <T.MeshBasicMaterial color={landColor(continent.name)} />
-  </T.Mesh>
-{/each}
+<EarthMesh
+  {activeId}
+  {hoveredId}
+  interactive
+  {onHover}
+  {onSelect}
+  radius={RADIUS}
+/>
 
 {#each labeledLevels as level (level.id)}
   {@const anchor = LEVEL_ANCHORS[level.id]}

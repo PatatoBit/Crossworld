@@ -28,8 +28,8 @@ export const sceneColors = {
     /** Apple Maps–style flat map palette. */
     ocean: "#15334f",
     land: "#3d8f82",
-    landHover: "#52a899",
-    landActive: "#6ec4b8",
+    landHover: "#7eb8ae",
+    landActive: "#ffffff",
     connector: "rgba(110, 196, 184, 0.35)",
     connectorActive: "rgba(110, 196, 184, 0.85)",
     label: "#e8e4d9",

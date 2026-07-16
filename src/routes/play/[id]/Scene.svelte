@@ -11,7 +11,6 @@
   } from "@threlte/extras";
   import type { IntersectionEvent } from "@threlte/extras";
   import type { ComponentProps } from "svelte";
-  import { onMount } from "svelte";
   import { puzzleCenter } from "$lib/crossword/puzzle";
   import type { CrosswordGame } from "$lib/crossword/game.svelte";
   import type { Axis } from "$lib/crossword/types";
@@ -63,42 +62,20 @@
   const earthRot = $derived(earthOrientation(levelId));
 
   interactivity();
-  // Access Threlte's own internal raycaster and pointer NDC so the debug line
-  // shows the EXACT ray used for hit detection, not a separately computed one.
-  const {
-    raycaster: _rc,
-    pointer: _pointer,
-    initialClick,
-    initialClickTime,
-    initialHits,
-    clickDistanceThreshold,
-    clickTimeThreshold,
-  } = useInteractivity();
+  // Access Threlte's own internal raycaster so the debug line shows the
+  // EXACT ray used for hit detection, not a separately computed one.
+  const { raycaster: _rc } = useInteractivity();
   // Edges creates THREE.LineSegments as children of each Mesh. The default
   // line hit threshold is 1 world unit — larger than the gap between cubes —
   // so lines were being "hit" before the ray reached the box geometry.
   _rc.params.Line = { threshold: 0 };
   _rc.params.Points = { threshold: 0 };
 
-  const { camera, renderer } = useThrelte();
+  const { camera } = useThrelte();
 
-  // Click empty canvas space → deselect. Shares Threlte's drag thresholds so
-  // orbiting with TrackballControls does not clear the selection.
-  onMount(() => {
-    const el = renderer.domElement;
-    const onClick = (event: MouseEvent) => {
-      const dx = event.offsetX - initialClick[0];
-      const dy = event.offsetY - initialClick[1];
-      const delta = Math.round(Math.hypot(dx, dy));
-      if (delta > clickDistanceThreshold) return;
-      if (performance.now() - initialClickTime > clickTimeThreshold) return;
-      if (initialHits.length > 0) return;
-      game.clearSelection();
-      game.hoverCell(null);
-    };
-    el.addEventListener("click", onClick);
-    return () => el.removeEventListener("click", onClick);
-  });
+  // Home camera for the idle overview (matches <PerspectiveCamera> below).
+  const DEFAULT_CAM_POS = new THREE.Vector3(7, 6 + PUZZLE_LIFT, 9);
+  const DEFAULT_CAM_UP = new THREE.Vector3(0, 1, 0);
 
   // TrackballControls instance, shared with the orientation gizmo.
   // (Type comes from TrackballControls' bindable `ref`, avoiding the
@@ -222,8 +199,13 @@
           _camAnimT = 0;
         }
       } else {
-        _camPosTgt = null;
-        _camUpTgt  = null;
+        // Fly home so the whole puzzle (and every letter) is readable again.
+        const cam = camera.current;
+        _camPosTgt = DEFAULT_CAM_POS.clone();
+        _camUpTgt = DEFAULT_CAM_UP.clone();
+        _camPosStart.copy(cam.position);
+        _camUpStart.copy(cam.up);
+        _camAnimT = 0;
       }
     }
     if (_camPosTgt && _camUpTgt) {
@@ -279,6 +261,23 @@
       const c = game.built.cells.get(key)!;
       return c.position;
     });
+  });
+
+  /** Cells on the focused word or any word that intersects it. */
+  const connectedCells = $derived.by((): Set<string> => {
+    const id = game.selectedWordId ?? game.hoveredWordId;
+    if (!id) return new Set();
+    const wordIds = new Set<string>();
+    for (const key of game.built.wordCells.get(id) ?? []) {
+      const cell = game.built.cells.get(key);
+      if (!cell) continue;
+      for (const wid of cell.wordIds) wordIds.add(wid);
+    }
+    const keys = new Set<string>();
+    for (const wid of wordIds) {
+      for (const key of game.built.wordCells.get(wid) ?? []) keys.add(key);
+    }
+    return keys;
   });
 
   /** Furthest non-highlighted cell distance — used to normalize the fade. */
@@ -351,6 +350,28 @@
 <T.DirectionalLight position={[8, 12, 6]} intensity={1.4} />
 <T.DirectionalLight position={[-6, -4, -8]} intensity={0.5} />
 
+<!--
+  Back-face miss target: sits around the puzzle so a click that hits no cell
+  still registers here. Same action as Escape. Threlte's own click thresholds
+  ignore orbit-drags. When a cell is nearer along the ray, intersections[0]
+  is that cell and we no-op.
+-->
+<T.Mesh
+  position={[0, PUZZLE_LIFT, 0]}
+  onclick={(e: IntersectionEvent<MouseEvent>) => {
+    if (e.intersections[0]?.eventObject !== e.eventObject) return;
+    game.clearSelection();
+  }}
+>
+  <T.SphereGeometry args={[48, 16, 16]} />
+  <T.MeshBasicMaterial
+    side={THREE.BackSide}
+    transparent
+    opacity={0}
+    depthWrite={false}
+  />
+</T.Mesh>
+
 <T.Group position={[-cx, -cy + PUZZLE_LIFT, -cz]}>
   {@const focusing = litPositions.length > 0}
   {#each cells as cell (cell.key)}
@@ -373,6 +394,11 @@
           : done || wrong
             ? 0.62
             : 0.5}
+    {@const letterOpacity = !focusing || lit || active
+      ? 1
+      : connectedCells.has(cell.key)
+        ? 0.28
+        : 0}
     <T.Group position={[cell.position[0] + bop * bopDir[0], cell.position[1] + bop * bopDir[1], cell.position[2] + bop * bopDir[2]]}>
       <T.Mesh
         onclick={() => game.selectCell(cell.key)}
@@ -417,35 +443,40 @@
       </T.Mesh>
 
       <!-- Billboard keeps the letter facing the camera → it always stays
-           upright/vertical no matter how you orbit the puzzle. -->
-      <Billboard>
-        <Text
-          text={game.displayLetter(cell.key)}
-          font={googleSansFontUrl}
-          fontSize={0.5}
-          color={sceneColors.letter}
-          anchorX="center"
-          anchorY="middle"
-          renderOrder={1}
-        />
-      </Billboard>
+           upright/vertical no matter how you orbit the puzzle.
+           Unconnected rows hide letters entirely while focusing. -->
+      {#if letterOpacity > 0}
+        <Billboard>
+          <Text
+            text={game.displayLetter(cell.key)}
+            font={googleSansFontUrl}
+            fontSize={0.5}
+            color={sceneColors.letter}
+            fillOpacity={letterOpacity}
+            anchorX="center"
+            anchorY="middle"
+            renderOrder={1}
+          />
+        </Billboard>
 
-      <!-- Word-number label at the top-left of the starting cell. -->
-      {@const cellNum = cellNumbers.get(cell.key)}
-      {#if cellNum !== undefined}
-        <T.Group position={[-0.27, 0.27, 0]}>
-          <Billboard>
-            <Text
-              text={String(cellNum)}
-              font={googleSansFontUrl}
-              fontSize={0.18}
-              color={sceneColors.number}
-              anchorX="center"
-              anchorY="middle"
-              renderOrder={1}
-            />
-          </Billboard>
-        </T.Group>
+        <!-- Word-number label at the top-left of the starting cell. -->
+        {@const cellNum = cellNumbers.get(cell.key)}
+        {#if cellNum !== undefined}
+          <T.Group position={[-0.27, 0.27, 0]}>
+            <Billboard>
+              <Text
+                text={String(cellNum)}
+                font={googleSansFontUrl}
+                fontSize={0.18}
+                color={sceneColors.number}
+                fillOpacity={letterOpacity}
+                anchorX="center"
+                anchorY="middle"
+                renderOrder={1}
+              />
+            </Billboard>
+          </T.Group>
+        {/if}
       {/if}
     </T.Group>
   {/each}

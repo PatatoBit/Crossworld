@@ -23,18 +23,8 @@
     position: relative;
     min-height: 100vh;
     overflow: hidden;
-    background: radial-gradient(
-        circle at 70% 20%,
-        rgba(126, 184, 201, 0.25),
-        transparent 45%
-      ),
-      radial-gradient(
-        circle at 15% 85%,
-        rgba(34, 197, 94, 0.18),
-        transparent 50%
-      ),
-      #0c2a28;
-    color: var(--cream);
+    background: #111214;
+    color: #e8e4d9;
   }
   .canvas-wrap {
     position: absolute;
@@ -62,25 +52,23 @@
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
     font-weight: 800;
     letter-spacing: -0.03em;
-    color: var(--cream);
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+    color: #e8e4d9;
   }
   .back {
     flex-shrink: 0;
     padding: 0.55rem 1.05rem;
     font: 600 0.85rem var(--font-sans);
-    color: var(--cream);
-    background: rgba(12, 42, 40, 0.45);
-    border: 1.5px solid rgba(244, 242, 230, 0.45);
+    color: #e8e4d9;
+    background: transparent;
+    border: 1.5px solid rgba(232, 228, 217, 0.4);
     border-radius: var(--radius-pill);
     cursor: pointer;
-    backdrop-filter: blur(8px);
     transition:
       background 0.15s ease,
       border-color 0.15s ease;
   }
   .back:hover {
-    background: rgba(244, 242, 230, 0.15);
-    border-color: var(--cream);
+    background: rgba(232, 228, 217, 0.08);
+    border-color: #e8e4d9;
   }
 </style>

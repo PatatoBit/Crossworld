@@ -36,18 +36,12 @@
       for (const c of loaded) c.geometry.dispose();
     };
   });
-
-  function landColor(name: string): string {
-    return sceneColors.globe.continents[name] ?? sceneColors.globe.landFallback;
-  }
 </script>
 
 <T.PerspectiveCamera makeDefault position={[0, 0.35, 2.85]} fov={42}>
   <OrbitControls
     enableDamping
     dampingFactor={0.08}
-    autoRotate
-    autoRotateSpeed={0.35}
     enablePan={false}
     minDistance={1.7}
     maxDistance={5}
@@ -56,37 +50,26 @@
   />
 </T.PerspectiveCamera>
 
-<T.AmbientLight intensity={0.85} />
-<T.DirectionalLight position={[4, 3, 5]} intensity={1.35} />
-<T.DirectionalLight position={[-3, -1, -4]} intensity={0.35} />
+<T.AmbientLight intensity={0.95} />
+<T.DirectionalLight position={[4, 3, 5]} intensity={1.1} />
+<T.DirectionalLight position={[-3, -1, -4]} intensity={0.25} />
 
-<!-- Soft atmosphere shell -->
-<T.Mesh>
-  <T.SphereGeometry args={[RADIUS * 1.035, 48, 48]} />
-  <T.MeshBasicMaterial
-    color={sceneColors.globe.atmosphere}
-    transparent
-    opacity={0.12}
-    depthWrite={false}
-  />
-</T.Mesh>
-
-<!-- Ocean — kept a bit under land so subdivided faces never sink through -->
+<!-- Ocean — kept under land so subdivided faces never sink through -->
 <T.Mesh>
   <T.SphereGeometry args={[RADIUS * 0.985, 64, 64]} />
   <T.MeshStandardMaterial
     color={sceneColors.globe.ocean}
-    roughness={0.55}
-    metalness={0.05}
+    roughness={0.85}
+    metalness={0}
   />
 </T.Mesh>
 
 {#each continents as continent (continent.name)}
   <T.Mesh geometry={continent.geometry}>
     <T.MeshStandardMaterial
-      color={landColor(continent.name)}
-      roughness={0.7}
-      metalness={0.05}
+      color={sceneColors.globe.land}
+      roughness={0.9}
+      metalness={0}
     />
   </T.Mesh>
 {/each}

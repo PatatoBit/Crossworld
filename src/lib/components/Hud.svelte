@@ -7,7 +7,7 @@
   const sections: { axis: Axis; label: string }[] = [
     { axis: "x", label: "แนวนอน (X)" },
     { axis: "y", label: "แนวตั้ง (Y)" },
-    { axis: "z", label: "ความลึก (Z)" },
+    { axis: "z", label: "แนวลึก (Z)" },
   ];
 
   function wordsForAxis(axis: Axis) {
@@ -130,7 +130,9 @@
     text-align: left;
     color: inherit;
     font: inherit;
-    transition: background 0.1s, border-color 0.1s;
+    transition:
+      background 0.1s,
+      border-color 0.1s;
   }
   li button:hover {
     background: rgba(13, 42, 26, 0.05);
@@ -192,7 +194,9 @@
     font-weight: 700;
     font-size: 0.82rem;
     cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    transition:
+      background 0.15s,
+      color 0.15s;
   }
   .toggle:hover {
     background: var(--forest);

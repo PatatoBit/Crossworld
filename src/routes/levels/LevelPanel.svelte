@@ -1,9 +1,12 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
+  import { openUrl } from "@tauri-apps/plugin-opener";
   import { levels, type Level } from "$lib/levels";
   import { LEVEL_ANCHORS } from "$lib/globe/levelContinents";
   import { progress } from "$lib/progress.svelte";
+
+  const FEEDBACK_URL = "https://forms.gle/g9yAdopshj77kERC7";
 
   let {
     activeId = null,
@@ -52,6 +55,14 @@
     onSelect(level.id);
     if (isLocked(level) || !level.puzzle) return;
     goto(`${base}/play/${level.id}`);
+  }
+
+  async function openFeedback() {
+    try {
+      await openUrl(FEEDBACK_URL);
+    } catch {
+      window.open(FEEDBACK_URL, "_blank", "noopener,noreferrer");
+    }
   }
 
   function itemRef(node: HTMLElement, levelId: string) {
@@ -140,6 +151,9 @@
         </li>
       {/each}
     </ul>
+    <button class="feedback" type="button" onclick={openFeedback}>
+      ให้ความเห็น / เสนอแนะ
+    </button>
   </section>
 </aside>
 
@@ -345,5 +359,25 @@
     color: #fff;
     background: var(--green);
     border-radius: var(--radius-pill);
+  }
+  .feedback {
+    margin-top: 0.35rem;
+    padding: 0.7rem 0.9rem;
+    font: 700 0.85rem var(--font-sans);
+    color: var(--forest);
+    background: transparent;
+    border: 1.5px dashed rgba(13, 42, 26, 0.22);
+    border-radius: 0.85rem;
+    cursor: pointer;
+    transition:
+      background 0.12s ease,
+      border-color 0.12s ease,
+      color 0.12s ease;
+  }
+  .feedback:hover {
+    color: var(--green-strong);
+    background: var(--green-soft);
+    border-color: rgba(22, 163, 74, 0.4);
+    border-style: solid;
   }
 </style>

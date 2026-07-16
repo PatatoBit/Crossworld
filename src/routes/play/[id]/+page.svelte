@@ -5,9 +5,11 @@
   import { base } from "$app/paths";
   import Scene from "./Scene.svelte";
   import Hud from "$lib/components/Hud.svelte";
+  import TutorialOverlay from "$lib/components/TutorialOverlay.svelte";
   import { CrosswordGame } from "$lib/crossword/game.svelte";
   import { findLevel } from "$lib/levels";
   import { progress } from "$lib/progress.svelte";
+  import { navTutorial } from "$lib/tutorial.svelte";
 
   // Resolve the level from the route param and build its game. Rebuilds when
   // navigating between levels (the id is reactive via $derived).
@@ -16,14 +18,32 @@
   const game = $derived(
     level?.puzzle && unlocked ? new CrosswordGame(level.puzzle) : null,
   );
+  const isTutorialLevel = $derived(level?.id === "demo");
 
   let startTime = $state(0);
   let elapsedMs = $state<number | null>(null);
+
+  // Gesture tracking for the Level 0 navigation coach.
+  let dragOrigin: { x: number; y: number } | null = null;
+  let lastCellKey: string | null = null;
+  let lastWordId: string | null = null;
+
+  $effect(() => {
+    if (!isTutorialLevel) {
+      navTutorial.close();
+      return;
+    }
+    if (game && !navTutorial.navComplete && navTutorial.step === null) {
+      navTutorial.start();
+    }
+  });
 
   $effect(() => {
     if (game) {
       startTime = Date.now();
       elapsedMs = null;
+      lastCellKey = null;
+      lastWordId = null;
     }
   });
 
@@ -34,6 +54,25 @@
     }
   });
 
+  /** Advance when the selected word cycles on the same intersection cell. */
+  $effect(() => {
+    if (!game || navTutorial.step !== "intersect") return;
+    const cell = game.selectedCellKey;
+    const word = game.selectedWordId;
+    if (
+      cell &&
+      word &&
+      lastCellKey === cell &&
+      lastWordId !== null &&
+      lastWordId !== word
+    ) {
+      const ids = game.built.cells.get(cell)?.wordIds ?? [];
+      if (ids.length > 1) navTutorial.advance();
+    }
+    lastCellKey = cell;
+    lastWordId = word;
+  });
+
   function formatTime(ms: number): string {
     const totalSec = Math.floor(ms / 1000);
     const min = Math.floor(totalSec / 60);
@@ -41,17 +80,57 @@
     if (min === 0) return `${sec} วินาที`;
     return `${min} นาที ${sec.toString().padStart(2, "0")} วินาที`;
   }
+
+  function onCanvasPointerDown(e: PointerEvent) {
+    if (navTutorial.step !== "rotate") return;
+    if (e.button !== 0) return;
+    dragOrigin = { x: e.clientX, y: e.clientY };
+  }
+
+  function onCanvasPointerMove(e: PointerEvent) {
+    if (navTutorial.step !== "rotate" || !dragOrigin) return;
+    if ((e.buttons & 1) === 0) {
+      dragOrigin = null;
+      return;
+    }
+    const dx = e.clientX - dragOrigin.x;
+    const dy = e.clientY - dragOrigin.y;
+    if (dx * dx + dy * dy > 36 * 36) {
+      dragOrigin = null;
+      navTutorial.advance();
+    }
+  }
+
+  function onCanvasPointerUp() {
+    dragOrigin = null;
+  }
+
+  function onCanvasWheel() {
+    if (navTutorial.step === "zoom") navTutorial.advance();
+  }
 </script>
 
 {#if game}
   <div class="layout">
-    <div class="canvas-wrap">
+    <div
+      class="canvas-wrap"
+      role="application"
+      aria-label="ปริศนาอักษรไขว้ 3 มิติ"
+      onpointerdown={onCanvasPointerDown}
+      onpointermove={onCanvasPointerMove}
+      onpointerup={onCanvasPointerUp}
+      onpointercancel={onCanvasPointerUp}
+      onwheel={onCanvasWheel}
+    >
       <Canvas>
         <Scene {game} levelId={level?.id ?? null} />
       </Canvas>
       <button class="back" onclick={() => goto(`${base}/levels`)}
         >← เลือกด่าน</button
       >
+      {#if isTutorialLevel && navTutorial.step}
+        <TutorialOverlay />
+      {/if}
     </div>
     <aside class="sidebar">
       <Hud {game} />

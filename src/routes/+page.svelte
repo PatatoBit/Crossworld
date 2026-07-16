@@ -1,63 +1,77 @@
 <script lang="ts">
+  import { Canvas } from "@threlte/core";
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
+  import MenuGlobe from "./MenuGlobe.svelte";
 </script>
 
 <main class="menu">
-  <div class="title">
-    <h1>Cross<span class="accent">World</span></h1>
-    <p class="tagline">
-      เกมปริศนาอักษรไขว้ 3 มิติเพื่อการเรียนรู้และปลุกจิตสำนึกด้านความยั่งยืน
-      ประเภท โปรแกรมเพื่อการเรียนรู้
-    </p>
+  <div class="globe" aria-hidden="true">
+    <Canvas>
+      <MenuGlobe />
+    </Canvas>
   </div>
 
-  <nav class="actions">
-    <button class="play" onclick={() => goto(`${base}/levels`)}>
-      เริ่มเล่น
-      <span class="arrow">▸</span>
-    </button>
-    <button class="secondary" onclick={() => goto(`${base}/about`)}>
-      เกี่ยวกับ / ตั้งค่า
-    </button>
-  </nav>
+  <div class="content">
+    <div class="title">
+      <h1>Cross<span class="accent">World</span></h1>
+      <p class="tagline">
+        เกมปริศนาอักษรไขว้ 3 มิติเพื่อการเรียนรู้และปลุกจิตสำนึกด้านความยั่งยืน
+        ประเภท โปรแกรมเพื่อการเรียนรู้
+      </p>
+    </div>
+
+    <nav class="actions">
+      <button class="play" onclick={() => goto(`${base}/levels`)}>
+        เริ่มเล่น
+        <span class="arrow">▸</span>
+      </button>
+      <button class="secondary" onclick={() => goto(`${base}/about`)}>
+        เกี่ยวกับ / ตั้งค่า
+      </button>
+    </nav>
+  </div>
 </main>
 
 <style>
   .menu {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.75rem;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    background: #15334f;
+    color: #e8e4d9;
+  }
+  .globe {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .globe :global(canvas) {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
     padding: 2rem;
     text-align: center;
+    /* Soft vignette so title stays readable over spinning landmasses. */
     background: radial-gradient(
-        circle at 15% 15%,
-        rgba(34, 197, 94, 0.14),
-        transparent 45%
-      ),
-      radial-gradient(
-        circle at 85% 80%,
-        rgba(246, 201, 21, 0.14),
-        transparent 45%
-      ),
-      var(--cream);
-    color: var(--ink);
-  }
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--green-strong);
-    background: var(--green-soft);
-    border-radius: var(--radius-pill);
+      ellipse 55% 50% at 50% 45%,
+      rgba(12, 28, 44, 0.55) 0%,
+      rgba(12, 28, 44, 0.2) 55%,
+      transparent 75%
+    );
   }
   .title {
     max-width: 40rem;
@@ -68,49 +82,18 @@
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 0.95;
-    color: var(--forest);
+    color: #f4f2e6;
+    text-shadow: 0 2px 24px rgba(12, 28, 44, 0.45);
   }
   h1 .accent {
-    color: var(--green);
+    color: #6ec4b8;
   }
   .tagline {
     margin: 1rem auto 0;
     max-width: 32rem;
-    color: var(--muted);
+    color: rgba(232, 228, 217, 0.78);
     font-size: clamp(1rem, 2.2vw, 1.15rem);
     line-height: 1.55;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .pill {
-    padding: 0.5rem 1.15rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: var(--radius-pill);
-    border: 2px solid transparent;
-  }
-  .pill.yellow {
-    background: var(--yellow);
-    color: var(--forest);
-  }
-  .pill.green {
-    background: var(--green);
-    color: #fff;
-  }
-  .pill.forest {
-    background: var(--forest);
-    color: var(--green);
-  }
-  .pill.outline {
-    border-color: var(--forest);
-    color: var(--forest);
   }
   .actions {
     display: flex;
@@ -132,9 +115,9 @@
     cursor: pointer;
     box-shadow: var(--shadow-soft);
     transition:
-      transform 0.15s,
-      box-shadow 0.15s,
-      background 0.15s;
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      background 0.15s ease;
   }
   .play:hover {
     transform: translateY(-2px);
@@ -147,22 +130,30 @@
   .secondary {
     padding: 0.7rem 1.5rem;
     font: 600 0.95rem var(--font-sans);
-    color: var(--forest);
-    background: transparent;
-    border: 2px solid rgba(13, 42, 26, 0.28);
+    color: #e8e4d9;
+    background: rgba(12, 20, 36, 0.45);
+    border: 2px solid rgba(232, 228, 217, 0.35);
     border-radius: var(--radius-pill);
     cursor: pointer;
+    backdrop-filter: blur(8px);
     transition:
-      background 0.15s,
-      border-color 0.15s,
-      color 0.15s;
+      background 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
   }
   .secondary:hover {
-    color: var(--cream);
-    background: var(--forest);
-    border-color: var(--forest);
+    color: #15334f;
+    background: #e8e4d9;
+    border-color: #e8e4d9;
   }
   .arrow {
     font-size: 0.95em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .play,
+    .secondary {
+      transition: none;
+    }
   }
 </style>

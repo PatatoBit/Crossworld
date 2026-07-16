@@ -64,9 +64,12 @@
     ),
   );
 
+  // Latch focus on hover — never clear it when the pointer leaves. Auto-turn
+  // moves the continent out from under the cursor, which would otherwise fire
+  // pointerleave → clear hover → abort the turn (jittery start/stop loop).
   $effect(() => {
     const id = hoveredId;
-    focusId = id && id in LEVEL_ANCHORS ? id : null;
+    if (id && id in LEVEL_ANCHORS) focusId = id;
   });
 
   // User drag wins — don't fight OrbitControls mid-gesture.
@@ -79,6 +82,12 @@
     c.addEventListener("start", onStart);
     return () => c.removeEventListener("start", onStart);
   });
+
+  /** Keep hover highlight while auto-turning; ignore leave events caused by the spin. */
+  function handleGlobeHover(id: string | null) {
+    if (id === null && focusId) return;
+    onHover(id);
+  }
 
   useTask((delta) => {
     if (!camera.current) return;
@@ -159,7 +168,7 @@
   {activeId}
   {hoveredId}
   interactive
-  {onHover}
+  onHover={handleGlobeHover}
   {onSelect}
   radius={RADIUS}
 />

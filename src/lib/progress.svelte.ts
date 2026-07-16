@@ -1,4 +1,5 @@
 import { levels } from "./levels";
+import { navTutorial } from "./tutorial.svelte";
 
 const STORAGE_KEY = "crossworld-progress";
 
@@ -85,6 +86,7 @@ class CampaignProgress {
   /** Wipe all saved level clears (localStorage + in-memory). */
   reset(): void {
     this.records = {};
+    navTutorial.reset();
     if (typeof localStorage === "undefined") return;
     try {
       localStorage.removeItem(STORAGE_KEY);

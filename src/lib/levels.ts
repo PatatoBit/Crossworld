@@ -1,13 +1,21 @@
 import type { Puzzle } from "./crossword/types";
 import { samplePuzzle } from "./crossword/sample";
+import {
+  africaPuzzle,
+  antarcticaPuzzle,
+  asiaPuzzle,
+  europePuzzle,
+  northAmericaPuzzle,
+  oceaniaPuzzle,
+  southAmericaPuzzle,
+} from "./crossword/continents";
 
 /**
- * The campaign levels: a standalone demo followed by the 7 continents. The demo
- * ships with the hand-authored puzzle; the continents are placeholders until
- * their puzzles (eventually AI-generated, per the project spec) are authored.
+ * The campaign levels: a standalone demo followed by the 7 continents in
+ * ascending difficulty (North America → Antarctica). Each continent puzzle
+ * is themed on that region's real sustainability crisis.
  *
- * A level with `puzzle === null` is "coming soon" — selectable in the UI but
- * not yet playable. `/play/[id]` looks the level up here by `id`.
+ * `/play/[id]` looks the level up here by `id`.
  */
 export interface Level {
   id: string;
@@ -15,8 +23,8 @@ export interface Level {
   name: string;
   /** One-line flavour for the card. */
   blurb: string;
-  /** The puzzle to load, or null while unauthored. */
-  puzzle: Puzzle | null;
+  /** The puzzle to load. */
+  puzzle: Puzzle;
 }
 
 export const levels: Level[] = [
@@ -30,43 +38,43 @@ export const levels: Level[] = [
     id: "north-america",
     name: "อเมริกาเหนือ",
     blurb: "พลังงานสะอาดและการปล่อยมลพิษ",
-    puzzle: null,
+    puzzle: northAmericaPuzzle,
   },
   {
     id: "south-america",
     name: "อเมริกาใต้",
     blurb: "ป่าฝนและความหลากหลายทางชีวภาพ",
-    puzzle: null,
+    puzzle: southAmericaPuzzle,
   },
   {
     id: "europe",
     name: "ยุโรป",
     blurb: "เศรษฐกิจหมุนเวียนและการรีไซเคิล",
-    puzzle: null,
+    puzzle: europePuzzle,
   },
   {
     id: "africa",
     name: "แอฟริกา",
     blurb: "น้ำ ภัยแล้ง และความยืดหยุ่น",
-    puzzle: null,
+    puzzle: africaPuzzle,
   },
   {
     id: "asia",
     name: "เอเชีย",
     blurb: "เมืองใหญ่และอากาศบริสุทธิ์",
-    puzzle: null,
+    puzzle: asiaPuzzle,
   },
   {
     id: "oceania",
     name: "โอเชียเนีย",
     blurb: "แนวปะการังและระดับน้ำทะเลที่สูงขึ้น",
-    puzzle: null,
+    puzzle: oceaniaPuzzle,
   },
   {
     id: "antarctica",
     name: "แอนตาร์กติกา",
     blurb: "น้ำแข็ง ภูมิอากาศ และนาฬิกาคาร์บอน",
-    puzzle: null,
+    puzzle: antarcticaPuzzle,
   },
 ];
 

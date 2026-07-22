@@ -39,6 +39,12 @@ class CampaignProgress {
   /** levelId → completion record */
   records = $state<ProgressMap>(load());
 
+  /**
+   * Session-only cheat: Esc × 3 unlocks every campaign level without clearing
+   * them. Not persisted — reload restores normal lock progression.
+   */
+  devMode = $state(false);
+
   isComplete(levelId: string): boolean {
     return levelId in this.records;
   }
@@ -46,14 +52,21 @@ class CampaignProgress {
   /**
    * A level is playable only after every preceding campaign level is cleared.
    * The first level (tutorial / demo) is always unlocked.
+   * Dev mode bypasses the chain for the current session.
    */
   isUnlocked(levelId: string): boolean {
     const idx = levels.findIndex((l) => l.id === levelId);
     if (idx < 0) return false;
+    if (this.devMode) return true;
     for (let i = 0; i < idx; i++) {
       if (!this.isComplete(levels[i].id)) return false;
     }
     return true;
+  }
+
+  /** Unlock all levels for this session (Esc × 3). */
+  enableDevMode(): void {
+    this.devMode = true;
   }
 
   get completedCount(): number {
@@ -86,6 +99,7 @@ class CampaignProgress {
   /** Wipe all saved level clears (localStorage + in-memory). */
   reset(): void {
     this.records = {};
+    this.devMode = false;
     navTutorial.reset();
     if (typeof localStorage === "undefined") return;
     try {

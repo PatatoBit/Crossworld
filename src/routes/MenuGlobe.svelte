@@ -8,13 +8,15 @@
   /** Slow continuous spin (rad/s) — about one turn per ~50s. */
   const SPIN = 0.125;
 
+  let { spin = true }: { spin?: boolean } = $props();
+
   let group = $state<Group | undefined>();
   const reduceMotion =
     typeof window !== "undefined" &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   useTask((delta) => {
-    if (!group || reduceMotion) return;
+    if (!group || reduceMotion || !spin) return;
     group.rotation.y += SPIN * delta;
   });
 </script>

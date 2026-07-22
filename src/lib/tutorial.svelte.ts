@@ -4,6 +4,8 @@ export type NavTutorialStep =
   | "intro"
   | "rotate"
   | "zoom"
+  | "select"
+  | "type"
   | "intersect"
   | "done";
 
@@ -59,6 +61,8 @@ class NavTutorial {
       "intro",
       "rotate",
       "zoom",
+      "select",
+      "type",
       "intersect",
       "done",
     ];

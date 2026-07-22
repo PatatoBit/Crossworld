@@ -1,83 +1,104 @@
 <script lang="ts">
-  /** Animated mouse glyph for the navigation tutorial gestures. */
+  /** Animated glyph for the navigation / input tutorial gestures. */
   let {
     kind,
   }: {
-    kind: "rotate" | "zoom" | "dblclick";
+    kind: "rotate" | "zoom" | "click" | "type" | "dblclick";
   } = $props();
 </script>
 
-<div class="hint" class:rotate={kind === "rotate"} class:zoom={kind === "zoom"} class:dblclick={kind === "dblclick"} aria-hidden="true">
-  <svg class="mouse" viewBox="0 0 64 96" fill="none">
-    <rect
-      class="body"
-      x="8"
-      y="4"
-      width="48"
-      height="80"
-      rx="24"
-      stroke="currentColor"
-      stroke-width="3.5"
-    />
-    <line
-      class="seam"
-      x1="32"
-      y1="4"
-      x2="32"
-      y2="36"
-      stroke="currentColor"
-      stroke-width="3"
-    />
-    <rect
-      class="wheel"
-      x="28"
-      y="16"
-      width="8"
-      height="14"
-      rx="4"
-      fill="currentColor"
-    />
-    {#if kind === "rotate" || kind === "dblclick"}
-      <path
-        class="btn-l"
-        d="M8 28 V28 A24 24 0 0 1 32 4 V36 H8 Z"
+{#if kind === "type"}
+  <div class="hint type" aria-hidden="true">
+    <div class="keys">
+      <span class="key k1">A</span>
+      <span class="key k2">B</span>
+      <span class="key k3">C</span>
+    </div>
+  </div>
+{:else}
+  <div
+    class="hint"
+    class:rotate={kind === "rotate"}
+    class:zoom={kind === "zoom"}
+    class:click={kind === "click"}
+    class:dblclick={kind === "dblclick"}
+    aria-hidden="true"
+  >
+    <svg class="mouse" viewBox="0 0 64 96" fill="none">
+      <rect
+        class="body"
+        x="8"
+        y="4"
+        width="48"
+        height="80"
+        rx="24"
+        stroke="currentColor"
+        stroke-width="3.5"
+      />
+      <line
+        class="seam"
+        x1="32"
+        y1="4"
+        x2="32"
+        y2="36"
+        stroke="currentColor"
+        stroke-width="3"
+      />
+      <rect
+        class="wheel"
+        x="28"
+        y="16"
+        width="8"
+        height="14"
+        rx="4"
         fill="currentColor"
-        opacity="0.35"
       />
-    {/if}
-  </svg>
-
-  {#if kind === "rotate"}
-    <svg class="trail" viewBox="0 0 120 120" fill="none">
-      <path
-        class="arc"
-        d="M 28 78 C 18 52, 32 22, 60 18 C 92 14, 108 42, 98 70"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-dasharray="6 8"
-      />
-      <path
-        class="arrow"
-        d="M 90 66 L 100 72 L 88 78"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+      {#if kind === "rotate" || kind === "click" || kind === "dblclick"}
+        <path
+          class="btn-l"
+          d="M8 28 V28 A24 24 0 0 1 32 4 V36 H8 Z"
+          fill="currentColor"
+          opacity="0.35"
+        />
+      {/if}
     </svg>
-  {:else if kind === "zoom"}
-    <div class="scroll-arrows">
-      <span class="up">▴</span>
-      <span class="down">▾</span>
-    </div>
-  {:else}
-    <div class="clicks">
-      <span class="pulse p1"></span>
-      <span class="pulse p2"></span>
-    </div>
-  {/if}
-</div>
+
+    {#if kind === "rotate"}
+      <svg class="trail" viewBox="0 0 120 120" fill="none">
+        <path
+          class="arc"
+          d="M 28 78 C 18 52, 32 22, 60 18 C 92 14, 108 42, 98 70"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-dasharray="6 8"
+        />
+        <path
+          class="arrow"
+          d="M 90 66 L 100 72 L 88 78"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    {:else if kind === "zoom"}
+      <div class="scroll-arrows">
+        <span class="up">▴</span>
+        <span class="down">▾</span>
+      </div>
+    {:else if kind === "click"}
+      <div class="clicks">
+        <span class="pulse p1"></span>
+      </div>
+    {:else}
+      <div class="clicks">
+        <span class="pulse p1"></span>
+        <span class="pulse p2"></span>
+      </div>
+    {/if}
+  </div>
+{/if}
 
 <style>
   .hint {
@@ -85,6 +106,7 @@
     position: relative;
     width: 7.5rem;
     height: 7.5rem;
+    margin-inline: auto;
     color: #6ec4b8;
     display: grid;
     place-items: center;
@@ -108,6 +130,14 @@
 
   .zoom .mouse {
     animation: bob 1.4s var(--ease) infinite;
+  }
+
+  .click .btn-l {
+    animation: click-flash-once 1.5s var(--ease) infinite;
+  }
+
+  .click .mouse {
+    animation: click-press-once 1.5s var(--ease) infinite;
   }
 
   .dblclick .btn-l {
@@ -171,8 +201,45 @@
     animation: ripple 1.5s var(--ease) infinite;
   }
 
+  .click .p1 {
+    animation: ripple-once 1.5s var(--ease) infinite;
+  }
+
   .p2 {
     animation: ripple 1.5s var(--ease) infinite 0.22s;
+  }
+
+  .type .keys {
+    display: flex;
+    gap: 0.45rem;
+    align-items: flex-end;
+  }
+
+  .key {
+    display: grid;
+    place-items: center;
+    width: 2.15rem;
+    height: 2.15rem;
+    font: 800 0.95rem var(--font-sans);
+    color: #0c1c2c;
+    background: #e8e4d9;
+    border-radius: 0.45rem;
+    box-shadow:
+      0 3px 0 #9aa3ad,
+      0 6px 14px rgba(4, 12, 24, 0.35);
+    transform-origin: center bottom;
+  }
+
+  .k1 {
+    animation: key-press 1.6s var(--ease) infinite;
+  }
+
+  .k2 {
+    animation: key-press 1.6s var(--ease) infinite 0.35s;
+  }
+
+  .k3 {
+    animation: key-press 1.6s var(--ease) infinite 0.7s;
   }
 
   @keyframes drag-orbit {
@@ -267,6 +334,28 @@
     }
   }
 
+  @keyframes click-press-once {
+    0%,
+    18%,
+    100% {
+      transform: scale(1);
+    }
+    8% {
+      transform: scale(0.92);
+    }
+  }
+
+  @keyframes click-flash-once {
+    0%,
+    18%,
+    100% {
+      opacity: 0.2;
+    }
+    8% {
+      opacity: 0.7;
+    }
+  }
+
   @keyframes ripple {
     0% {
       transform: scale(0.4);
@@ -279,6 +368,42 @@
     }
   }
 
+  @keyframes ripple-once {
+    0%,
+    8% {
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    12% {
+      transform: scale(0.4);
+      opacity: 0.85;
+    }
+    70%,
+    100% {
+      transform: scale(2.2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes key-press {
+    0%,
+    100% {
+      transform: translateY(0);
+      box-shadow:
+        0 3px 0 #9aa3ad,
+        0 6px 14px rgba(4, 12, 24, 0.35);
+      background: #e8e4d9;
+    }
+    18%,
+    32% {
+      transform: translateY(3px);
+      box-shadow:
+        0 0 0 #9aa3ad,
+        0 2px 8px rgba(4, 12, 24, 0.25);
+      background: #6ec4b8;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .mouse,
     .trail,
@@ -286,7 +411,8 @@
     .scroll-arrows .up,
     .scroll-arrows .down,
     .btn-l,
-    .pulse {
+    .pulse,
+    .key {
       animation: none !important;
     }
   }

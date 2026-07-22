@@ -27,6 +27,10 @@
   let dragOrigin: { x: number; y: number } | null = null;
   let lastCellKey: string | null = null;
   let lastWordId: string | null = null;
+  /** True after the select step has cleared any leftover selection. */
+  let selectArmed = false;
+  /** Entries size when the "type" step began — advance once a letter is added. */
+  let typeStepBaseline = $state<number | null>(null);
 
   $effect(() => {
     if (!isTutorialLevel) {
@@ -44,6 +48,8 @@
       elapsedMs = null;
       lastCellKey = null;
       lastWordId = null;
+      selectArmed = false;
+      typeStepBaseline = null;
     }
   });
 
@@ -52,6 +58,32 @@
       elapsedMs = Date.now() - startTime;
       progress.markComplete(level.id, elapsedMs);
     }
+  });
+
+  /** Advance when the player clicks a cell during the select step. */
+  $effect(() => {
+    if (!game || navTutorial.step !== "select") {
+      selectArmed = false;
+      return;
+    }
+    if (!selectArmed) {
+      game.clearSelection();
+      selectArmed = true;
+    }
+    if (selectArmed && game.selectedCellKey) navTutorial.advance();
+  });
+
+  /** Snapshot entry count when entering the type step; advance on first letter. */
+  $effect(() => {
+    if (!game || navTutorial.step !== "type") {
+      typeStepBaseline = null;
+      return;
+    }
+    if (typeStepBaseline === null) {
+      typeStepBaseline = game.entries.size;
+      return;
+    }
+    if (game.entries.size > typeStepBaseline) navTutorial.advance();
   });
 
   /** Advance when the selected word cycles on the same intersection cell. */

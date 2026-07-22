@@ -96,7 +96,7 @@ class CampaignProgress {
     save(this.records);
   }
 
-  /** Wipe all saved level clears (localStorage + in-memory). */
+  /** Wipe all saved level clears (localStorage + in-memory). `` × 2. */
   reset(): void {
     this.records = {};
     this.devMode = false;

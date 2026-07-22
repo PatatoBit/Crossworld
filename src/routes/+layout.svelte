@@ -4,18 +4,35 @@
 
   let { children } = $props();
 
-  /** Consecutive Esc presses must land within this window to count as "in a row". */
-  const ESC_WINDOW_MS = 1000;
+  /** Consecutive presses must land within this window to count as "in a row". */
+  const CHORD_WINDOW_MS = 1000;
   let escStamps: number[] = [];
+  let tickStamps: number[] = [];
 
   function onKeydown(e: KeyboardEvent) {
-    if (e.key !== "Escape" || e.repeat || progress.devMode) return;
+    if (e.repeat) return;
     const now = Date.now();
-    escStamps = escStamps.filter((t) => now - t < ESC_WINDOW_MS);
-    escStamps.push(now);
-    if (escStamps.length >= 3) {
-      escStamps = [];
-      progress.enableDevMode();
+
+    // Esc × 3 — unlock all levels for this session (dev cheat).
+    if (e.key === "Escape" && !progress.devMode) {
+      escStamps = escStamps.filter((t) => now - t < CHORD_WINDOW_MS);
+      escStamps.push(now);
+      if (escStamps.length >= 3) {
+        escStamps = [];
+        progress.enableDevMode();
+      }
+      return;
+    }
+
+    // ` × 2 — wipe saved progress + tutorial memory.
+    if (e.key === "`") {
+      e.preventDefault();
+      tickStamps = tickStamps.filter((t) => now - t < CHORD_WINDOW_MS);
+      tickStamps.push(now);
+      if (tickStamps.length >= 2) {
+        tickStamps = [];
+        progress.reset();
+      }
     }
   }
 </script>

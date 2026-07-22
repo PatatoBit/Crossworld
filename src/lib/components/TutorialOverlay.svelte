@@ -2,36 +2,50 @@
   import { navTutorial, type NavTutorialStep } from "$lib/tutorial.svelte";
   import MouseHint from "./MouseHint.svelte";
 
+  const STEPS = ["rotate", "zoom", "select", "type", "intersect"] as const;
+
   const copy: Record<
     Exclude<NavTutorialStep, null>,
     {
       eyebrow: string;
       title: string;
       body: string;
-      hint?: "rotate" | "zoom" | "dblclick";
+      hint?: "rotate" | "zoom" | "click" | "type" | "dblclick";
       cta?: string;
     }
   > = {
     intro: {
       eyebrow: "แนะนำการเล่น",
-      title: "การหมุน ซูม และสลับแถว",
-      body: "เรียนรู้วิธีการเล่น CrossWorld",
+      title: "หมุน มอง และพิมพ์คำตอบ",
+      body: "เรียนรู้การสำรวจปริศนา 3 มิติ และการใส่ตัวอักษรลงในช่อง",
       cta: "เริ่มเรียน",
     },
     rotate: {
-      eyebrow: "1/3",
+      eyebrow: "1/5",
       title: "ลากเมาส์เพื่อหมุน",
       body: "กดแล้วลากเมาส์ เพื่อหมุนกล้องรอบเกม",
       hint: "rotate",
     },
     zoom: {
-      eyebrow: "2/3",
+      eyebrow: "2/5",
       title: "ซูมเข้า–ออก",
       body: "เลื่อนล้อเมาส์ เพื่อซูมเข้าใกล้หรือถอยออก",
       hint: "zoom",
     },
+    select: {
+      eyebrow: "3/5",
+      title: "คลิกช่องเพื่อเลือก",
+      body: "คลิกที่ลูกบาศก์หนึ่งช่อง เพื่อเลือกแถวและช่องที่จะพิมพ์",
+      hint: "click",
+    },
+    type: {
+      eyebrow: "4/5",
+      title: "พิมพ์ตัวอักษร",
+      body: "กดปุ่มตัวอักษรบนคีย์บอร์ด เพื่อใส่คำตอบ — เคอร์เซอร์จะเลื่อนไปช่องถัดไปเอง",
+      hint: "type",
+    },
     intersect: {
-      eyebrow: "3/3",
+      eyebrow: "5/5",
       title: "คลิกสองรอบที่จุดตัดระหว่างสองแถว",
       body: "เพื่อสลับไปยังแถวที่ตัดผ่านช่องนั้น",
       hint: "dblclick",
@@ -49,7 +63,7 @@
 
   const progressIndex = $derived.by(() => {
     if (!step || step === "intro" || step === "done") return -1;
-    return (["rotate", "zoom", "intersect"] as const).indexOf(step);
+    return (STEPS as readonly string[]).indexOf(step);
   });
 
   function onCta() {
@@ -72,7 +86,7 @@
 
         {#if progressIndex >= 0}
           <div class="dots" aria-hidden="true">
-            {#each [0, 1, 2] as i}
+            {#each STEPS as _, i}
               <span
                 class="dot"
                 class:on={i <= progressIndex}

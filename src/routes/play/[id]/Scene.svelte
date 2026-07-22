@@ -73,10 +73,6 @@
 
   const { camera } = useThrelte();
 
-  // Home camera for the idle overview (matches <PerspectiveCamera> below).
-  const DEFAULT_CAM_POS = new THREE.Vector3(7, 6 + PUZZLE_LIFT, 9);
-  const DEFAULT_CAM_UP = new THREE.Vector3(0, 1, 0);
-
   // TrackballControls instance, shared with the orientation gizmo.
   // (Type comes from TrackballControls' bindable `ref`, avoiding the
   //  un-typed `three/examples/jsm` subpath import.)
@@ -118,9 +114,10 @@
   // Compute target camera position + up so the given word axis reads left-to-right.
   // Derived from: right = cross(forward, up) = wordDir.
   // Orbit around the raised puzzle center (not world origin).
+  // Pitch is 45° from vertical (looking down) so the row stays readable.
   function wordCameraTarget(axis: Axis, dist: number): [THREE.Vector3, THREE.Vector3] {
-    const h = dist * 0.5;    // elevation component (sin 30°)
-    const d = dist * 0.866;  // horizontal component (cos 30°)
+    const h = dist * Math.SQRT1_2; // elevation (sin 45°)
+    const d = dist * Math.SQRT1_2; // horizontal (cos 45°)
     const y = PUZZLE_LIFT;
     if (axis === 'x') return [new THREE.Vector3(0, y + h, d),  new THREE.Vector3(0, 1, 0)];
     if (axis === 'z') return [new THREE.Vector3(-d, y + h, 0), new THREE.Vector3(0, 1, 0)];
@@ -180,8 +177,8 @@
     }
 
     // ── Camera orientation ────────────────────────────────────────────────────
-    // Trigger only on selection changes (not hover) so the camera flies to the
-    // angle that makes the selected word read left-to-right on screen.
+    // On select, fly to the angle that makes the word read left-to-right.
+    // On deselect, leave the camera where it is — only cell visuals reset.
     const selId = game.selectedWordId ?? '';
     if (selId !== _prevSelectedId) {
       _prevSelectedId = selId;
@@ -199,13 +196,9 @@
           _camAnimT = 0;
         }
       } else {
-        // Fly home so the whole puzzle (and every letter) is readable again.
-        const cam = camera.current;
-        _camPosTgt = DEFAULT_CAM_POS.clone();
-        _camUpTgt = DEFAULT_CAM_UP.clone();
-        _camPosStart.copy(cam.position);
-        _camUpStart.copy(cam.up);
-        _camAnimT = 0;
+        // Cancel any in-flight camera tween; do not return to the level overview.
+        _camPosTgt = null;
+        _camUpTgt = null;
       }
     }
     if (_camPosTgt && _camUpTgt) {

@@ -19,6 +19,7 @@
   import { continentOrientation } from "$lib/globe/latLon";
   import { googleSansFontUrl } from "$lib/fonts";
   import { sceneColors } from "$lib/theme";
+  import { navTutorial } from "$lib/tutorial.svelte";
   // @ts-ignore – three r184 ships no .d.ts; runtime import works fine
   import * as THREE from "three";
 
@@ -106,6 +107,11 @@
   let waveElapsed = $state<number | null>(null);
   let _prevHighlightId = '';
 
+  /** 0–1 envelope for the intersection-hint pulse (sine of elapsed time). */
+  let intersectPulse = $state(0);
+  let _intersectPulseT = 0;
+  const INTERSECT_PULSE_HZ = 0.7; // ~1.4s per breath
+
   // Bounce direction: camera.up projected onto the plane perpendicular to the
   // word axis, so letters always appear to jump "up" relative to their reading
   // direction regardless of which 3-D axis the word runs along.
@@ -174,6 +180,16 @@
     if (waveElapsed !== null) {
       waveElapsed += delta;
       if (waveElapsed >= WAVE_DURATION) waveElapsed = null;
+    }
+
+    if (navTutorial.step === "intersect") {
+      _intersectPulseT += delta;
+      // Smooth in–out breath: 0 at trough, 1 at peak.
+      intersectPulse =
+        0.5 + 0.5 * Math.sin(_intersectPulseT * Math.PI * 2 * INTERSECT_PULSE_HZ);
+    } else if (_intersectPulseT !== 0) {
+      _intersectPulseT = 0;
+      intersectPulse = 0;
     }
 
     // ── Camera orientation ────────────────────────────────────────────────────
@@ -374,20 +390,24 @@
     {@const litWrong = lit && game.highlightedWordIncorrect}
     {@const litDone = lit && game.highlightedWordComplete}
     {@const active = cell.key === game.selectedCellKey}
+    {@const isIntersectHint =
+      navTutorial.step === "intersect" && cell.wordIds.length > 1}
     {@const order = game.highlightedOrder.get(cell.key)}
     {@const bopT = waveElapsed !== null && order !== undefined ? Math.max(0, Math.min((waveElapsed - (order - 1) * BOP_STAGGER) / BOP_DURATION, 1)) : 0}
     {@const bop = lit && order !== undefined ? Math.sin(bopT * Math.PI) * BOP_HEIGHT : 0}
-    {@const showOutline = !focusing || lit || active}
-    {@const cubeOpacity = focusing && !lit && !active
+    {@const showOutline = !focusing || lit || active || isIntersectHint}
+    {@const cubeOpacity = focusing && !lit && !active && !isIntersectHint
       ? dimOpacity(cell.position)
       : active
         ? 0.85
-        : lit
-          ? 0.72
-          : done || wrong
-            ? 0.62
-            : 0.5}
-    {@const letterOpacity = !focusing || lit || active
+        : isIntersectHint
+          ? 0.55 + 0.3 * intersectPulse
+          : lit
+            ? 0.72
+            : done || wrong
+              ? 0.62
+              : 0.5}
+    {@const letterOpacity = !focusing || lit || active || isIntersectHint
       ? 1
       : connectedCells.has(cell.key)
         ? 0.28
@@ -409,22 +429,32 @@
       >
         {@const tone = active
           ? sceneColors.cell.active
-          : litWrong
-            ? sceneColors.cell.highlightedIncorrect
-            : litDone
-              ? sceneColors.cell.highlightedComplete
-              : lit
-                ? sceneColors.cell.highlighted
-                : done
-                  ? sceneColors.cell.completed
-                  : wrong
-                    ? sceneColors.cell.incorrect
-                    : sceneColors.cell.default}
+          : isIntersectHint
+            ? sceneColors.cell.intersection
+            : litWrong
+              ? sceneColors.cell.highlightedIncorrect
+              : litDone
+                ? sceneColors.cell.highlightedComplete
+                : lit
+                  ? sceneColors.cell.highlighted
+                  : done
+                    ? sceneColors.cell.completed
+                    : wrong
+                      ? sceneColors.cell.incorrect
+                      : sceneColors.cell.default}
         <T.BoxGeometry args={[0.9, 0.9, 0.9]} />
         <T.MeshStandardMaterial
           color={tone.color}
           emissive={tone.emissive}
-          emissiveIntensity={active ? 0.6 : lit ? 0.5 : done || wrong ? 0.42 : 0.35}
+          emissiveIntensity={active
+            ? 0.6
+            : isIntersectHint
+              ? 0.35 + 0.55 * intersectPulse
+              : lit
+                ? 0.5
+                : done || wrong
+                  ? 0.42
+                  : 0.35}
           transparent
           opacity={cubeOpacity}
           roughness={0.45}

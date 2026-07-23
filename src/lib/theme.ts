@@ -19,6 +19,8 @@ export const sceneColors = {
     incorrect: { color: "#eab308", emissive: "#ca8a04", edge: "#fde68a" },
     /** Selected/hovered line when that word is filled incorrectly. */
     highlightedIncorrect: { color: "#f59e0b", emissive: "#d97706", edge: "#fef08a" },
+    /** Intersection cells during the switch-word tutorial step. */
+    intersection: { color: "#3b82f6", emissive: "#1d4ed8", edge: "#bfdbfe" },
   },
   letter: "#f4f2e6",
   number: "#b8c4b4",

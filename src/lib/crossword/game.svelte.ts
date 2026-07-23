@@ -160,12 +160,14 @@ export class CrosswordGame {
     }
   }
 
-  /** Select a word directly (e.g. from the clue list), placing the cursor at its first cell. */
+  /** Select a word directly (e.g. from the clue list), placing the cursor at
+   *  its first empty / incorrect cell (skipping letters already correct from
+   *  intersecting words). */
   selectWord(wordId: string): void {
     const keys = this.built.wordCells.get(wordId);
     if (!keys || keys.length === 0) return;
     this.selectedWordId = wordId;
-    this.selectedCellKey = keys[0];
+    this.selectedCellKey = this.firstTypableKey(keys);
   }
 
   clearSelection(): void {
@@ -181,16 +183,38 @@ export class CrosswordGame {
     return { keys, index: keys.indexOf(this.selectedCellKey) };
   }
 
-  /** Type a letter into the active cell, then advance the cursor along the word. */
+  /** True when the player has the solution letter in this cell. */
+  private isCorrectlyFilled(key: string): boolean {
+    const entry = this.entries.get(key);
+    return entry !== undefined && entry === this.built.cells.get(key)?.solution;
+  }
+
+  /** First cell that still needs input; falls back to the word's first cell. */
+  private firstTypableKey(keys: string[]): string {
+    return keys.find((key) => !this.isCorrectlyFilled(key)) ?? keys[0];
+  }
+
+  /** Index to land on after typing at `fromIndex`: skip cells that already
+   *  have the correct letter (e.g. from an intersecting word). Does not skip
+   *  on backspace — callers step backward one cell at a time. */
+  private advancePastFilled(keys: string[], fromIndex: number): number {
+    for (let i = fromIndex + 1; i < keys.length; i++) {
+      if (!this.isCorrectlyFilled(keys[i])) return i;
+    }
+    return Math.min(fromIndex + 1, keys.length - 1);
+  }
+
+  /** Type a letter into the active cell, then advance past already-correct cells. */
   typeLetter(ch: string): void {
     const line = this.activeLine();
     if (!line || !this.selectedCellKey) return;
     this.entries = new Map(this.entries).set(this.selectedCellKey, ch.toUpperCase());
-    const next = Math.min(line.index + 1, line.keys.length - 1);
-    this.selectedCellKey = line.keys[next];
+    this.selectedCellKey = line.keys[this.advancePastFilled(line.keys, line.index)];
   }
 
-  /** Clear the active cell, or — if already empty — step back and clear that one. */
+  /** Clear the active cell, or — if already empty — step back and clear that one.
+   *  Steps one cell at a time (does not skip), so correct intersection letters
+   *  can be deleted. */
   backspace(): void {
     const line = this.activeLine();
     if (!line || !this.selectedCellKey) return;
